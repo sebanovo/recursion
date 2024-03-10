@@ -109,3 +109,4 @@ int contar_digitos(Cardinal x) {
     return c;
 }
 
+
