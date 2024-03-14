@@ -119,6 +119,7 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <None Include=".gitignore"/>
         <CppCompile Include="functions_numbers.cpp">
             <DependentOn>functions_numbers.h</DependentOn>
             <BuildOrder>3</BuildOrder>
@@ -129,9 +130,7 @@
             <DependentOn>main.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <None Include="README.md">
-            <ModuleName>Untitled1</ModuleName>
-        </None>
+        <None Include="README.md"/>
         <CppCompile Include="Recursividad.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -230,7 +229,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Untitled1.md" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName=".gitignore" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="README.md" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 383
-  ClientWidth = 686
+  ClientHeight = 312
+  ClientWidth = 525
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,21 +13,21 @@ object Form1: TForm1
   Menu = MainMenu1
   TextHeight = 15
   object Edit1: TEdit
-    Left = 176
+    Left = 184
     Top = 120
-    Width = 241
-    Height = 23
+    Width = 273
+    Height = 25
     TabOrder = 0
   end
   object Edit2: TEdit
-    Left = 176
-    Top = 216
-    Width = 241
-    Height = 23
+    Left = 184
+    Top = 144
+    Width = 273
+    Height = 25
     TabOrder = 1
   end
   object MainMenu1: TMainMenu
-    Left = 16
+    Left = 8
     Top = 8
     object Menu1: TMenuItem
       Caption = 'Menu'
@@ -58,6 +58,26 @@ object Form1: TForm1
       object ContarDigitos: TMenuItem
         Caption = 'Contar Digitos'
         OnClick = ContarDigitosClick
+      end
+      object RetornarMenorDigito1: TMenuItem
+        Caption = 'Retornar Menor Digito'
+        OnClick = RetornarMenorDigito1Click
+      end
+      object RetonarMayorDigito: TMenuItem
+        Caption = 'Retornar Mayor Digito'
+        OnClick = RetonarMayorDigitoClick
+      end
+      object AgregarComaDigitos1: TMenuItem
+        Caption = 'Agregar Coma Digitos'
+        OnClick = AgregarComaDigitos1Click
+      end
+      object VerificarOrdenado: TMenuItem
+        Caption = 'Verificar Ordenado'
+        OnClick = VerificarOrdenadoClick
+      end
+      object MoverDigitoMayorAlFinal1: TMenuItem
+        Caption = 'Mover Digito Mayor Al Final'
+        OnClick = MoverDigitoMayorAlFinal1Click
       end
     end
   end

@@ -7,37 +7,37 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-byte factorial(Cardinal x) {
-	byte f;
+Cardinal factorial(Cardinal x)
+{
+    Cardinal f;
     if (x < 2) {
         f = 1;
-    }
-    else {
+    } else {
         f = x * factorial(x - 1);
     }
     return f;
 }
 
-byte sumar_digitos(Cardinal x) {
-	byte s;
+byte sumar_digitos(Cardinal x)
+{
+    byte s;
     if (x < 10) {
         s = x;
-    }
-    else {
+    } else {
         s = sumar_digitos(x / 10) + x % 10;
     }
     return s;
 }
 
-byte sumar_digitos_impares(Cardinal x) {
-	byte s;
+byte sumar_digitos_impares(Cardinal x)
+{
+    byte s;
     if (x < 10) {
         if (x % 2 == 1)
             s = x;
         else
             s = 0;
-    }
-    else {
+    } else {
         s = sumar_digitos_impares(x / 10);
         if (x % 2 == 1)
             s = s + x % 10;
@@ -45,31 +45,31 @@ byte sumar_digitos_impares(Cardinal x) {
     return s;
 }
 
-byte sumar_digitos_pares(Cardinal x) {
-	byte s;
+byte sumar_digitos_pares(Cardinal x)
+{
+    byte s;
     if (x < 10) {
         if (x % 2 == 0)
             s = x;
         else
             s = 0;
-    }
-    else {
+    } else {
         s = sumar_digitos_pares(x / 10);
         if (x % 2 == 0)
             s = s + x % 10;
     }
-	return s;
+    return s;
 }
 
-int restar_digitos_par_impar(int x) {
-	int s;
-	if (x < 10) {
-		if (x % 2 == 0)
-			s = x;
-		else
-			s = -x;
-	}
-	else {
+int restar_digitos_par_impar(int x)
+{
+    int s;
+    if (x < 10) {
+        if (x % 2 == 0)
+            s = x;
+        else
+            s = -x;
+    } else {
         if (x % 2 == 0)
             s = x % 10;
         else
@@ -79,16 +79,15 @@ int restar_digitos_par_impar(int x) {
     return s;
 }
 
-
-int restar_digitos_impar_par(int x) {
-	int s;
-	if (x < 10) {
+int restar_digitos_impar_par(int x)
+{
+    int s;
+    if (x < 10) {
         if (x % 2 == 1)
             s = x;
         else
             s = -x;
-    }
-    else {
+    } else {
         if (x % 2 == 1)
             s = x % 10;
         else
@@ -98,15 +97,82 @@ int restar_digitos_impar_par(int x) {
     return s;
 }
 
-int contar_digitos(Cardinal x) {
+int contar_digitos(Cardinal x)
+{
     int c;
     if (x < 10) {
         c = 1;
-    }
-    else {
+    } else {
         c = contar_digitos(x / 10) + 1;
     }
     return c;
 }
 
+String agregar_coma_digitos(Cardinal x)
+{
+    String s;
+    if (x < 10) {
+        s = x;
+    } else {
+        s = agregar_coma_digitos(x / 10) + ',' + x % 10;
+    }
+    return s;
+}
+
+byte retornar_menor_digito(Cardinal x)
+{
+    byte m;
+    if (x < 10) {
+        m = x;
+    } else {
+        m = retornar_menor_digito(x / 10);
+        if (x % 10 < m) {
+            m = x % 10;
+        }
+    }
+    return m;
+}
+
+byte retornar_mayor_digito(Cardinal x)
+{
+    byte m;
+    if (x < 10) {
+        m = x;
+    } else {
+        m = retornar_mayor_digito(x / 10);
+        if (x % 10 > m) {
+            m = x % 10;
+        }
+    }
+    return m;
+}
+
+bool verificar_ordenado(Cardinal x)
+{
+    bool b;
+    if (x < 10) {
+        b = true;
+    } else {
+        b = verificar_ordenado(x / 10) && (x / 10 % 10 <= x % 10);
+    }
+    return b;
+}
+
+void mover_digito_mayor_al_final(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        byte d = x % 10;
+        x = x / 10;
+        mover_digito_mayor_al_final(x);
+        if (x % 10 <= d) {
+            x = x * 10 + d;
+        } else {
+            byte z = x % 10;
+            x = x / 10;
+            x = (x * 10 + d) * 10 + z;
+        }
+    }
+}
 
