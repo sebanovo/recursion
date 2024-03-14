@@ -16,21 +16,21 @@ object Form1: TForm1
     Left = 184
     Top = 120
     Width = 273
-    Height = 25
+    Height = 23
     TabOrder = 0
   end
   object Edit2: TEdit
     Left = 184
     Top = 144
     Width = 273
-    Height = 25
+    Height = 23
     TabOrder = 1
   end
   object MainMenu1: TMainMenu
     Left = 8
     Top = 8
-    object Menu1: TMenuItem
-      Caption = 'Menu'
+    object Number: TMenuItem
+      Caption = 'Number'
       object Factorial: TMenuItem
         Caption = 'Factorial'
         OnClick = FactorialClick
@@ -78,6 +78,17 @@ object Form1: TForm1
       object MoverDigitoMayorAlFinal1: TMenuItem
         Caption = 'Mover Digito Mayor Al Final'
         OnClick = MoverDigitoMayorAlFinal1Click
+      end
+    end
+    object String: TMenuItem
+      Caption = 'String'
+      object ContarEspacios: TMenuItem
+        Caption = 'Contar Espacios'
+        OnClick = ContarEspaciosClick
+      end
+      object ContarVocales: TMenuItem
+        Caption = 'Contar Vocales'
+        OnClick = ContarVocalesClick
       end
     end
   end

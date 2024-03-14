@@ -5,6 +5,7 @@
 
 #include "main.h"
 #include "functions_numbers.h"
+#include "functions_strings.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -85,6 +86,18 @@ void __fastcall TForm1::MoverDigitoMayorAlFinal1Click(TObject* Sender)
     Cardinal number = StrToInt(Edit1->Text);
     mover_digito_mayor_al_final(number);
     Edit2->Text = number;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarEspaciosClick(TObject* Sender)
+{
+    Edit2->Text = contar_espacios(Edit1->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarVocalesClick(TObject* Sender)
+{
+    Edit2->Text = contar_vocales_v1(Edit1->Text);
 }
 //---------------------------------------------------------------------------
 

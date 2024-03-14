@@ -13,7 +13,7 @@ class TForm1 : public TForm
 {
   __published: // IDE-managed Components
     TMainMenu* MainMenu1;
-    TMenuItem* Menu1;
+    TMenuItem* Number;
     TMenuItem* Factorial;
     TMenuItem* SumarDigitos;
     TEdit* Edit1;
@@ -28,6 +28,9 @@ class TForm1 : public TForm
     TMenuItem* AgregarComaDigitos1;
     TMenuItem* VerificarOrdenado;
     TMenuItem* MoverDigitoMayorAlFinal1;
+    TMenuItem* String;
+    TMenuItem* ContarEspacios;
+    TMenuItem* ContarVocales;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -40,6 +43,8 @@ class TForm1 : public TForm
     void __fastcall AgregarComaDigitos1Click(TObject* Sender);
     void __fastcall VerificarOrdenadoClick(TObject* Sender);
     void __fastcall MoverDigitoMayorAlFinal1Click(TObject* Sender);
+    void __fastcall ContarEspaciosClick(TObject* Sender);
+    void __fastcall ContarVocalesClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

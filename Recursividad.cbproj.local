@@ -8,14 +8,17 @@
     <Transaction>2024/03/07 13:16:58.000.966,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.dfm=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2024/03/07 13:16:58.000.950,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\RecursividadPCH1.h=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2024/03/07 13:16:58.000.966,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.h=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2024/03/07 13:17:08.000.057,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\main.cpp=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp</Transaction>
     <Transaction>2024/03/07 13:17:08.000.057,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\main.h=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.h</Transaction>
+    <Transaction>2024/03/07 13:17:08.000.057,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\main.cpp=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp</Transaction>
     <Transaction>2024/03/07 13:17:08.000.057,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\main.dfm=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.dfm</Transaction>
     <Transaction>2024/03/07 13:32:13.000.468,=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp</Transaction>
-    <Transaction>2024/03/07 13:34:00.000.866,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\functions_numbers.cpp=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp</Transaction>
     <Transaction>2024/03/07 13:34:00.000.866,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\functions_numbers.h=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.h</Transaction>
+    <Transaction>2024/03/07 13:34:00.000.866,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\functions_numbers.cpp=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp</Transaction>
     <Transaction>2024/03/09 23:11:52.000.888,=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Untitled1.md</Transaction>
     <Transaction>2024/03/09 23:17:34.000.511,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Untitled1.md=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\README.md</Transaction>
     <Transaction>2024/03/10 10:51:38.000.500,=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\.gitignore</Transaction>
+    <Transaction>2024/03/14 13:53:33.000.109,=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp</Transaction>
+    <Transaction>2024/03/14 13:53:52.000.633,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.h=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\functions_strings.h</Transaction>
+    <Transaction>2024/03/14 13:53:52.000.633,C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\Unit1.cpp=C:\Users\HP\Documents\Embarcadero\Studio\Projects\Recursividad\functions_strings.cpp</Transaction>
   </Transactions>
 </BorlandProject>
