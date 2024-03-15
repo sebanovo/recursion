@@ -31,6 +31,10 @@ class TForm1 : public TForm
     TMenuItem* String;
     TMenuItem* ContarEspacios;
     TMenuItem* ContarVocales;
+    TMenuItem* EliminarDigitosImpares;
+    TMenuItem* EliminarDigitosPares;
+    TMenuItem* EncontrarDigitosMayorYMenor;
+    TMenuItem* AgregarComaDigitosEInvertir;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -45,6 +49,10 @@ class TForm1 : public TForm
     void __fastcall MoverDigitoMayorAlFinal1Click(TObject* Sender);
     void __fastcall ContarEspaciosClick(TObject* Sender);
     void __fastcall ContarVocalesClick(TObject* Sender);
+    void __fastcall EliminarDigitosImparesClick(TObject* Sender);
+    void __fastcall EliminarDigitosParesClick(TObject* Sender);
+    void __fastcall EncontrarDigitosMayorYMenorClick(TObject* Sender);
+    void __fastcall AgregarComaDigitosEInvertirClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

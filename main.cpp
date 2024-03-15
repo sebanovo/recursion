@@ -101,3 +101,33 @@ void __fastcall TForm1::ContarVocalesClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::EliminarDigitosImparesClick(TObject* Sender)
+{
+    Cardinal number = StrToInt(Edit1->Text);
+    eliminar_digitos_impares(number);
+    Edit2->Text = number;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarDigitosParesClick(TObject* Sender)
+{
+    Cardinal number = StrToInt(Edit1->Text);
+    eliminar_digitos_pares(number);
+    Edit2->Text = number;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EncontrarDigitosMayorYMenorClick(TObject* Sender)
+{
+    byte M, m;
+    encontrar_digito_mayor_y_menor(StrToInt(Edit1->Text), M, m);
+    Edit2->Text = "Mayor: " + IntToStr(M) + " Menor: " + IntToStr(m);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AgregarComaDigitosEInvertirClick(TObject* Sender)
+{
+    Edit2->Text = agregar_coma_digitos_e_invertir(StrToInt(Edit1->Text));
+}
+//---------------------------------------------------------------------------
+

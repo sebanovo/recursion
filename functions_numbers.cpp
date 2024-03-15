@@ -119,6 +119,17 @@ String agregar_coma_digitos(Cardinal x)
     return s;
 }
 
+String agregar_coma_digitos_e_invertir(Cardinal x)
+{
+    String s;
+    if (x < 10) {
+        s = String(x);
+    } else {
+        s = String(x % 10) + ',' + agregar_coma_digitos_e_invertir(x / 10);
+    }
+    return s;
+}
+
 byte retornar_menor_digito(Cardinal x)
 {
     byte m;
@@ -172,6 +183,68 @@ void mover_digito_mayor_al_final(Cardinal &x)
             byte z = x % 10;
             x = x / 10;
             x = (x * 10 + d) * 10 + z;
+        }
+    }
+}
+
+void eliminar_digitos_impares(Cardinal &x)
+{
+    if (x < 10) {
+        if (x % 2 == 0) {
+            // nada
+        }
+        if (x % 2 == 1) {
+            x = 0;
+        }
+    } else {
+        int ultimoDigito = x % 10;
+        x = x / 10;
+        eliminar_digitos_impares(x);
+        if (ultimoDigito % 2 == 0) {
+            x = x * 10 + ultimoDigito;
+        }
+        if (ultimoDigito % 2 == 1) {
+            // nada
+        }
+    }
+}
+
+void eliminar_digitos_pares(Cardinal &x)
+{
+    if (x < 10) {
+        if (x % 2 == 1) {
+            // nada
+        }
+        if (x % 2 == 0) {
+            x = 0;
+        }
+    } else {
+        int ultimoDigito = x % 10;
+        x = x / 10;
+        eliminar_digitos_pares(x);
+        if (ultimoDigito % 2 == 1) {
+            x = x * 10 + ultimoDigito;
+        }
+        if (ultimoDigito % 2 == 0) {
+            // nada
+        }
+    }
+}
+
+void encontrar_digito_mayor_y_menor(Cardinal x, byte &M, byte &m)
+{
+    if (x < 10) {
+        M = x;
+        m = x;
+    } else {
+        int ultimoDigito = x % 10;
+        x = x / 10;
+        encontrar_digito_mayor_y_menor(x, M, m);
+        if (M < ultimoDigito) {
+            M = ultimoDigito;
+        }
+        if (m > ultimoDigito) {
+            m = ultimoDigito;
         }
     }
 }

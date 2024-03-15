@@ -20,10 +20,15 @@ int contar_digitos(Cardinal x);
 // mandar el mayor al final
 
 String agregar_coma_digitos(Cardinal x);
+String agregar_coma_digitos_e_invertir(Cardinal x);
 byte retornar_menor_digito(Cardinal x);
 byte retornar_mayor_digito(Cardinal x);
 bool verificar_ordenado(Cardinal x);
 void mover_digito_mayor_al_final(Cardinal &x);
+void eliminar_digitos_impares(Cardinal &x);
+void eliminar_digitos_pares(Cardinal &x);
+void encontrar_digito_mayor_y_menor(Cardinal x, byte &M, byte &m);
+
 //---------------------------------------------------------------------------
 #endif
 
