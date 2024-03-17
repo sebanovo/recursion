@@ -4,8 +4,8 @@
 #pragma hdrstop
 
 #include "main.h"
-#include "functions_numbers.h"
-#include "functions_strings.h"
+#include "numero.h"
+#include "cadena.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -128,6 +128,84 @@ void __fastcall TForm1::EncontrarDigitosMayorYMenorClick(TObject* Sender)
 void __fastcall TForm1::AgregarComaDigitosEInvertirClick(TObject* Sender)
 {
     Edit2->Text = agregar_coma_digitos_e_invertir(StrToInt(Edit1->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InvertirCadenaClick(TObject* Sender)
+{
+    String cadena = Edit1->Text;
+    invertir_cadena(cadena);
+    Edit2->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FiltrarDigitosClick(TObject* Sender)
+{
+    Edit2->Text = filtrar_digitos(Edit1->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FiltrarPrimerNumeroClick(TObject* Sender)
+{
+    Edit2->Text = filtrar_primer_numero(Edit1->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RepetirDigitosClick(TObject* Sender)
+{
+    Edit2->Text = repetir_digitos(StrToInt(Edit1->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarVocalesClick(TObject* Sender)
+{
+    String cadena = Edit1->Text;
+    eliminar_vocales(cadena);
+    Edit2->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarDigitosImparesAntesDeUnoParClick(TObject* Sender)
+{
+    Edit2->Text =
+        contar_digitos_impares_antes_de_uno_par(StrToInt(Edit1->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::OrdenarClick(TObject* Sender)
+{
+    Cardinal number = StrToInt(Edit1->Text);
+    ordenar(number);
+    Edit2->Text = number;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::PalabraMsLargaClick(TObject* Sender)
+{
+    Edit2->Text = palabra_mas_larga(Edit1->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarPrimerLetraDeCadaPalabraClick(TObject* Sender)
+{
+    String cadena = Edit1->Text;
+    eliminar_primera_letra_de_cada_palabra(cadena);
+    Edit2->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InvertirCadaPalabraClick(TObject* Sender)
+{
+    //    String cadena = Edit1->Text;
+    //    invertir_cada_palabra(cadena);
+    //    Edit2->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarCaracteresASCIIClick(TObject* Sender)
+{
+    AnsiString cadena = Edit1->Text;
+    Edit2->Text = contar_letras_ASCII(cadena);
 }
 //---------------------------------------------------------------------------
 

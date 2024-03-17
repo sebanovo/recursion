@@ -13,7 +13,7 @@ class TForm1 : public TForm
 {
   __published: // IDE-managed Components
     TMainMenu* MainMenu1;
-    TMenuItem* Number;
+    TMenuItem* Numero;
     TMenuItem* Factorial;
     TMenuItem* SumarDigitos;
     TEdit* Edit1;
@@ -28,13 +28,24 @@ class TForm1 : public TForm
     TMenuItem* AgregarComaDigitos1;
     TMenuItem* VerificarOrdenado;
     TMenuItem* MoverDigitoMayorAlFinal1;
-    TMenuItem* String;
+    TMenuItem* Cadena;
     TMenuItem* ContarEspacios;
     TMenuItem* ContarVocales;
     TMenuItem* EliminarDigitosImpares;
     TMenuItem* EliminarDigitosPares;
     TMenuItem* EncontrarDigitosMayorYMenor;
     TMenuItem* AgregarComaDigitosEInvertir;
+    TMenuItem* InvertirCadena;
+    TMenuItem* FiltrarDigitos;
+    TMenuItem* FiltrarPrimerNumero;
+    TMenuItem* RepetirDigitos;
+    TMenuItem* EliminarVocales;
+    TMenuItem* ContarDigitosImparesAntesDeUnoPar;
+    TMenuItem* Ordenar;
+    TMenuItem* PalabraMsLarga;
+    TMenuItem* EliminarPrimerLetraDeCadaPalabra;
+    TMenuItem* InvertirCadaPalabra;
+    TMenuItem* ContarCaracteresASCII;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -53,6 +64,17 @@ class TForm1 : public TForm
     void __fastcall EliminarDigitosParesClick(TObject* Sender);
     void __fastcall EncontrarDigitosMayorYMenorClick(TObject* Sender);
     void __fastcall AgregarComaDigitosEInvertirClick(TObject* Sender);
+    void __fastcall InvertirCadenaClick(TObject* Sender);
+    void __fastcall FiltrarDigitosClick(TObject* Sender);
+    void __fastcall FiltrarPrimerNumeroClick(TObject* Sender);
+    void __fastcall RepetirDigitosClick(TObject* Sender);
+    void __fastcall EliminarVocalesClick(TObject* Sender);
+    void __fastcall ContarDigitosImparesAntesDeUnoParClick(TObject* Sender);
+    void __fastcall OrdenarClick(TObject* Sender);
+    void __fastcall PalabraMsLargaClick(TObject* Sender);
+    void __fastcall EliminarPrimerLetraDeCadaPalabraClick(TObject* Sender);
+    void __fastcall InvertirCadaPalabraClick(TObject* Sender);
+    void __fastcall ContarCaracteresASCIIClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

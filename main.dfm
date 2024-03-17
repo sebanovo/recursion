@@ -15,21 +15,34 @@ object Form1: TForm1
   object Edit1: TEdit
     Left = 328
     Top = 168
-    Width = 273
-    Height = 23
+    Width = 385
+    Height = 36
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object Edit2: TEdit
     Left = 328
-    Top = 192
-    Width = 273
-    Height = 23
+    Top = 224
+    Width = 385
+    Height = 36
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object MainMenu1: TMainMenu
-    Left = 8
-    object Number: TMenuItem
-      Caption = 'Number'
+    Left = 592
+    Top = 40
+    object Numero: TMenuItem
+      Caption = 'Numero'
       object Factorial: TMenuItem
         Caption = 'Factorial'
         OnClick = FactorialClick
@@ -94,9 +107,21 @@ object Form1: TForm1
         Caption = 'Encontrar Digitos Mayor Y Menor'
         OnClick = EncontrarDigitosMayorYMenorClick
       end
+      object RepetirDigitos: TMenuItem
+        Caption = 'Repetir Digitos'
+        OnClick = RepetirDigitosClick
+      end
+      object ContarDigitosImparesAntesDeUnoPar: TMenuItem
+        Caption = 'Contar Digitos Impares Antes De Uno Par'
+        OnClick = ContarDigitosImparesAntesDeUnoParClick
+      end
+      object Ordenar: TMenuItem
+        Caption = 'Ordenar'
+        OnClick = OrdenarClick
+      end
     end
-    object String: TMenuItem
-      Caption = 'String'
+    object Cadena: TMenuItem
+      Caption = 'Cadena'
       object ContarEspacios: TMenuItem
         Caption = 'Contar Espacios'
         OnClick = ContarEspaciosClick
@@ -104,6 +129,38 @@ object Form1: TForm1
       object ContarVocales: TMenuItem
         Caption = 'Contar Vocales'
         OnClick = ContarVocalesClick
+      end
+      object ContarCaracteresASCII: TMenuItem
+        Caption = 'Contar Caracteres ASCII'
+        OnClick = ContarCaracteresASCIIClick
+      end
+      object InvertirCadena: TMenuItem
+        Caption = 'Invertir Cadena'
+        OnClick = InvertirCadenaClick
+      end
+      object FiltrarDigitos: TMenuItem
+        Caption = 'Filtrar Digitos'
+        OnClick = FiltrarDigitosClick
+      end
+      object FiltrarPrimerNumero: TMenuItem
+        Caption = 'Filtrar Primer Numero'
+        OnClick = FiltrarPrimerNumeroClick
+      end
+      object EliminarVocales: TMenuItem
+        Caption = 'Eliminar Vocales'
+        OnClick = EliminarVocalesClick
+      end
+      object PalabraMsLarga: TMenuItem
+        Caption = 'Palabra M'#225's Larga'
+        OnClick = PalabraMsLargaClick
+      end
+      object EliminarPrimerLetraDeCadaPalabra: TMenuItem
+        Caption = 'Eliminar Primer Letra De Cada Palabra'
+        OnClick = EliminarPrimerLetraDeCadaPalabraClick
+      end
+      object InvertirCadaPalabra: TMenuItem
+        Caption = 'Invertir Cada Palabra'
+        OnClick = InvertirCadaPalabraClick
       end
     end
   end

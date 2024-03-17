@@ -120,12 +120,8 @@
     </PropertyGroup>
     <ItemGroup>
         <None Include=".gitignore"/>
-        <CppCompile Include="functions_numbers.cpp">
-            <DependentOn>functions_numbers.h</DependentOn>
-            <BuildOrder>3</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="functions_strings.cpp">
-            <DependentOn>functions_strings.h</DependentOn>
+        <CppCompile Include="cadena.cpp">
+            <DependentOn>cadena.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
         <CppCompile Include="main.cpp">
@@ -133,6 +129,10 @@
             <FormType>dfm</FormType>
             <DependentOn>main.h</DependentOn>
             <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="numero.cpp">
+            <DependentOn>numero.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
         </CppCompile>
         <None Include="README.md"/>
         <CppCompile Include="Recursividad.cpp">
