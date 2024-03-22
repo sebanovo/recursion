@@ -77,7 +77,7 @@ void __fastcall TForm1::AgregarComaDigitos1Click(TObject* Sender)
 
 void __fastcall TForm1::VerificarOrdenadoClick(TObject* Sender)
 {
-    Edit2->Text = verificar_ordenado(StrToInt(Edit1->Text));
+    Edit2->Text = verificar_ordenado_ascendente(StrToInt(Edit1->Text));
 }
 //---------------------------------------------------------------------------
 
@@ -172,10 +172,10 @@ void __fastcall TForm1::ContarDigitosImparesAntesDeUnoParClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::OrdenarClick(TObject* Sender)
+void __fastcall TForm1::OrdenamientoAscendenteClick(TObject* Sender)
 {
     Cardinal number = StrToInt(Edit1->Text);
-    ordenar(number);
+    ordenamiento_ascendente(number);
     Edit1->Text = number;
 }
 //---------------------------------------------------------------------------
@@ -225,9 +225,33 @@ void __fastcall TForm1::EliminarPrimerPalabraClick(TObject* Sender)
 
 void __fastcall TForm1::EliminarHastaPrimerPalabraClick(TObject* Sender)
 {
-    //    String cadena = Edit1->Text;
-    //    eliminar_hasta_primer_palabra(cadena);
-    //    Edit1->Text = cadena;
+    String cadena = Edit1->Text;
+    eliminar_hasta_primer_palabra(cadena);
+    Edit1->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarDesdePrimerPalabraClick(TObject* Sender)
+{
+    String cadena = Edit1->Text;
+    eliminar_desde_primer_palabra(cadena);
+    Edit1->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::MoverDigitoMenorAlFinalClick(TObject* Sender)
+{
+    Cardinal number = StrToInt(Edit1->Text);
+    mover_digito_menor_al_final(number);
+    Edit1->Text = number;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::OrdenamientoDescendenteClick(TObject* Sender)
+{
+    Cardinal number = StrToInt(Edit1->Text);
+    ordenamiento_descendente(number);
+    Edit1->Text = number;
 }
 //---------------------------------------------------------------------------
 

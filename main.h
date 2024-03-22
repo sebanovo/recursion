@@ -41,7 +41,7 @@ class TForm1 : public TForm
     TMenuItem* RepetirDigitos;
     TMenuItem* EliminarVocales;
     TMenuItem* ContarDigitosImparesAntesDeUnoPar;
-    TMenuItem* Ordenar;
+    TMenuItem* OrdenamientoAscendente;
     TMenuItem* PalabraMsLarga;
     TMenuItem* EliminarPrimerLetraDeCadaPalabra;
     TMenuItem* InvertirCadaPalabra;
@@ -49,6 +49,9 @@ class TForm1 : public TForm
     TMenuItem* PrimerPalabra;
     TMenuItem* EliminarPrimerPalabra;
     TMenuItem* EliminarHastaPrimerPalabra;
+    TMenuItem* EliminarDesdePrimerPalabra;
+    TMenuItem* MoverDigitoMenorAlFinal;
+    TMenuItem* OrdenamientoDescendente;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -73,7 +76,7 @@ class TForm1 : public TForm
     void __fastcall RepetirDigitosClick(TObject* Sender);
     void __fastcall EliminarVocalesClick(TObject* Sender);
     void __fastcall ContarDigitosImparesAntesDeUnoParClick(TObject* Sender);
-    void __fastcall OrdenarClick(TObject* Sender);
+    void __fastcall OrdenamientoAscendenteClick(TObject* Sender);
     void __fastcall PalabraMsLargaClick(TObject* Sender);
     void __fastcall EliminarPrimerLetraDeCadaPalabraClick(TObject* Sender);
     void __fastcall InvertirCadaPalabraClick(TObject* Sender);
@@ -81,6 +84,9 @@ class TForm1 : public TForm
     void __fastcall PrimerPalabraClick(TObject* Sender);
     void __fastcall EliminarPrimerPalabraClick(TObject* Sender);
     void __fastcall EliminarHastaPrimerPalabraClick(TObject* Sender);
+    void __fastcall EliminarDesdePrimerPalabraClick(TObject* Sender);
+    void __fastcall MoverDigitoMenorAlFinalClick(TObject* Sender);
+    void __fastcall OrdenamientoDescendenteClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

@@ -40,6 +40,7 @@ bool verificar_palindromo(String x);
 String primer_palabra(String x);
 void eliminar_primer_palabra(String &x);
 void eliminar_hasta_primer_palabra(String &x);
+void eliminar_desde_primer_palabra(String &x);
 
 //---------------------------------------------------------------------------
 #endif

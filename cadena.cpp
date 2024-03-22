@@ -342,19 +342,37 @@ void eliminar_primer_palabra(String &x)
 // Ej2 x = "123hola a todos" => " a todos"
 void eliminar_hasta_primer_palabra(String &x)
 {
-    byte c = x.Length();
-    if (c == 0) {
+    if (x == "") {
         // nada
-    } else if (c == 1) {
-        if (verificar_letra(x[1])) {
-            x = "";
-        } else {
-            // nada
-        }
     } else {
         wchar_t a = x[1];
+        // a1
         x.Delete(1, 1);
-        // hacer
+        if (!verificar_letra(a)) {
+            eliminar_hasta_primer_palabra(x);
+        } else {
+            if (x != "" && verificar_letra(x[1])) {
+                eliminar_hasta_primer_palabra(x);
+            }
+        }
+    }
+}
+
+// Ej x = "hola a todos *123" => "hola a "
+void eliminar_desde_primer_palabra(String &x)
+{
+    if (x == "") {
+        // nada
+    } else {
+        wchar_t a = x[x.Length()];
+        x.Delete(x.Length(), 1);
+        if (!verificar_letra(a)) {
+            eliminar_desde_primer_palabra(x);
+        } else {
+            if (x != "" && verificar_letra(x[x.Length()])) {
+                eliminar_desde_primer_palabra(x);
+            }
+        }
     }
 }
 

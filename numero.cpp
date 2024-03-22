@@ -162,13 +162,24 @@ byte retornar_mayor_digito(Cardinal x)
     return m;
 }
 
-bool verificar_ordenado(Cardinal x)
+bool verificar_ordenado_ascendente(Cardinal x)
 {
     bool b;
     if (x < 10) {
         b = true;
     } else {
-        b = verificar_ordenado(x / 10) && (x / 10 % 10 <= x % 10);
+        b = verificar_ordenado_ascendente(x / 10) && (x / 10 % 10 <= x % 10);
+    }
+    return b;
+}
+
+bool verificar_ordenado_descendente(Cardinal x)
+{
+    bool b;
+    if (x < 10) {
+        b = true;
+    } else {
+        b = verificar_ordenado_descendente(x / 10) && (x / 10 % 10 >= x % 10);
     }
     return b;
 }
@@ -191,24 +202,47 @@ void mover_digito_mayor_al_final(Cardinal &x)
     }
 }
 
-void ordenar(Cardinal &x)
+void mover_digito_menor_al_final(Cardinal &x)
 {
     if (x < 10) {
         // nada
     } else {
         byte d = x % 10;
         x = x / 10;
-        ordenar(x);
-        if (x % 10 <= d) {
+        mover_digito_menor_al_final(x);
+        if (x % 10 >= d) {
             x = x * 10 + d;
         } else {
             byte z = x % 10;
             x = x / 10;
             x = (x * 10 + d) * 10 + z;
         }
-        if (!verificar_ordenado(x)) {
-            ordenar(x);
-        }
+    }
+}
+
+void ordenamiento_ascendente(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        mover_digito_mayor_al_final(x);
+        int ultimoDigito = x % 10;
+        x = x / 10;
+        ordenamiento_ascendente(x);
+        x = x * 10 + ultimoDigito;
+    }
+}
+
+void ordenamiento_descendente(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        mover_digito_menor_al_final(x);
+        int ultimoDigito = x % 10;
+        x = x / 10;
+        ordenamiento_descendente(x);
+        x = x * 10 + ultimoDigito;
     }
 }
 

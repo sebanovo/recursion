@@ -71,6 +71,10 @@ object Form1: TForm1
         Caption = 'Contar Digitos'
         OnClick = ContarDigitosClick
       end
+      object ContarDigitosImparesAntesDeUnoPar: TMenuItem
+        Caption = 'Contar Digitos Impares Antes De Uno Par'
+        OnClick = ContarDigitosImparesAntesDeUnoParClick
+      end
       object RetornarMenorDigito1: TMenuItem
         Caption = 'Retornar Menor Digito'
         OnClick = RetornarMenorDigito1Click
@@ -95,6 +99,18 @@ object Form1: TForm1
         Caption = 'Mover Digito Mayor Al Final'
         OnClick = MoverDigitoMayorAlFinal1Click
       end
+      object MoverDigitoMenorAlFinal: TMenuItem
+        Caption = 'Mover Digito Menor Al Final'
+        OnClick = MoverDigitoMenorAlFinalClick
+      end
+      object OrdenamientoAscendente: TMenuItem
+        Caption = 'Ordenamiento Ascendente'
+        OnClick = OrdenamientoAscendenteClick
+      end
+      object OrdenamientoDescendente: TMenuItem
+        Caption = 'Ordenamiento Descendente'
+        OnClick = OrdenamientoDescendenteClick
+      end
       object EliminarDigitosImpares: TMenuItem
         Caption = 'Eliminar Digitos Impares'
         OnClick = EliminarDigitosImparesClick
@@ -110,14 +126,6 @@ object Form1: TForm1
       object RepetirDigitos: TMenuItem
         Caption = 'Repetir Digitos'
         OnClick = RepetirDigitosClick
-      end
-      object ContarDigitosImparesAntesDeUnoPar: TMenuItem
-        Caption = 'Contar Digitos Impares Antes De Uno Par'
-        OnClick = ContarDigitosImparesAntesDeUnoParClick
-      end
-      object Ordenar: TMenuItem
-        Caption = 'Ordenar'
-        OnClick = OrdenarClick
       end
     end
     object Cadena: TMenuItem
@@ -173,6 +181,10 @@ object Form1: TForm1
       object EliminarHastaPrimerPalabra: TMenuItem
         Caption = 'Eliminar Hasta Primer Palabra'
         OnClick = EliminarHastaPrimerPalabraClick
+      end
+      object EliminarDesdePrimerPalabra: TMenuItem
+        Caption = 'Eliminar Desde Primer Palabra'
+        OnClick = EliminarDesdePrimerPalabraClick
       end
     end
   end
