@@ -13,6 +13,20 @@
 
 // Unicode -> wchar_t - String
 // ASCII -> char - AnsiString
+
+bool verificar_vocal(wchar_t v)
+{
+    String vocales = "aeiouáéíóúäëïöüAEIOUÁÉÍÓÚÄËÏÖÜ";
+    return vocales.Pos(v) > 0;
+}
+
+bool verificar_letra(wchar_t l)
+{
+    String letras =
+        "qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMáéíóúÁÉÍÓÚäëïöüÄËÏÖÜ";
+    return letras.Pos(l) > 0;
+}
+
 byte contar_espacios(String x)
 {
     byte c;
@@ -27,12 +41,6 @@ byte contar_espacios(String x)
         }
     }
     return c;
-}
-
-bool verificar_vocal(wchar_t v)
-{
-    String vocales = "aeiouáéíóúäëïöüAEIOUÁÉÍÓÚÄËÏÖÜ";
-    return vocales.Pos(v) > 0;
 }
 
 byte contar_vocales_v1(String x)
@@ -92,16 +100,16 @@ byte contar_vocales_v3(String x)
     return c;
 }
 
-int contar_letras_ASCII(AnsiString x)
+int contar_letras(String x)
 {
     int c;
     if (x == "") {
         c = 0;
     } else {
-        char a = x[1];
+        wchar_t a = x[1];
         x.Delete(1, 1);
-        c = contar_letras_ASCII(x);
-        if (isalpha(a)) {
+        c = contar_letras(x);
+        if (verificar_letra(a)) {
             c++;
         }
     }
@@ -271,5 +279,82 @@ bool verificar_palindromo(String x)
         }
     }
     return b;
+}
+
+String primer_palabra(String x)
+{
+    String p;
+    byte c = x.Length();
+    if (c == 0) {
+        p = "";
+    } else if (c == 1) {
+        if (verificar_letra(x[1])) {
+            p = x;
+        } else {
+            p = "";
+        }
+    } else {
+        wchar_t a = x[1]; // a = h
+        x.Delete(1, 1);
+        p = primer_palabra(x); // n-1 => hola mundo -> ola
+        if (verificar_letra(a) && verificar_letra(x[1])) {
+            p = String(a) + p;
+        } else if (verificar_letra(a) && !verificar_letra(x[1])) {
+            p = a;
+        } else if (!verificar_letra(a) && verificar_letra(x[1])) {
+            // nada
+        } else if (!verificar_letra(a) && !verificar_letra(x[1])) {
+            // nada
+        }
+    }
+    return p;
+}
+
+void eliminar_primer_palabra(String &x)
+{
+    byte c = x.Length();
+    if (c == 0) {
+        // nada
+    } else if (c == 1) {
+        if (verificar_letra(x[1])) {
+            x = "";
+        } else {
+            // nada
+        }
+    } else {
+        wchar_t a = x[1];
+        x.Delete(1, 1);
+        if (verificar_letra(a) && verificar_letra(x[1])) {
+            eliminar_primer_palabra(x);
+        } else if (verificar_letra(a) && !verificar_letra(x[1])) {
+            // nada
+        } else if (!verificar_letra(a) && verificar_letra(x[1])) {
+            eliminar_primer_palabra(x);
+            x = String(a) + x;
+        } else if (!verificar_letra(a) && !verificar_letra(x[1])) {
+            eliminar_primer_palabra(x);
+            x = String(a) + x;
+        }
+    }
+}
+
+// Ej1 x = "hola a todos" => " a todos"
+// Ej2 x = "123hola a todos" => " a todos"
+void eliminar_hasta_primer_palabra(String &x)
+{
+    byte c = x.Length();
+    if (c == 0) {
+        // nada
+    } else if (c == 1) {
+        if (verificar_letra(x[1])) {
+            x = "";
+        } else {
+            // nada
+        }
+    } else {
+        wchar_t a = x[1];
+        x.Delete(1, 1);
+        // hacer
+    }
 }
 

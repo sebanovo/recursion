@@ -20,7 +20,7 @@ byte contar_espacios(String x);
 byte contar_vocales_v1(String x);
 byte contar_vocales_v2(String x);
 byte contar_vocales_v3(String x);
-int contar_letras_ASCII(AnsiString x);
+int contar_letras(String x);
 void invertir_cadena(String &x);
 String filtrar_digitos(String x);
 String filtrar_primer_numero(String x);
@@ -30,6 +30,16 @@ String palabra_mas_larga(String s);
 void eliminar_primera_letra_de_cada_palabra(String &x);
 void invertir_cada_palabra(String &x);
 bool verificar_palindromo(String x);
+
+// Clase 3 no vine;
+
+// Clase 4 - Programacion 2
+// ------------------------
+// primer palabra
+// eliminar primer palabra
+String primer_palabra(String x);
+void eliminar_primer_palabra(String &x);
+void eliminar_hasta_primer_palabra(String &x);
 
 //---------------------------------------------------------------------------
 #endif

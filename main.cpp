@@ -85,7 +85,7 @@ void __fastcall TForm1::MoverDigitoMayorAlFinal1Click(TObject* Sender)
 {
     Cardinal number = StrToInt(Edit1->Text);
     mover_digito_mayor_al_final(number);
-    Edit2->Text = number;
+    Edit1->Text = number;
 }
 //---------------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ void __fastcall TForm1::EliminarDigitosParesClick(TObject* Sender)
 {
     Cardinal number = StrToInt(Edit1->Text);
     eliminar_digitos_pares(number);
-    Edit2->Text = number;
+    Edit1->Text = number;
 }
 //---------------------------------------------------------------------------
 
@@ -121,7 +121,7 @@ void __fastcall TForm1::EncontrarDigitosMayorYMenorClick(TObject* Sender)
 {
     byte M, m;
     encontrar_digito_mayor_y_menor(StrToInt(Edit1->Text), M, m);
-    Edit2->Text = "Mayor: " + IntToStr(M) + " Menor: " + IntToStr(m);
+    Edit1->Text = "Mayor: " + IntToStr(M) + " Menor: " + IntToStr(m);
 }
 //---------------------------------------------------------------------------
 
@@ -135,7 +135,7 @@ void __fastcall TForm1::InvertirCadenaClick(TObject* Sender)
 {
     String cadena = Edit1->Text;
     invertir_cadena(cadena);
-    Edit2->Text = cadena;
+    Edit1->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
@@ -161,7 +161,7 @@ void __fastcall TForm1::EliminarVocalesClick(TObject* Sender)
 {
     String cadena = Edit1->Text;
     eliminar_vocales(cadena);
-    Edit2->Text = cadena;
+    Edit1->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
@@ -176,7 +176,7 @@ void __fastcall TForm1::OrdenarClick(TObject* Sender)
 {
     Cardinal number = StrToInt(Edit1->Text);
     ordenar(number);
-    Edit2->Text = number;
+    Edit1->Text = number;
 }
 //---------------------------------------------------------------------------
 
@@ -190,22 +190,44 @@ void __fastcall TForm1::EliminarPrimerLetraDeCadaPalabraClick(TObject* Sender)
 {
     String cadena = Edit1->Text;
     eliminar_primera_letra_de_cada_palabra(cadena);
-    Edit2->Text = cadena;
+    Edit1->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::InvertirCadaPalabraClick(TObject* Sender)
 {
-    //    String cadena = Edit1->Text;
-    //    invertir_cada_palabra(cadena);
-    //    Edit2->Text = cadena;
+    String cadena = Edit1->Text;
+    invertir_cada_palabra(cadena);
+    Edit1->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ContarCaracteresASCIIClick(TObject* Sender)
+void __fastcall TForm1::ContarLetrasClick(TObject* Sender)
 {
-    AnsiString cadena = Edit1->Text;
-    Edit2->Text = contar_letras_ASCII(cadena);
+    String cadena = Edit1->Text;
+    Edit2->Text = contar_letras(cadena);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::PrimerPalabraClick(TObject* Sender)
+{
+    String cadena = Edit1->Text;
+    Edit2->Text = primer_palabra(cadena);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::EliminarPrimerPalabraClick(TObject* Sender)
+{
+    String cadena = Edit1->Text;
+    eliminar_primer_palabra(cadena);
+    Edit1->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarHastaPrimerPalabraClick(TObject* Sender)
+{
+    //    String cadena = Edit1->Text;
+    //    eliminar_hasta_primer_palabra(cadena);
+    //    Edit1->Text = cadena;
 }
 //---------------------------------------------------------------------------
 

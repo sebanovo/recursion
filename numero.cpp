@@ -306,10 +306,9 @@ byte contar_digitos_impares_antes_de_uno_par(Cardinal x)
     } else {
         byte ultimoDigito = x % 10;
         byte penultimoDigito = x / 10 % 10;
+        c = contar_digitos_impares_antes_de_uno_par(x / 10);
         if (penultimoDigito % 2 == 0 && ultimoDigito % 2 == 1) {
-            c = contar_digitos_impares_antes_de_uno_par(x / 10) + 1;
-        } else {
-            c = contar_digitos_impares_antes_de_uno_par(x / 10);
+            c++;
         }
     }
     return c;

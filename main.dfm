@@ -130,9 +130,9 @@ object Form1: TForm1
         Caption = 'Contar Vocales'
         OnClick = ContarVocalesClick
       end
-      object ContarCaracteresASCII: TMenuItem
-        Caption = 'Contar Caracteres ASCII'
-        OnClick = ContarCaracteresASCIIClick
+      object ContarLetras: TMenuItem
+        Caption = 'Contar Letras'
+        OnClick = ContarLetrasClick
       end
       object InvertirCadena: TMenuItem
         Caption = 'Invertir Cadena'
@@ -161,6 +161,18 @@ object Form1: TForm1
       object InvertirCadaPalabra: TMenuItem
         Caption = 'Invertir Cada Palabra'
         OnClick = InvertirCadaPalabraClick
+      end
+      object PrimerPalabra: TMenuItem
+        Caption = 'Primer Palabra'
+        OnClick = PrimerPalabraClick
+      end
+      object EliminarPrimerPalabra: TMenuItem
+        Caption = 'Eliminar Primer Palabra'
+        OnClick = EliminarPrimerPalabraClick
+      end
+      object EliminarHastaPrimerPalabra: TMenuItem
+        Caption = 'Eliminar Hasta Primer Palabra'
+        OnClick = EliminarHastaPrimerPalabraClick
       end
     end
   end
