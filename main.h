@@ -73,6 +73,8 @@ class TForm1 : public TForm
     TEdit* EditCargarVector;
     TEdit* Output;
     TMenuItem* InvertirVector;
+    TMenuItem* MoverElementoMenorAlFinal;
+    TMenuItem* MoverElementoMayorAlFinal1;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -117,6 +119,8 @@ class TForm1 : public TForm
     void __fastcall CargarVectorClick(TObject* Sender);
     void __fastcall SumarTodosLosElementosClick(TObject* Sender);
     void __fastcall InvertirVectorClick(TObject* Sender);
+    void __fastcall MoverElementoMenorAlFinalClick(TObject* Sender);
+    void __fastcall MoverElementoMayorAlFinal1Click(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

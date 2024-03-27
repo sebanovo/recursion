@@ -310,3 +310,17 @@ void __fastcall TForm1::InvertirVectorClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::MoverElementoMenorAlFinalClick(TObject* Sender)
+{
+    // no es correcto
+    mover_menor_al_final(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::MoverElementoMayorAlFinal1Click(TObject* Sender)
+{
+    // no es correcto
+    mover_mayor_al_final(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+

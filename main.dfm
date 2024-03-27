@@ -167,8 +167,8 @@ object Form1: TForm1
     end
   end
   object MainMenu1: TMainMenu
-    Left = 928
-    Top = 8
+    Left = 816
+    Top = 416
     object Numero: TMenuItem
       Caption = 'Numero'
       object Factorial: TMenuItem
@@ -340,6 +340,14 @@ object Form1: TForm1
       object InvertirVector: TMenuItem
         Caption = 'Invertir Vector'
         OnClick = InvertirVectorClick
+      end
+      object MoverElementoMenorAlFinal: TMenuItem
+        Caption = 'Mover Elemento Menor Al Final'
+        OnClick = MoverElementoMenorAlFinalClick
+      end
+      object MoverElementoMayorAlFinal1: TMenuItem
+        Caption = 'Mover Elemento Mayor Al Final'
+        OnClick = MoverElementoMayorAlFinal1Click
       end
     end
   end

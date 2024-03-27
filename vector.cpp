@@ -31,7 +31,11 @@ Cardinal sumar_todos_los_elementos(TStringGrid* v, byte a, byte b)
 
 void invertir_vector(TStringGrid* v, byte a, byte n)
 {
-    if (n > 1) {
+    if (n == 0) {
+        // nada
+    } else if (n == 1) {
+        // nada
+    } else {
         byte b = a + n - 1;
         invertir_vector(v, a + 1, n - 2);
         String temp = v->Cells[a][0];
@@ -40,6 +44,31 @@ void invertir_vector(TStringGrid* v, byte a, byte n)
     }
 }
 
+// no esta bien
+void mover_mayor_al_final(TStringGrid* v, byte n)
+{
+    if (n > 1) {
+        mover_menor_al_final(v, n - 1);
+        if (v->Cells[n - 2][0] > v->Cells[n - 1][0]) {
+            String temp = v->Cells[n - 2][0];
+            v->Cells[n - 2][0] = v->Cells[n - 1][0];
+            v->Cells[n - 1][0] = temp;
+        }
+    }
+}
+
+// no esta bien
+void mover_menor_al_final(TStringGrid* v, byte n)
+{
+    if (n > 1) {
+        mover_menor_al_final(v, n - 1);
+        if (v->Cells[n - 2][0] < v->Cells[n - 1][0]) {
+            String temp = v->Cells[n - 2][0];
+            v->Cells[n - 2][0] = v->Cells[n - 1][0];
+            v->Cells[n - 1][0] = temp;
+        }
+    }
+}
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
