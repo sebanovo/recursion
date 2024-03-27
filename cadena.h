@@ -28,6 +28,7 @@ bool verificar_solo_espacios(String x);
 void eliminar_vocales(String &x);
 String palabra_mas_larga(String s);
 void eliminar_primera_letra_de_cada_palabra(String &x);
+void eliminar_primera_y_ultima_letra_de_cada_palabra(String &x);
 void invertir_cada_palabra(String &x);
 bool verificar_palindromo(String x);
 
@@ -41,7 +42,10 @@ String primer_palabra(String x);
 void eliminar_primer_palabra(String &x);
 void eliminar_hasta_primer_palabra(String &x);
 void eliminar_desde_primer_palabra(String &x);
-
+byte contar_palabras(String x);
+// EJERCICIO MÁS DIFICIL
+Cardinal numero_mayor(String x);
+void invertir_frase(String &x);
 //---------------------------------------------------------------------------
 #endif
 

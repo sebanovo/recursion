@@ -233,6 +233,23 @@ void eliminar_primera_letra_de_cada_palabra(String &x)
     }
 }
 
+void eliminar_primera_y_ultima_letra_de_cada_palabra(String &x)
+{
+    x = x.Trim();
+    byte c = x.Length();
+    if (c == 0) {
+        x = "";
+    } else {
+        int d = x.LastDelimiter(' ');
+        String ultimaPalabra = x.SubString(d + 1, c - d);
+        x.Delete(d + 1, c - d);
+        eliminar_primera_y_ultima_letra_de_cada_palabra(x);
+        ultimaPalabra.Delete(1, 1);
+        ultimaPalabra.Delete(ultimaPalabra.Length(), 1);
+        x = x + ultimaPalabra + " ";
+    }
+}
+
 void invertir_cada_palabra(String &x)
 {
     x = x.Trim();
@@ -294,9 +311,9 @@ String primer_palabra(String x)
             p = "";
         }
     } else {
-        wchar_t a = x[1]; // a = h
+        wchar_t a = x[1];
         x.Delete(1, 1);
-        p = primer_palabra(x); // n-1 => hola mundo -> ola
+        p = primer_palabra(x);
         if (verificar_letra(a) && verificar_letra(x[1])) {
             p = String(a) + p;
         } else if (verificar_letra(a) && !verificar_letra(x[1])) {
@@ -346,7 +363,6 @@ void eliminar_hasta_primer_palabra(String &x)
         // nada
     } else {
         wchar_t a = x[1];
-        // a1
         x.Delete(1, 1);
         if (!verificar_letra(a)) {
             eliminar_hasta_primer_palabra(x);
@@ -374,5 +390,107 @@ void eliminar_desde_primer_palabra(String &x)
             }
         }
     }
+}
+
+byte contar_palabras(String x)
+{
+    byte c;
+    Cardinal length = x.Length();
+    if (length == 0) {
+        c = 0;
+    } else if (length == 1) {
+        if (verificar_letra(x[1])) {
+            c = 1;
+        } else {
+            c = 0;
+        }
+    } else {
+        wchar_t a = x[1];
+        x.Delete(1, 1);
+        c = contar_palabras(x);
+        if (verificar_letra(a) && !verificar_letra(x[1])) {
+            c++;
+        }
+    }
+
+    return c;
+}
+
+// EJERCICIO MÁS DIFICIL
+// -------------------------------------------------------------
+// Ej1: x = "hola104 mundo54 como1 estan" => 104
+// Ej2: x = "Hola mundo" => 0
+Cardinal posNum(String cad, bool num)
+{
+    Cardinal pos;
+    if (cad.Length() == 0)
+        pos = 0;
+    else {
+        wchar_t c = cad[cad.Length()];
+        cad.Delete(cad.Length(), 1);
+        pos = posNum(cad, num);
+        if (pos == 0) {
+            if (num) {
+                if (isdigit(c))
+                    pos = cad.Length() + 1;
+            } else {
+                if (!isdigit(c))
+                    pos = cad.Length() + 1;
+            }
+        }
+    }
+    return pos;
+}
+
+Cardinal mayor(String cad)
+{
+    Cardinal may;
+    if (cad.Length() == 0)
+        may = 0;
+    else {
+        Cardinal posA = posNum(cad, true);
+        Cardinal num;
+        if (posA > 0) {
+            cad.Delete(1, posA - 1);
+            Cardinal posB = posNum(cad, false);
+            if (posB == 0)
+                posB = cad.Length() + 1;
+            num = StrToInt(cad.SubString(1, posB - 1));
+            cad.Delete(1, posB - 1);
+        } else {
+            num = 0;
+            cad = "";
+        }
+        may = mayor(cad);
+        if (num > may)
+            may = num;
+    }
+    return may;
+}
+
+Cardinal numero_mayor(String x)
+{
+    Cardinal may;
+    if (x.Length() == 0)
+        may = 0;
+    else {
+        Cardinal pos = x.Pos(" ");
+        if (pos == 0)
+            pos = x.Length() + 1;
+        String pal = x.SubString(1, pos - 1);
+        x.Delete(1, pos);
+        may = numero_mayor(x);
+        Cardinal num = mayor(pal);
+        if (num > may)
+            may = num;
+    }
+    return may;
+}
+// -------------------------------------------------------------
+
+void invertir_frase(String &x)
+{
+    invertir_cadena(x);
+    invertir_cada_palabra(x);
 }
 

@@ -348,3 +348,45 @@ byte contar_digitos_impares_antes_de_uno_par(Cardinal x)
     return c;
 }
 
+// PAQUETE DE EJERCICIO MOVER MENOR DIGITO AL PRINCIPIO NO FUNCIONA
+// --------------------------------------------------------------------------
+//int agregar_digito_al_principio(int numero, int digito)
+//{
+//    int numDigitos = (int)log10(numero) + 1;
+//    return digito * (int)pow(10, numDigitos) + numero;
+//}
+//
+//int obtener_primer_digito(int numero)
+//{
+//    int numDigitos = (int)log10(numero) + 1;
+//    int primerDigito = numero / (int)pow(10, numDigitos - 1);
+//    return primerDigito;
+//}
+//
+//int eliminar_primer_digito(int numero)
+//{
+//    int numDigitos = (int)log10(numero) + 1;
+//    int numeroSinPrimerDigito = numero % (int)pow(10, numDigitos - 1);
+//    return numeroSinPrimerDigito;
+//}
+//
+//void mover_digito_menor_al_principio(int &x)
+//{
+//    if (x < 10) {
+//        // nada
+//    } else {
+//        int d = obtener_primer_digito(x);
+//        x = eliminar_primer_digito(x);
+//        mover_digito_menor_al_principio(x);
+//        if (obtener_primer_digito(x) >= d) {
+//            x = agregar_digito_al_principio(x, d);
+//        } else {
+//            int z = obtener_primer_digito(x);
+//            x = eliminar_primer_digito(x);
+//            x = agregar_digito_al_principio(x, d);
+//            x = agregar_digito_al_principio(x, z);
+//        }
+//    }
+//}
+// --------------------------------------------------------------------------
+

@@ -8,6 +8,8 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.Menus.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -52,6 +54,25 @@ class TForm1 : public TForm
     TMenuItem* EliminarDesdePrimerPalabra;
     TMenuItem* MoverDigitoMenorAlFinal;
     TMenuItem* OrdenamientoDescendente;
+    TMenuItem* ContarPalabras;
+    TMenuItem* EliminarPrimerYUltimaLetraDeCadaPalabra;
+    TMenuItem* NmeroMayor;
+    TMenuItem* InvertirFrase;
+    TPageControl* PageControl1;
+    TTabSheet* TabSheet1;
+    TTabSheet* TabSheet2;
+    TTabSheet* TabSheet3;
+    TTabSheet* TabSheet4;
+    TEdit* Edit3;
+    TEdit* Edit4;
+    TStringGrid* StringGrid1;
+    TEdit* EditDimensionar;
+    TButton* DimensionarVector;
+    TMenuItem* Vector;
+    TButton* CargarVector;
+    TEdit* EditCargarVector;
+    TEdit* Output;
+    TMenuItem* InvertirVector;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -87,6 +108,15 @@ class TForm1 : public TForm
     void __fastcall EliminarDesdePrimerPalabraClick(TObject* Sender);
     void __fastcall MoverDigitoMenorAlFinalClick(TObject* Sender);
     void __fastcall OrdenamientoDescendenteClick(TObject* Sender);
+    void __fastcall ContarPalabrasClick(TObject* Sender);
+    void __fastcall EliminarPrimerYUltimaLetraDeCadaPalabraClick(
+        TObject* Sender);
+    void __fastcall NmeroMayorClick(TObject* Sender);
+    void __fastcall InvertirFraseClick(TObject* Sender);
+    void __fastcall DimensionarVectorClick(TObject* Sender);
+    void __fastcall CargarVectorClick(TObject* Sender);
+    void __fastcall SumarTodosLosElementosClick(TObject* Sender);
+    void __fastcall InvertirVectorClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

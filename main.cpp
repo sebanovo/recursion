@@ -6,6 +6,7 @@
 #include "main.h"
 #include "numero.h"
 #include "cadena.h"
+#include "vector.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -91,13 +92,13 @@ void __fastcall TForm1::MoverDigitoMayorAlFinal1Click(TObject* Sender)
 
 void __fastcall TForm1::ContarEspaciosClick(TObject* Sender)
 {
-    Edit2->Text = contar_espacios(Edit1->Text);
+    Edit4->Text = contar_espacios(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ContarVocalesClick(TObject* Sender)
 {
-    Edit2->Text = contar_vocales_v1(Edit1->Text);
+    Edit4->Text = contar_vocales_v1(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 
@@ -121,7 +122,7 @@ void __fastcall TForm1::EncontrarDigitosMayorYMenorClick(TObject* Sender)
 {
     byte M, m;
     encontrar_digito_mayor_y_menor(StrToInt(Edit1->Text), M, m);
-    Edit1->Text = "Mayor: " + IntToStr(M) + " Menor: " + IntToStr(m);
+    Edit2->Text = "Mayor: " + IntToStr(M) + " Menor: " + IntToStr(m);
 }
 //---------------------------------------------------------------------------
 
@@ -133,21 +134,21 @@ void __fastcall TForm1::AgregarComaDigitosEInvertirClick(TObject* Sender)
 
 void __fastcall TForm1::InvertirCadenaClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     invertir_cadena(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::FiltrarDigitosClick(TObject* Sender)
 {
-    Edit2->Text = filtrar_digitos(Edit1->Text);
+    Edit4->Text = filtrar_digitos(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::FiltrarPrimerNumeroClick(TObject* Sender)
 {
-    Edit2->Text = filtrar_primer_numero(Edit1->Text);
+    Edit4->Text = filtrar_primer_numero(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 
@@ -159,9 +160,9 @@ void __fastcall TForm1::RepetirDigitosClick(TObject* Sender)
 
 void __fastcall TForm1::EliminarVocalesClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     eliminar_vocales(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
@@ -182,60 +183,58 @@ void __fastcall TForm1::OrdenamientoAscendenteClick(TObject* Sender)
 
 void __fastcall TForm1::PalabraMsLargaClick(TObject* Sender)
 {
-    Edit2->Text = palabra_mas_larga(Edit1->Text);
+    Edit4->Text = palabra_mas_larga(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::EliminarPrimerLetraDeCadaPalabraClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     eliminar_primera_letra_de_cada_palabra(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::InvertirCadaPalabraClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     invertir_cada_palabra(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ContarLetrasClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
-    Edit2->Text = contar_letras(cadena);
+    Edit4->Text = contar_letras(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::PrimerPalabraClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
-    Edit2->Text = primer_palabra(cadena);
+    Edit4->Text = primer_palabra(Edit3->Text);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::EliminarPrimerPalabraClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     eliminar_primer_palabra(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::EliminarHastaPrimerPalabraClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     eliminar_hasta_primer_palabra(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::EliminarDesdePrimerPalabraClick(TObject* Sender)
 {
-    String cadena = Edit1->Text;
+    String cadena = Edit3->Text;
     eliminar_desde_primer_palabra(cadena);
-    Edit1->Text = cadena;
+    Edit3->Text = cadena;
 }
 //---------------------------------------------------------------------------
 
@@ -252,6 +251,62 @@ void __fastcall TForm1::OrdenamientoDescendenteClick(TObject* Sender)
     Cardinal number = StrToInt(Edit1->Text);
     ordenamiento_descendente(number);
     Edit1->Text = number;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarPalabrasClick(TObject* Sender)
+{
+    Edit4->Text = contar_palabras(Edit3->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarPrimerYUltimaLetraDeCadaPalabraClick(
+    TObject* Sender)
+
+{
+    String cadena = Edit3->Text;
+    eliminar_primera_y_ultima_letra_de_cada_palabra(cadena);
+    Edit3->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::NmeroMayorClick(TObject* Sender)
+{
+    Edit4->Text = numero_mayor(Edit3->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InvertirFraseClick(TObject* Sender)
+{
+    String cadena = Edit3->Text;
+    invertir_frase(cadena);
+    Edit3->Text = cadena;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::DimensionarVectorClick(TObject* Sender)
+{
+    StringGrid1->ColCount = StrToInt(EditDimensionar->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarVectorClick(TObject* Sender)
+{
+    StringGrid1->ColCount = StrToInt(EditCargarVector->Text);
+    cargar(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SumarTodosLosElementosClick(TObject* Sender)
+{
+    Output->Text =
+        sumar_todos_los_elementos(StringGrid1, 0, StringGrid1->ColCount - 1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InvertirVectorClick(TObject* Sender)
+{
+    invertir_vector(StringGrid1, 0, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 

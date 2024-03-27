@@ -142,6 +142,10 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="vector.cpp">
+            <DependentOn>vector.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
         <FormResources Include="main.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

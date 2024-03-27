@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 485
-  ClientWidth = 835
+  ClientHeight = 495
+  ClientWidth = 975
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,35 +12,163 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   TextHeight = 15
-  object Edit1: TEdit
-    Left = 328
-    Top = 168
-    Width = 385
-    Height = 36
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 975
+    Height = 495
+    ActivePage = TabSheet3
+    Align = alClient
     TabOrder = 0
-  end
-  object Edit2: TEdit
-    Left = 328
-    Top = 224
-    Width = 385
-    Height = 36
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 1
+    ExplicitWidth = 969
+    ExplicitHeight = 486
+    object TabSheet1: TTabSheet
+      Caption = 'Numero'
+      object Edit1: TEdit
+        Left = 360
+        Top = 71
+        Width = 481
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Edit2: TEdit
+        Left = 360
+        Top = 167
+        Width = 481
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Cadena'
+      ImageIndex = 1
+      object Edit3: TEdit
+        Left = 360
+        Top = 71
+        Width = 481
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Edit4: TEdit
+        Left = 360
+        Top = 167
+        Width = 481
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Vector'
+      ImageIndex = 2
+      object StringGrid1: TStringGrid
+        Left = 152
+        Top = 144
+        Width = 761
+        Height = 57
+        FixedCols = 0
+        RowCount = 1
+        FixedRows = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
+        ParentFont = False
+        TabOrder = 0
+        RowHeights = (
+          24)
+      end
+      object EditDimensionar: TEdit
+        Left = 680
+        Top = 82
+        Width = 105
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+      end
+      object DimensionarVector: TButton
+        Left = 807
+        Top = 82
+        Width = 106
+        Height = 36
+        Caption = 'Dimensionar'
+        TabOrder = 2
+        OnClick = DimensionarVectorClick
+      end
+      object CargarVector: TButton
+        Left = 279
+        Top = 82
+        Width = 114
+        Height = 36
+        Caption = 'Cargar'
+        TabOrder = 3
+        OnClick = CargarVectorClick
+      end
+      object EditCargarVector: TEdit
+        Left = 152
+        Top = 77
+        Width = 105
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Output: TEdit
+        Left = 384
+        Top = 312
+        Width = 145
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Matriz'
+      ImageIndex = 3
+    end
   end
   object MainMenu1: TMainMenu
-    Left = 592
-    Top = 40
+    Left = 928
+    Top = 8
     object Numero: TMenuItem
       Caption = 'Numero'
       object Factorial: TMenuItem
@@ -185,6 +313,33 @@ object Form1: TForm1
       object EliminarDesdePrimerPalabra: TMenuItem
         Caption = 'Eliminar Desde Primer Palabra'
         OnClick = EliminarDesdePrimerPalabraClick
+      end
+      object ContarPalabras: TMenuItem
+        Caption = 'Contar Palabras'
+        OnClick = ContarPalabrasClick
+      end
+      object EliminarPrimerYUltimaLetraDeCadaPalabra: TMenuItem
+        Caption = 'Eliminar Primer Y Ultima Letra De Cada Palabra'
+        OnClick = EliminarPrimerYUltimaLetraDeCadaPalabraClick
+      end
+      object NmeroMayor: TMenuItem
+        Caption = 'N'#250'mero Mayor'
+        OnClick = NmeroMayorClick
+      end
+      object InvertirFrase: TMenuItem
+        Caption = 'Invertir Frase'
+        OnClick = InvertirFraseClick
+      end
+    end
+    object Vector: TMenuItem
+      Caption = 'Vector'
+      object SumarTodosLosElementos: TMenuItem
+        Caption = 'Sumar Todos Los Elementos'
+        OnClick = SumarTodosLosElementosClick
+      end
+      object InvertirVector: TMenuItem
+        Caption = 'Invertir Vector'
+        OnClick = InvertirVectorClick
       end
     end
   end
