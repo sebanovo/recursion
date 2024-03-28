@@ -28,7 +28,7 @@ class TForm1 : public TForm
     TMenuItem* RetornarMenorDigito1;
     TMenuItem* RetonarMayorDigito;
     TMenuItem* AgregarComaDigitos1;
-    TMenuItem* VerificarOrdenado;
+    TMenuItem* VerificarOrdenadoAscendente;
     TMenuItem* MoverDigitoMayorAlFinal1;
     TMenuItem* Cadena;
     TMenuItem* ContarEspacios;
@@ -69,12 +69,19 @@ class TForm1 : public TForm
     TEdit* EditDimensionar;
     TButton* DimensionarVector;
     TMenuItem* Vector;
-    TButton* CargarVector;
-    TEdit* EditCargarVector;
-    TEdit* Output;
-    TMenuItem* InvertirVector;
-    TMenuItem* MoverElementoMenorAlFinal;
-    TMenuItem* MoverElementoMayorAlFinal1;
+    TEdit* EditInput;
+    TEdit* EditOutput;
+    TMenuItem* InvertirVectorV;
+    TMenuItem* MoverElementoMenorAlFinalV;
+    TMenuItem* MoverElementoMayorAlFinalV;
+    TMenuItem* CargarRandomV;
+    TMenuItem* CargarPalabrasV;
+    TLabel* Label1;
+    TLabel* Label2;
+    TMenuItem* OrdenamientoAscendenteV;
+    TMenuItem* OrdenamientoDescendenteV;
+    TMenuItem* VerificarOrdenadoDescendente;
+    TMenuItem* BusquedaBinariaV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -85,7 +92,7 @@ class TForm1 : public TForm
     void __fastcall RetornarMenorDigito1Click(TObject* Sender);
     void __fastcall RetonarMayorDigitoClick(TObject* Sender);
     void __fastcall AgregarComaDigitos1Click(TObject* Sender);
-    void __fastcall VerificarOrdenadoClick(TObject* Sender);
+    void __fastcall VerificarOrdenadoAscendenteClick(TObject* Sender);
     void __fastcall MoverDigitoMayorAlFinal1Click(TObject* Sender);
     void __fastcall ContarEspaciosClick(TObject* Sender);
     void __fastcall ContarVocalesClick(TObject* Sender);
@@ -116,11 +123,16 @@ class TForm1 : public TForm
     void __fastcall NmeroMayorClick(TObject* Sender);
     void __fastcall InvertirFraseClick(TObject* Sender);
     void __fastcall DimensionarVectorClick(TObject* Sender);
-    void __fastcall CargarVectorClick(TObject* Sender);
-    void __fastcall SumarTodosLosElementosClick(TObject* Sender);
-    void __fastcall InvertirVectorClick(TObject* Sender);
-    void __fastcall MoverElementoMenorAlFinalClick(TObject* Sender);
-    void __fastcall MoverElementoMayorAlFinal1Click(TObject* Sender);
+    void __fastcall SumarTodosLosElementosVClick(TObject* Sender);
+    void __fastcall InvertirVectorVClick(TObject* Sender);
+    void __fastcall MoverElementoMenorAlFinalVClick(TObject* Sender);
+    void __fastcall MoverElementoMayorAlFinalVClick(TObject* Sender);
+    void __fastcall CargarRandomVClick(TObject* Sender);
+    void __fastcall CargarPalabrasVClick(TObject* Sender);
+    void __fastcall OrdenamientoAscendenteVClick(TObject* Sender);
+    void __fastcall OrdenamientoDescendenteVClick(TObject* Sender);
+    void __fastcall VerificarOrdenadoDescendenteClick(TObject* Sender);
+    void __fastcall BusquedaBinariaVClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

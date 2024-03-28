@@ -84,28 +84,41 @@ object Form1: TForm1
     object TabSheet3: TTabSheet
       Caption = 'Vector'
       ImageIndex = 2
+      object Label1: TLabel
+        Left = 152
+        Top = 120
+        Width = 40
+        Height = 15
+        Caption = 'Entrada'
+      end
+      object Label2: TLabel
+        Left = 152
+        Top = 320
+        Width = 31
+        Height = 15
+        Caption = 'Salida'
+      end
       object StringGrid1: TStringGrid
         Left = 152
-        Top = 144
+        Top = 208
         Width = 761
-        Height = 57
+        Height = 74
+        DefaultRowHeight = 48
         FixedCols = 0
         RowCount = 1
         FixedRows = 0
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -17
+        Font.Height = -20
         Font.Name = 'Segoe UI'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
         ParentFont = False
         TabOrder = 0
-        RowHeights = (
-          24)
       end
       object EditDimensionar: TEdit
-        Left = 680
-        Top = 82
+        Left = 648
+        Top = 141
         Width = 105
         Height = 36
         Font.Charset = DEFAULT_CHARSET
@@ -118,26 +131,30 @@ object Form1: TForm1
       end
       object DimensionarVector: TButton
         Left = 807
-        Top = 82
+        Top = 141
         Width = 106
         Height = 36
         Caption = 'Dimensionar'
         TabOrder = 2
         OnClick = DimensionarVectorClick
       end
-      object CargarVector: TButton
-        Left = 279
-        Top = 82
-        Width = 114
-        Height = 36
-        Caption = 'Cargar'
-        TabOrder = 3
-        OnClick = CargarVectorClick
-      end
-      object EditCargarVector: TEdit
+      object EditInput: TEdit
         Left = 152
-        Top = 77
-        Width = 105
+        Top = 141
+        Width = 193
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+      end
+      object EditOutput: TEdit
+        Left = 152
+        Top = 341
+        Width = 193
         Height = 36
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -147,19 +164,6 @@ object Form1: TForm1
         ParentFont = False
         TabOrder = 4
       end
-      object Output: TEdit
-        Left = 384
-        Top = 312
-        Width = 145
-        Height = 36
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -20
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 5
-      end
     end
     object TabSheet4: TTabSheet
       Caption = 'Matriz'
@@ -168,7 +172,7 @@ object Form1: TForm1
   end
   object MainMenu1: TMainMenu
     Left = 816
-    Top = 416
+    Top = 424
     object Numero: TMenuItem
       Caption = 'Numero'
       object Factorial: TMenuItem
@@ -219,9 +223,13 @@ object Form1: TForm1
         Caption = 'Agregar Coma Digitos E Invertir'
         OnClick = AgregarComaDigitosEInvertirClick
       end
-      object VerificarOrdenado: TMenuItem
-        Caption = 'Verificar Ordenado'
-        OnClick = VerificarOrdenadoClick
+      object VerificarOrdenadoAscendente: TMenuItem
+        Caption = 'Verificar Ordenado Ascendente'
+        OnClick = VerificarOrdenadoAscendenteClick
+      end
+      object VerificarOrdenadoDescendente: TMenuItem
+        Caption = 'Verificar Ordenado Descendente'
+        OnClick = VerificarOrdenadoDescendenteClick
       end
       object MoverDigitoMayorAlFinal1: TMenuItem
         Caption = 'Mover Digito Mayor Al Final'
@@ -333,21 +341,41 @@ object Form1: TForm1
     end
     object Vector: TMenuItem
       Caption = 'Vector'
-      object SumarTodosLosElementos: TMenuItem
+      object CargarRandomV: TMenuItem
+        Caption = 'Cargar Random'
+        OnClick = CargarRandomVClick
+      end
+      object CargarPalabrasV: TMenuItem
+        Caption = 'Cargar Palabras'
+        OnClick = CargarPalabrasVClick
+      end
+      object SumarTodosLosElementosV: TMenuItem
         Caption = 'Sumar Todos Los Elementos'
-        OnClick = SumarTodosLosElementosClick
+        OnClick = SumarTodosLosElementosVClick
       end
-      object InvertirVector: TMenuItem
+      object InvertirVectorV: TMenuItem
         Caption = 'Invertir Vector'
-        OnClick = InvertirVectorClick
+        OnClick = InvertirVectorVClick
       end
-      object MoverElementoMenorAlFinal: TMenuItem
+      object MoverElementoMenorAlFinalV: TMenuItem
         Caption = 'Mover Elemento Menor Al Final'
-        OnClick = MoverElementoMenorAlFinalClick
+        OnClick = MoverElementoMenorAlFinalVClick
       end
-      object MoverElementoMayorAlFinal1: TMenuItem
+      object MoverElementoMayorAlFinalV: TMenuItem
         Caption = 'Mover Elemento Mayor Al Final'
-        OnClick = MoverElementoMayorAlFinal1Click
+        OnClick = MoverElementoMayorAlFinalVClick
+      end
+      object OrdenamientoAscendenteV: TMenuItem
+        Caption = 'Ordenamiento Ascendente'
+        OnClick = OrdenamientoAscendenteVClick
+      end
+      object OrdenamientoDescendenteV: TMenuItem
+        Caption = 'Ordenamiento Descendente'
+        OnClick = OrdenamientoDescendenteVClick
+      end
+      object BusquedaBinariaV: TMenuItem
+        Caption = 'Busqueda Binaria'
+        OnClick = BusquedaBinariaVClick
       end
     end
   end

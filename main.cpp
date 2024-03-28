@@ -76,9 +76,11 @@ void __fastcall TForm1::AgregarComaDigitos1Click(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::VerificarOrdenadoClick(TObject* Sender)
+void __fastcall TForm1::VerificarOrdenadoAscendenteClick(TObject* Sender)
 {
-    Edit2->Text = verificar_ordenado_ascendente(StrToInt(Edit1->Text));
+    Edit2->Text = verificar_ordenado_ascendente(StrToInt(Edit1->Text))
+                      ? "Ordenado Ascendentemente"
+                      : "Desordenado";
 }
 //---------------------------------------------------------------------------
 
@@ -290,37 +292,72 @@ void __fastcall TForm1::DimensionarVectorClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::CargarVectorClick(TObject* Sender)
+void __fastcall TForm1::SumarTodosLosElementosVClick(TObject* Sender)
 {
-    StringGrid1->ColCount = StrToInt(EditCargarVector->Text);
-    cargar(StringGrid1, StringGrid1->ColCount);
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::SumarTodosLosElementosClick(TObject* Sender)
-{
-    Output->Text =
+    EditOutput->Text =
         sumar_todos_los_elementos(StringGrid1, 0, StringGrid1->ColCount - 1);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::InvertirVectorClick(TObject* Sender)
+void __fastcall TForm1::InvertirVectorVClick(TObject* Sender)
 {
     invertir_vector(StringGrid1, 0, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::MoverElementoMenorAlFinalClick(TObject* Sender)
+void __fastcall TForm1::MoverElementoMenorAlFinalVClick(TObject* Sender)
 {
-    // no es correcto
     mover_menor_al_final(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::MoverElementoMayorAlFinal1Click(TObject* Sender)
+void __fastcall TForm1::MoverElementoMayorAlFinalVClick(TObject* Sender)
 {
-    // no es correcto
     mover_mayor_al_final(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarRandomVClick(TObject* Sender)
+{
+    cargar(StringGrid1, StrToInt(EditInput->Text));
+    StringGrid1->ColCount =
+        StrToInt(EditInput->Text); // ColCount no puede ser cero
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::CargarPalabrasVClick(TObject* Sender)
+{
+    byte n;
+    cargar_palabras(EditInput->Text, StringGrid1, 0, n);
+    StringGrid1->ColCount = n;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::OrdenamientoAscendenteVClick(TObject* Sender)
+{
+    ordenamiento_ascendente(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::OrdenamientoDescendenteVClick(TObject* Sender)
+{
+    ordenamiento_descendente(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::VerificarOrdenadoDescendenteClick(TObject* Sender)
+{
+    Edit2->Text = verificar_ordenado_descendente(StrToInt(Edit1->Text))
+                      ? "Ordenado Descendentemente"
+                      : "Desordenado";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::BusquedaBinariaVClick(TObject* Sender)
+{
+    EditOutput->Text = busqueda_binaria(
+        StrToInt(EditInput->Text), StringGrid1, 0, StringGrid1->ColCount - 1);
+    ? "Encontrado";
+    "No Encontrado"
 }
 //---------------------------------------------------------------------------
 
