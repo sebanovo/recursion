@@ -141,7 +141,7 @@ object Form1: TForm1
       object EditInput: TEdit
         Left = 152
         Top = 141
-        Width = 193
+        Width = 329
         Height = 36
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -154,7 +154,7 @@ object Form1: TForm1
       object EditOutput: TEdit
         Left = 152
         Top = 341
-        Width = 193
+        Width = 329
         Height = 36
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -376,6 +376,14 @@ object Form1: TForm1
       object BusquedaBinariaV: TMenuItem
         Caption = 'Busqueda Binaria'
         OnClick = BusquedaBinariaVClick
+      end
+      object VerificarOrdenadoAscendenteV: TMenuItem
+        Caption = 'Verificar Ordenado Ascendente'
+        OnClick = VerificarOrdenadoAscendenteVClick
+      end
+      object VerificarOrdenadoDescendenteV: TMenuItem
+        Caption = 'Verificar Ordenado Descendente'
+        OnClick = VerificarOrdenadoDescendenteVClick
       end
     end
   end

@@ -82,6 +82,8 @@ class TForm1 : public TForm
     TMenuItem* OrdenamientoDescendenteV;
     TMenuItem* VerificarOrdenadoDescendente;
     TMenuItem* BusquedaBinariaV;
+    TMenuItem* VerificarOrdenadoAscendenteV;
+    TMenuItem* VerificarOrdenadoDescendenteV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -133,6 +135,8 @@ class TForm1 : public TForm
     void __fastcall OrdenamientoDescendenteVClick(TObject* Sender);
     void __fastcall VerificarOrdenadoDescendenteClick(TObject* Sender);
     void __fastcall BusquedaBinariaVClick(TObject* Sender);
+    void __fastcall VerificarOrdenadoAscendenteVClick(TObject* Sender);
+    void __fastcall VerificarOrdenadoDescendenteVClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

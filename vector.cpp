@@ -144,3 +144,35 @@ bool busqueda_binaria(Cardinal x, TStringGrid* v, byte a, byte b)
     return bol;
 }
 
+bool verificar_ordenado_ascendente(TStringGrid* v, byte a, byte n)
+{
+    bool bol;
+    if (n == 0) {
+        bol = true;
+    } else if (n == 1) {
+        bol = true;
+    } else {
+        bol = verificar_ordenado_ascendente(v, a + 1, n - 1);
+        if (StrToInt(v->Cells[a][0]) > StrToInt(v->Cells[a + 1][0])) {
+            bol = false;
+        }
+    }
+    return bol;
+}
+
+bool verificar_ordenado_descendente(TStringGrid* v, byte a, byte n)
+{
+    bool bol;
+    if (n == 0) {
+        bol = true;
+    } else if (n == 1) {
+        bol = true;
+    } else {
+        bol = verificar_ordenado_descendente(v, a + 1, n - 1);
+        if (StrToInt(v->Cells[a][0]) < StrToInt(v->Cells[a + 1][0])) {
+            bol = false;
+        }
+    }
+    return bol;
+}
+

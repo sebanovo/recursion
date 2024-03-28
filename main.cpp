@@ -354,10 +354,29 @@ void __fastcall TForm1::VerificarOrdenadoDescendenteClick(TObject* Sender)
 
 void __fastcall TForm1::BusquedaBinariaVClick(TObject* Sender)
 {
-    EditOutput->Text = busqueda_binaria(
-        StrToInt(EditInput->Text), StringGrid1, 0, StringGrid1->ColCount - 1);
-    ? "Encontrado";
-    "No Encontrado"
+    ordenamiento_ascendente(StringGrid1, StringGrid1->ColCount);
+    EditOutput->Text = busqueda_binaria(StrToInt(EditInput->Text), StringGrid1,
+                           0, StringGrid1->ColCount - 1)
+                           ? "Encontrado"
+                           : "No Encontrado";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::VerificarOrdenadoAscendenteVClick(TObject* Sender)
+{
+    EditOutput->Text =
+        verificar_ordenado_ascendente(StringGrid1, 0, StringGrid1->ColCount)
+            ? "Ordenado Ascendentemente"
+            : "Desordenado";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::VerificarOrdenadoDescendenteVClick(TObject* Sender)
+{
+    EditOutput->Text =
+        verificar_ordenado_descendente(StringGrid1, 0, StringGrid1->ColCount)
+            ? "Ordenado Descendentemente"
+            : "Desordenado";
 }
 //---------------------------------------------------------------------------
 

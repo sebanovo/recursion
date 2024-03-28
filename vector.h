@@ -14,6 +14,8 @@
 // Clase 5 - Programacion 2
 // ------------------------
 // Cargar Randomicamente
+// sumar todos los elementos
+// invertir vector
 void cargar(TStringGrid* v, byte n);
 void cargar_palabras(String x, TStringGrid* v, byte a, byte &n);
 Cardinal sumar_todos_los_elementos(TStringGrid* v, byte a, byte b);
@@ -23,6 +25,12 @@ void mover_mayor_al_final(TStringGrid* v, byte n);
 void ordenamiento_ascendente(TStringGrid* v, byte n);
 void ordenamiento_descendente(TStringGrid* v, byte n);
 bool busqueda_binaria(Cardinal x, TStringGrid* v, byte a, byte b);
+bool verificar_ordenado_ascendente(TStringGrid* v, byte a, byte n);
+bool verificar_ordenado_descendente(TStringGrid* v, byte a, byte n);
+// Clase 6 - Programacion 2
+// ------------------------
+// Ordenamiento Ascendente (Bubble Sort)
+// Cargar Palabras
 //---------------------------------------------------------------------------
 #endif
 
