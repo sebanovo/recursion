@@ -292,10 +292,10 @@ void __fastcall TForm1::DimensionarVectorClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::SumarTodosLosElementosVClick(TObject* Sender)
+void __fastcall TForm1::SumarTodosLosNúmerosVClick(TObject* Sender)
 {
     EditOutput->Text =
-        sumar_todos_los_elementos(StringGrid1, 0, StringGrid1->ColCount - 1);
+        sumar_todos_los_numeros(StringGrid1, 0, StringGrid1->ColCount - 1);
 }
 //---------------------------------------------------------------------------
 
@@ -305,23 +305,23 @@ void __fastcall TForm1::InvertirVectorVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::MoverElementoMenorAlFinalVClick(TObject* Sender)
+void __fastcall TForm1::MoverNumeroMenorAlFinalVClick(TObject* Sender)
 {
-    mover_menor_al_final(StringGrid1, StringGrid1->ColCount);
+    mover_numero_menor_al_final(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::MoverElementoMayorAlFinalVClick(TObject* Sender)
+void __fastcall TForm1::MoverNumeroMayorAlFinalVClick(TObject* Sender)
 {
-    mover_mayor_al_final(StringGrid1, StringGrid1->ColCount);
+    mover_numero_mayor_al_final(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::CargarRandomVClick(TObject* Sender)
 {
+    // Importante!! -> ColCount no puede ser "0"
     cargar(StringGrid1, StrToInt(EditInput->Text));
-    StringGrid1->ColCount =
-        StrToInt(EditInput->Text); // ColCount no puede ser cero
+    StringGrid1->ColCount = StrToInt(EditInput->Text);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::CargarPalabrasVClick(TObject* Sender)
@@ -334,13 +334,13 @@ void __fastcall TForm1::CargarPalabrasVClick(TObject* Sender)
 
 void __fastcall TForm1::OrdenamientoAscendenteVClick(TObject* Sender)
 {
-    ordenamiento_ascendente(StringGrid1, StringGrid1->ColCount);
+    ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::OrdenamientoDescendenteVClick(TObject* Sender)
 {
-    ordenamiento_descendente(StringGrid1, StringGrid1->ColCount);
+    ordenamiento_burbuja_descendente(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
@@ -354,7 +354,7 @@ void __fastcall TForm1::VerificarOrdenadoDescendenteClick(TObject* Sender)
 
 void __fastcall TForm1::BusquedaBinariaVClick(TObject* Sender)
 {
-    ordenamiento_ascendente(StringGrid1, StringGrid1->ColCount);
+    ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
     EditOutput->Text = busqueda_binaria(StrToInt(EditInput->Text), StringGrid1,
                            0, StringGrid1->ColCount - 1)
                            ? "Encontrado"
@@ -377,6 +377,32 @@ void __fastcall TForm1::VerificarOrdenadoDescendenteVClick(TObject* Sender)
         verificar_ordenado_descendente(StringGrid1, 0, StringGrid1->ColCount)
             ? "Ordenado Descendentemente"
             : "Desordenado";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarNumerosParesVClick(TObject* Sender)
+{
+    EditOutput->Text = contar_numeros_pares(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarElementoVClick(TObject* Sender)
+{
+    eliminar_elemento(
+        EditInput->Text, StringGrid1, 0, StringGrid1->ColCount - 1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::factorialVClick(TObject* Sender)
+{
+    factorial(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarNumerosImparesVClick(TObject* Sender)
+{
+    EditOutput->Text =
+        contar_numeros_impares(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 

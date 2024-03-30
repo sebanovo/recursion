@@ -37,7 +37,7 @@ void cargar_palabras(String x, TStringGrid* v, byte a, byte &n)
     }
 }
 
-Cardinal sumar_todos_los_elementos(TStringGrid* v, byte a, byte b)
+Cardinal sumar_todos_los_numeros(TStringGrid* v, byte a, byte b)
 {
     Cardinal s;
     byte n = b - a + 1;
@@ -46,7 +46,7 @@ Cardinal sumar_todos_los_elementos(TStringGrid* v, byte a, byte b)
     } else if (n == 1) {
         s = StrToInt(v->Cells[a][0]);
     } else {
-        s = sumar_todos_los_elementos(v, a + 2, b);
+        s = sumar_todos_los_numeros(v, a + 2, b);
         s = s + StrToInt(v->Cells[a][0]) + StrToInt(v->Cells[a + 1][0]);
     }
     return s;
@@ -67,14 +67,14 @@ void invertir_vector(TStringGrid* v, byte a, byte n)
     }
 }
 
-void mover_mayor_al_final(TStringGrid* v, byte n)
+void mover_numero_mayor_al_final(TStringGrid* v, byte n)
 {
     if (n == 0) {
         // nada
     } else if (n == 1) {
         // nada
     } else {
-        mover_mayor_al_final(v, n - 1);
+        mover_numero_mayor_al_final(v, n - 1);
         if (StrToInt(v->Cells[n - 2][0]) > StrToInt(v->Cells[n - 1][0])) {
             String temp = v->Cells[n - 2][0];
             v->Cells[n - 2][0] = v->Cells[n - 1][0];
@@ -83,14 +83,14 @@ void mover_mayor_al_final(TStringGrid* v, byte n)
     }
 }
 
-void mover_menor_al_final(TStringGrid* v, byte n)
+void mover_numero_menor_al_final(TStringGrid* v, byte n)
 {
     if (n == 0) {
         // nada
     } else if (n == 1) {
         // nada
     } else {
-        mover_menor_al_final(v, n - 1);
+        mover_numero_menor_al_final(v, n - 1);
         if (StrToInt(v->Cells[n - 2][0]) < StrToInt(v->Cells[n - 1][0])) {
             String temp = v->Cells[n - 2][0];
             v->Cells[n - 2][0] = v->Cells[n - 1][0];
@@ -99,27 +99,27 @@ void mover_menor_al_final(TStringGrid* v, byte n)
     }
 }
 
-void ordenamiento_ascendente(TStringGrid* v, byte n)
+void ordenamiento_burbuja_ascendente(TStringGrid* v, byte n)
 {
     if (n == 0) {
         // nada
     } else if (n == 1) {
         // nada
     } else {
-        mover_mayor_al_final(v, n);
-        ordenamiento_ascendente(v, n - 1);
+        mover_numero_mayor_al_final(v, n);
+        ordenamiento_burbuja_ascendente(v, n - 1);
     }
 }
 
-void ordenamiento_descendente(TStringGrid* v, byte n)
+void ordenamiento_burbuja_descendente(TStringGrid* v, byte n)
 {
     if (n == 0) {
         // nada
     } else if (n == 1) {
         // nada
     } else {
-        mover_menor_al_final(v, n);
-        ordenamiento_descendente(v, n - 1);
+        mover_numero_menor_al_final(v, n);
+        ordenamiento_burbuja_descendente(v, n - 1);
     }
 }
 
@@ -174,5 +174,73 @@ bool verificar_ordenado_descendente(TStringGrid* v, byte a, byte n)
         }
     }
     return bol;
+}
+
+//Escribir una función que devuelva la cantidad de números pares que contiene
+//Ej. ContarPares(v[2, 4,5,12, 23, 54,3, 34, 6], 9) => 6
+byte contar_numeros_pares(TStringGrid* v, byte n)
+{
+    byte c;
+    if (n == 0) {
+        c = 0;
+    } else {
+        c = contar_numeros_pares(v, n - 1);
+        if (StrToInt(v->Cells[n - 1][0]) % 2 == 0) {
+            c++;
+        }
+    }
+    return c;
+}
+
+byte contar_numeros_impares(TStringGrid* v, byte n)
+{
+    byte c;
+    if (n == 0) {
+        c = 0;
+    } else {
+        c = contar_numeros_impares(v, n - 1);
+        if (StrToInt(v->Cells[n - 1][0]) % 2 == 1) {
+            c++;
+        }
+    }
+    return c;
+}
+
+//Escribir un proceso para eliminar el dato x de un vector.
+//Ej. v[2,5,65,23,45,2,13,45,61], x=2 EliminarX(x, v, 9) => v[5,65,23,45,13,45,61]
+
+void recorrer(TStringGrid* v, byte a, byte b)
+{
+    byte n = b - a + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        v->Cells[a][0] = v->Cells[a + 1][0];
+        recorrer(v, a + 1, b);
+    }
+}
+void eliminar_elemento(String x, TStringGrid* v, byte a, byte b)
+{
+    byte n = b - a + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        String d = v->Cells[a][0];
+        eliminar_elemento(x, v, a + 1, b);
+        if (d == x) {
+            recorrer(v, a, b);
+            v->ColCount--;
+        }
+    }
+}
+
+void factorial(TStringGrid* v, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else {
+        v->Cells[n - 1][0] = factorial(StrToInt(v->Cells[n - 1][0]));
+        factorial(v, n - 1);
+    }
 }
 

@@ -72,8 +72,8 @@ class TForm1 : public TForm
     TEdit* EditInput;
     TEdit* EditOutput;
     TMenuItem* InvertirVectorV;
-    TMenuItem* MoverElementoMenorAlFinalV;
-    TMenuItem* MoverElementoMayorAlFinalV;
+    TMenuItem* MoverNumeroMenorAlFinalV;
+    TMenuItem* MoverNumeroMayorAlFinalV;
     TMenuItem* CargarRandomV;
     TMenuItem* CargarPalabrasV;
     TLabel* Label1;
@@ -84,6 +84,10 @@ class TForm1 : public TForm
     TMenuItem* BusquedaBinariaV;
     TMenuItem* VerificarOrdenadoAscendenteV;
     TMenuItem* VerificarOrdenadoDescendenteV;
+    TMenuItem* ContarNumerosParesV;
+    TMenuItem* EliminarElementoV;
+    TMenuItem* factorialV;
+    TMenuItem* ContarNumerosImparesV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -125,10 +129,10 @@ class TForm1 : public TForm
     void __fastcall NmeroMayorClick(TObject* Sender);
     void __fastcall InvertirFraseClick(TObject* Sender);
     void __fastcall DimensionarVectorClick(TObject* Sender);
-    void __fastcall SumarTodosLosElementosVClick(TObject* Sender);
+    void __fastcall SumarTodosLosNúmerosVClick(TObject* Sender);
     void __fastcall InvertirVectorVClick(TObject* Sender);
-    void __fastcall MoverElementoMenorAlFinalVClick(TObject* Sender);
-    void __fastcall MoverElementoMayorAlFinalVClick(TObject* Sender);
+    void __fastcall MoverNumeroMenorAlFinalVClick(TObject* Sender);
+    void __fastcall MoverNumeroMayorAlFinalVClick(TObject* Sender);
     void __fastcall CargarRandomVClick(TObject* Sender);
     void __fastcall CargarPalabrasVClick(TObject* Sender);
     void __fastcall OrdenamientoAscendenteVClick(TObject* Sender);
@@ -137,6 +141,10 @@ class TForm1 : public TForm
     void __fastcall BusquedaBinariaVClick(TObject* Sender);
     void __fastcall VerificarOrdenadoAscendenteVClick(TObject* Sender);
     void __fastcall VerificarOrdenadoDescendenteVClick(TObject* Sender);
+    void __fastcall ContarNumerosParesVClick(TObject* Sender);
+    void __fastcall EliminarElementoVClick(TObject* Sender);
+    void __fastcall factorialVClick(TObject* Sender);
+    void __fastcall ContarNumerosImparesVClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

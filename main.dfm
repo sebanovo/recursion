@@ -1,4 +1,4 @@
-object Form1: TForm1
+﻿object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
@@ -215,6 +215,10 @@ object Form1: TForm1
         Caption = 'Retornar Mayor Digito'
         OnClick = RetonarMayorDigitoClick
       end
+      object EncontrarDigitosMayorYMenor: TMenuItem
+        Caption = 'Encontrar Digitos Mayor Y Menor'
+        OnClick = EncontrarDigitosMayorYMenorClick
+      end
       object AgregarComaDigitos1: TMenuItem
         Caption = 'Agregar Coma Digitos'
         OnClick = AgregarComaDigitos1Click
@@ -254,10 +258,6 @@ object Form1: TForm1
       object EliminarDigitosPares: TMenuItem
         Caption = 'Eliminar Digitos Pares'
         OnClick = EliminarDigitosParesClick
-      end
-      object EncontrarDigitosMayorYMenor: TMenuItem
-        Caption = 'Encontrar Digitos Mayor Y Menor'
-        OnClick = EncontrarDigitosMayorYMenorClick
       end
       object RepetirDigitos: TMenuItem
         Caption = 'Repetir Digitos'
@@ -349,21 +349,21 @@ object Form1: TForm1
         Caption = 'Cargar Palabras'
         OnClick = CargarPalabrasVClick
       end
-      object SumarTodosLosElementosV: TMenuItem
-        Caption = 'Sumar Todos Los Elementos'
-        OnClick = SumarTodosLosElementosVClick
+      object SumarTodosLosNúmerosV: TMenuItem
+        Caption = 'Sumar Todos Los N'#250'meros'
+        OnClick = SumarTodosLosNúmerosVClick
       end
       object InvertirVectorV: TMenuItem
         Caption = 'Invertir Vector'
         OnClick = InvertirVectorVClick
       end
-      object MoverElementoMenorAlFinalV: TMenuItem
-        Caption = 'Mover Elemento Menor Al Final'
-        OnClick = MoverElementoMenorAlFinalVClick
+      object MoverNumeroMenorAlFinalV: TMenuItem
+        Caption = 'Mover N'#250'mero Menor Al Final'
+        OnClick = MoverNumeroMenorAlFinalVClick
       end
-      object MoverElementoMayorAlFinalV: TMenuItem
-        Caption = 'Mover Elemento Mayor Al Final'
-        OnClick = MoverElementoMayorAlFinalVClick
+      object MoverNumeroMayorAlFinalV: TMenuItem
+        Caption = 'Mover N'#250'mero Mayor Al Final'
+        OnClick = MoverNumeroMayorAlFinalVClick
       end
       object OrdenamientoAscendenteV: TMenuItem
         Caption = 'Ordenamiento Ascendente'
@@ -373,10 +373,6 @@ object Form1: TForm1
         Caption = 'Ordenamiento Descendente'
         OnClick = OrdenamientoDescendenteVClick
       end
-      object BusquedaBinariaV: TMenuItem
-        Caption = 'Busqueda Binaria'
-        OnClick = BusquedaBinariaVClick
-      end
       object VerificarOrdenadoAscendenteV: TMenuItem
         Caption = 'Verificar Ordenado Ascendente'
         OnClick = VerificarOrdenadoAscendenteVClick
@@ -384,6 +380,26 @@ object Form1: TForm1
       object VerificarOrdenadoDescendenteV: TMenuItem
         Caption = 'Verificar Ordenado Descendente'
         OnClick = VerificarOrdenadoDescendenteVClick
+      end
+      object BusquedaBinariaV: TMenuItem
+        Caption = 'Busqueda Binaria'
+        OnClick = BusquedaBinariaVClick
+      end
+      object ContarNumerosParesV: TMenuItem
+        Caption = 'Contar N'#250'meros Pares'
+        OnClick = ContarNumerosParesVClick
+      end
+      object ContarNumerosImparesV: TMenuItem
+        Caption = 'Contar N'#250'meros Impares'
+        OnClick = ContarNumerosImparesVClick
+      end
+      object EliminarElementoV: TMenuItem
+        Caption = 'Eliminar Elemento'
+        OnClick = EliminarElementoVClick
+      end
+      object factorialV: TMenuItem
+        Caption = 'factorial'
+        OnClick = factorialVClick
       end
     end
   end
