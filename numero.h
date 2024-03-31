@@ -9,6 +9,9 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.Menus.hpp>
 
+byte obtener_divisor(Cardinal n, Cardinal divisor);
+bool verificar_primo(Cardinal n);
+
 Cardinal factorial(Cardinal x);
 byte sumar_digitos(Cardinal x);
 byte sumar_digitos_pares(Cardinal x);

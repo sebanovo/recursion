@@ -208,7 +208,6 @@ byte contar_numeros_impares(TStringGrid* v, byte n)
 
 //Escribir un proceso para eliminar el dato x de un vector.
 //Ej. v[2,5,65,23,45,2,13,45,61], x=2 EliminarX(x, v, 9) => v[5,65,23,45,13,45,61]
-
 void recorrer(TStringGrid* v, byte a, byte b)
 {
     byte n = b - a + 1;
@@ -219,6 +218,7 @@ void recorrer(TStringGrid* v, byte a, byte b)
         recorrer(v, a + 1, b);
     }
 }
+
 void eliminar_elemento(String x, TStringGrid* v, byte a, byte b)
 {
     byte n = b - a + 1;
@@ -243,4 +243,129 @@ void factorial(TStringGrid* v, byte n)
         factorial(v, n - 1);
     }
 }
+
+bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n)
+{
+    bool p = true;
+    if (a <= n / 2) {
+        // menos el primero y menos el ultimo
+        p = verificar_palindromo(v, a + 1, b - 1, n);
+        if (p != false) {
+            if (v->Cells[a][0] == v->Cells[b][0]) {
+                p = true;
+            } else {
+                p = false;
+            }
+        }
+    }
+    return p;
+}
+
+byte posicion_del_numero_mayor(TStringGrid* v, byte n)
+{
+    byte p;
+    if (n == 0) {
+        throw new Exception("Error: vector vacio");
+    } else if (n == 1) {
+        p = 0;
+    } else {
+        p = posicion_del_numero_mayor(v, n - 1);
+        if (v->Cells[p][0].ToInt() < v->Cells[n - 1][0].ToInt()) {
+            p = n - 1;
+        }
+    }
+    return p;
+}
+
+void selection_sort(TStringGrid* v, byte n)
+{
+    if (n > 1) {
+        byte pm = posicion_del_numero_mayor(v, n);
+        String temp = v->Cells[n - 1][0];
+        v->Cells[n - 1][0] = v->Cells[pm][0];
+        v->Cells[pm][0] = temp;
+        selection_sort(v, n - 1);
+    }
+}
+
+// Ejm: x = "Hola" => v[H,a,l,o]
+void cargar_caracteres_orden_ascendente(TStringGrid* v, String x)
+{
+    if (x.Length() > 0) {
+        Cardinal posMay = posicion_del_caracter_mayor(x);
+        wchar_t c = x[posMay];
+        v->Cells[x.Length() - 1][0] = c;
+        x.Delete(posMay, 1);
+        cargar_caracteres_orden_ascendente(v, x);
+    }
+}
+
+// Ejm: x = "Hola" => v[o,H,l,a]
+void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
+{
+    if (x.Length() > 0) {
+        Cardinal posMen = posicion_del_caracter_menor(x);
+        wchar_t c = x[posMen];
+        v->Cells[x.Length() - 1][0] = c;
+        x.Delete(posMen, 1);
+        cargar_caracteres_orden_descendente(v, x);
+    }
+}
+
+// *** EJERCICIO DE 2 StringGrid ***//
+// insertar un vector en otro indicando una posicion;
+//void recorrer1(TStringGrid1* v, byte p, byte n)
+//{
+//    if (p < n) {
+//        v->Cells[n][0] = v->Cells[n - 1][0];
+//        recorrer1(v, p, n - 1);
+//    }
+//}
+//
+//void insertar_aux(TStringGrid* v2, TStringGrid* v1, byte p, byte i)
+//{
+//    if (i < v2->ColCount) {
+//        v1->ColCount++;
+//        recorrer1(v1, p, v1->ColCount);
+//        v1->Cells[p][0] = v2->Cells[i][0];
+//        insertar_aux(v2, v1, p + 1, i + 1);
+//    }
+//}
+//
+//void insertar(TStringGrid* v2, TStringGrid* v1, byte p)
+//{
+//    insertar_aux(v2, v1, p, 0);
+//}
+// ----------------------------------------------------------------------------
+
+// *** EJERCICIO DE 2 StringGrid ***//
+// Ej: v1[H,o,l,a,m,u,n,d,o]
+//     v2[1,2,1,1,1,1,1,1,2]
+// cuenta cuantas veces se repite cada caracter en el vector
+//Cardinal frecuencia(String cad, char c)
+//{
+//    Cardinal f;
+//    if (cad.Length() == 0) {
+//        f = 0;
+//    } else {
+//        char x = cad[1];
+//        cad.Delete(1, 1);
+//        f = frecuencia(cad, c);
+//        if (x == c) {
+//            f++;
+//        }
+//    }
+//    return f;
+//}
+//
+//void cargar_frecuencia(String cad, TStringGrid* vc, TStringGrid* vf, Cardinal n)
+//{
+//    if (n > 0) {
+//        char c = cad[n];
+//        Cardinal f = frecuencia(cad, c);
+//        vc->Cells[n - 1][0] = c;
+//        vf->Cells[n - 1][0] = f;
+//        cargar_frecuencia(cad, vc, vf, n - 1);
+//    }
+//} // ------------------------------------------------------------------------
 

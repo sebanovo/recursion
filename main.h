@@ -88,6 +88,10 @@ class TForm1 : public TForm
     TMenuItem* EliminarElementoV;
     TMenuItem* factorialV;
     TMenuItem* ContarNumerosImparesV;
+    TMenuItem* VerificarPrimo;
+    TMenuItem* VerificarPalindromoV;
+    TMenuItem* CargarCaracteresOrdenAscendenteASCIIV;
+    TMenuItem* CargarCaracteresOrdenDescendenteASCIIV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -145,6 +149,11 @@ class TForm1 : public TForm
     void __fastcall EliminarElementoVClick(TObject* Sender);
     void __fastcall factorialVClick(TObject* Sender);
     void __fastcall ContarNumerosImparesVClick(TObject* Sender);
+    void __fastcall VerificarPrimoClick(TObject* Sender);
+    void __fastcall VerificarPalindromoVClick(TObject* Sender);
+    void __fastcall CargarCaracteresOrdenAscendenteASCIIVClick(TObject* Sender);
+    void __fastcall CargarCaracteresOrdenDescendenteASCIIVClick(
+        TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

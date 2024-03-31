@@ -37,6 +37,14 @@ byte contar_numeros_impares(TStringGrid* v, byte n);
 void recorrer(TStringGrid* v, byte a, byte b);
 void eliminar_elemento(String x, TStringGrid* v, byte a, byte b);
 void factorial(TStringGrid* v, byte n);
+bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n);
+
+// sorts
+byte posicion_del_numero_mayor(TStringGrid* v, byte n);
+void selection_sort(TStringGrid* v, byte n);
+
+void cargar_caracteres_orden_ascendente(TStringGrid* v, String x);
+void cargar_caracteres_orden_descendente(TStringGrid* v, String x);
 
 //---------------------------------------------------------------------------
 #endif

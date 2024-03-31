@@ -227,6 +227,10 @@
         Caption = 'Agregar Coma Digitos E Invertir'
         OnClick = AgregarComaDigitosEInvertirClick
       end
+      object VerificarPrimo: TMenuItem
+        Caption = 'Verificar Primo'
+        OnClick = VerificarPrimoClick
+      end
       object VerificarOrdenadoAscendente: TMenuItem
         Caption = 'Verificar Ordenado Ascendente'
         OnClick = VerificarOrdenadoAscendenteClick
@@ -381,6 +385,10 @@
         Caption = 'Verificar Ordenado Descendente'
         OnClick = VerificarOrdenadoDescendenteVClick
       end
+      object VerificarPalindromoV: TMenuItem
+        Caption = 'Verificar Palindromo'
+        OnClick = VerificarPalindromoVClick
+      end
       object BusquedaBinariaV: TMenuItem
         Caption = 'Busqueda Binaria'
         OnClick = BusquedaBinariaVClick
@@ -400,6 +408,14 @@
       object factorialV: TMenuItem
         Caption = 'factorial'
         OnClick = factorialVClick
+      end
+      object CargarCaracteresOrdenAscendenteASCIIV: TMenuItem
+        Caption = 'Cargar Caracteres Orden Ascendente ASCII'
+        OnClick = CargarCaracteresOrdenAscendenteASCIIVClick
+      end
+      object CargarCaracteresOrdenDescendenteASCIIV: TMenuItem
+        Caption = 'Cargar Caracteres Orden Descendente ASCII'
+        OnClick = CargarCaracteresOrdenDescendenteASCIIVClick
       end
     end
   end

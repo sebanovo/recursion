@@ -46,6 +46,11 @@ byte contar_palabras(String x);
 // EJERCICIO MÁS DIFICIL
 Cardinal numero_mayor(String x);
 void invertir_frase(String &x);
+
+// Aux Vector
+Cardinal posicion_del_caracter_mayor(String x); // es llamado desde vector
+Cardinal posicion_del_caracter_menor(String x); // es llamado desde vector
+
 //---------------------------------------------------------------------------
 #endif
 

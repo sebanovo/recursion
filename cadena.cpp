@@ -418,6 +418,8 @@ byte contar_palabras(String x)
 
 // EJERCICIO MÁS DIFICIL
 // -------------------------------------------------------------
+// Escribir una función que devuelva el númeo mayor contenido en una cadena.
+// Si la cadena no tiene números debe devolver 0
 // Ej1: x = "hola104 mundo54 como1 estan" => 104
 // Ej2: x = "Hola mundo" => 0
 Cardinal posNum(String cad, bool num)
@@ -492,5 +494,41 @@ void invertir_frase(String &x)
 {
     invertir_cadena(x);
     invertir_cada_palabra(x);
+}
+
+// posicion del caracter de mayor ASCII
+Cardinal posicion_del_caracter_mayor(String x)
+{
+    Cardinal p;
+    Word n = x.Length();
+    if (n == 1) {
+        p = 1;
+    } else {
+        char c = x[n];
+        x.Delete(n, 1);
+        p = posicion_del_caracter_mayor(x);
+        if (c > x[p]) {
+            p = n;
+        }
+    }
+    return p;
+}
+
+// posicion del caracter de mayor ASCII
+Cardinal posicion_del_caracter_menor(String x)
+{
+    Cardinal p;
+    Word n = x.Length();
+    if (n == 1) {
+        p = 1;
+    } else {
+        char c = x[n];
+        x.Delete(n, 1);
+        p = posicion_del_caracter_mayor(x);
+        if (c < x[p]) {
+            p = n;
+        }
+    }
+    return p;
 }
 

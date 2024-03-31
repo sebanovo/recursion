@@ -334,7 +334,8 @@ void __fastcall TForm1::CargarPalabrasVClick(TObject* Sender)
 
 void __fastcall TForm1::OrdenamientoAscendenteVClick(TObject* Sender)
 {
-    ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
+    //    ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
+    selection_sort(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
@@ -403,6 +404,40 @@ void __fastcall TForm1::ContarNumerosImparesVClick(TObject* Sender)
 {
     EditOutput->Text =
         contar_numeros_impares(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::VerificarPrimoClick(TObject* Sender)
+{
+    Edit2->Text =
+        verificar_primo(Edit1->Text.ToInt()) ? "Es Primo" : "No Es Primo";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::VerificarPalindromoVClick(TObject* Sender)
+{
+    EditOutput->Text = verificar_palindromo(StringGrid1, 0,
+                           StringGrid1->ColCount - 1, StringGrid1->ColCount)
+                           ? "Es Palindromo"
+                           : "No es Palindromo";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarCaracteresOrdenAscendenteASCIIVClick(
+    TObject* Sender)
+
+{
+    StringGrid1->ColCount = EditInput->Text.Length();
+    cargar_caracteres_orden_ascendente(StringGrid1, EditInput->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarCaracteresOrdenDescendenteASCIIVClick(
+    TObject* Sender)
+
+{
+    StringGrid1->ColCount = EditInput->Text.Length();
+    cargar_caracteres_orden_descendente(StringGrid1, EditInput->Text);
 }
 //---------------------------------------------------------------------------
 

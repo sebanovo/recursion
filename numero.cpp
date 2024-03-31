@@ -11,6 +11,34 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+// verificar primo
+byte obtener_divisor(Cardinal n, Cardinal divisor)
+{
+    byte div;
+    if (n <= 1) {
+        div = 1;
+    } else if (divisor == 1) {
+        div = 1;
+    } else if (n % divisor == 0) {
+        div = divisor;
+    } else {
+        div = obtener_divisor(n, divisor - 1);
+    }
+    return div;
+}
+
+bool verificar_primo(Cardinal n)
+{
+    bool b;
+    if (n <= 1) {
+        b = false;
+    } else {
+        int divisor = obtener_divisor(n, n - 1);
+        b = divisor == 1;
+    }
+    return b;
+}
+
 Cardinal factorial(Cardinal x)
 {
     Cardinal f;
