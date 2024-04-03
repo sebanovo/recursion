@@ -2,8 +2,8 @@
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 495
-  ClientWidth = 975
+  ClientHeight = 486
+  ClientWidth = 969
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,13 +15,13 @@
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 975
-    Height = 495
+    Width = 969
+    Height = 486
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 969
-    ExplicitHeight = 486
+    ExplicitWidth = 963
+    ExplicitHeight = 477
     object TabSheet1: TTabSheet
       Caption = 'Numero'
       object Edit1: TEdit
@@ -102,7 +102,7 @@
         Left = 152
         Top = 208
         Width = 761
-        Height = 74
+        Height = 65
         DefaultRowHeight = 48
         FixedCols = 0
         RowCount = 1
@@ -168,6 +168,38 @@
     object TabSheet4: TTabSheet
       Caption = 'Matriz'
       ImageIndex = 3
+      object StringGrid2: TStringGrid
+        Left = 240
+        Top = 152
+        Width = 513
+        Height = 249
+        DefaultRowHeight = 48
+        FixedCols = 0
+        RowCount = 1
+        FixedRows = 0
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object EditRows: TEdit
+        Left = 240
+        Top = 72
+        Width = 121
+        Height = 23
+        TabOrder = 1
+      end
+      object EditCols: TEdit
+        Left = 632
+        Top = 72
+        Width = 121
+        Height = 23
+        TabOrder = 2
+      end
     end
   end
   object MainMenu1: TMainMenu
@@ -357,9 +389,9 @@
         Caption = 'Sumar Todos Los N'#250'meros'
         OnClick = SumarTodosLosNúmerosVClick
       end
-      object InvertirVectorV: TMenuItem
-        Caption = 'Invertir Vector'
-        OnClick = InvertirVectorVClick
+      object InvertirV: TMenuItem
+        Caption = 'Invertir'
+        OnClick = InvertirVClick
       end
       object MoverNumeroMenorAlFinalV: TMenuItem
         Caption = 'Mover N'#250'mero Menor Al Final'
@@ -416,6 +448,21 @@
       object CargarCaracteresOrdenDescendenteASCIIV: TMenuItem
         Caption = 'Cargar Caracteres Orden Descendente ASCII'
         OnClick = CargarCaracteresOrdenDescendenteASCIIVClick
+      end
+    end
+    object Matriz1: TMenuItem
+      Caption = 'Matriz'
+      object CargarRandomM: TMenuItem
+        Caption = 'Cargar Random'
+        OnClick = CargarRandomMClick
+      end
+      object OrdenarFilasAscendenteM: TMenuItem
+        Caption = 'Ordenar Filas Ascendente '
+        OnClick = OrdenarFilasAscendenteMClick
+      end
+      object CargarTriangularInferiorIzquierdaM: TMenuItem
+        Caption = 'Cargar Triangular Inferior Izquierda'
+        OnClick = CargarTriangularInferiorIzquierdaMClick
       end
     end
   end

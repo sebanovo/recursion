@@ -20,7 +20,7 @@
 void cargar(TStringGrid* v, byte n);
 void cargar_palabras(String x, TStringGrid* v, byte a, byte &n);
 Cardinal sumar_todos_los_numeros(TStringGrid* v, byte a, byte b);
-void invertir_vector(TStringGrid* v, byte a, byte n);
+void invertir(TStringGrid* v, byte a, byte b);
 void mover_numero_menor_al_final(TStringGrid* v, byte n);
 void mover_numero_mayor_al_final(TStringGrid* v, byte n);
 // Clase 6 - Programacion 2

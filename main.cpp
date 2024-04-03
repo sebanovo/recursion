@@ -3,10 +3,18 @@
 #include <vcl.h>
 #pragma hdrstop
 
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.Menus.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.Grids.hpp>
 #include "main.h"
 #include "numero.h"
 #include "cadena.h"
 #include "vector.h"
+#include "matriz.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -299,9 +307,9 @@ void __fastcall TForm1::SumarTodosLosNúmerosVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::InvertirVectorVClick(TObject* Sender)
+void __fastcall TForm1::InvertirVClick(TObject* Sender)
 {
-    invertir_vector(StringGrid1, 0, StringGrid1->ColCount);
+    invertir(StringGrid1, 0, StringGrid1->ColCount - 1);
 }
 //---------------------------------------------------------------------------
 
@@ -438,6 +446,31 @@ void __fastcall TForm1::CargarCaracteresOrdenDescendenteASCIIVClick(
 {
     StringGrid1->ColCount = EditInput->Text.Length();
     cargar_caracteres_orden_descendente(StringGrid1, EditInput->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarRandomMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    cargar_random(StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::OrdenarFilasAscendenteMClick(TObject* Sender)
+{
+    ordenar_filas_burbuja_ascedente(
+        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarTriangularInferiorIzquierdaMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    byte contador = 1;
+    cargar_triangular_inferior_izquierda(
+        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, contador);
 }
 //---------------------------------------------------------------------------
 

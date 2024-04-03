@@ -130,6 +130,10 @@
             <DependentOn>main.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <CppCompile Include="matriz.cpp">
+            <DependentOn>matriz.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
         <CppCompile Include="numero.cpp">
             <DependentOn>numero.h</DependentOn>
             <BuildOrder>3</BuildOrder>

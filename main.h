@@ -71,7 +71,7 @@ class TForm1 : public TForm
     TMenuItem* Vector;
     TEdit* EditInput;
     TEdit* EditOutput;
-    TMenuItem* InvertirVectorV;
+    TMenuItem* InvertirV;
     TMenuItem* MoverNumeroMenorAlFinalV;
     TMenuItem* MoverNumeroMayorAlFinalV;
     TMenuItem* CargarRandomV;
@@ -92,6 +92,13 @@ class TForm1 : public TForm
     TMenuItem* VerificarPalindromoV;
     TMenuItem* CargarCaracteresOrdenAscendenteASCIIV;
     TMenuItem* CargarCaracteresOrdenDescendenteASCIIV;
+    TStringGrid* StringGrid2;
+    TEdit* EditRows;
+    TEdit* EditCols;
+    TMenuItem* Matriz1;
+    TMenuItem* CargarRandomM;
+    TMenuItem* OrdenarFilasAscendenteM;
+    TMenuItem* CargarTriangularInferiorIzquierdaM;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -134,7 +141,7 @@ class TForm1 : public TForm
     void __fastcall InvertirFraseClick(TObject* Sender);
     void __fastcall DimensionarVectorClick(TObject* Sender);
     void __fastcall SumarTodosLosNúmerosVClick(TObject* Sender);
-    void __fastcall InvertirVectorVClick(TObject* Sender);
+    void __fastcall InvertirVClick(TObject* Sender);
     void __fastcall MoverNumeroMenorAlFinalVClick(TObject* Sender);
     void __fastcall MoverNumeroMayorAlFinalVClick(TObject* Sender);
     void __fastcall CargarRandomVClick(TObject* Sender);
@@ -154,6 +161,9 @@ class TForm1 : public TForm
     void __fastcall CargarCaracteresOrdenAscendenteASCIIVClick(TObject* Sender);
     void __fastcall CargarCaracteresOrdenDescendenteASCIIVClick(
         TObject* Sender);
+    void __fastcall CargarRandomMClick(TObject* Sender);
+    void __fastcall OrdenarFilasAscendenteMClick(TObject* Sender);
+    void __fastcall CargarTriangularInferiorIzquierdaMClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

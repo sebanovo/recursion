@@ -9,6 +9,8 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.Menus.hpp>
 #include "vector.h"
+#include "cadena.h"
+#include "numero.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -52,15 +54,15 @@ Cardinal sumar_todos_los_numeros(TStringGrid* v, byte a, byte b)
     return s;
 }
 
-void invertir_vector(TStringGrid* v, byte a, byte n)
+void invertir(TStringGrid* v, byte a, byte b)
 {
+    byte n = b - a + 1;
     if (n == 0) {
         // nada
     } else if (n == 1) {
         // nada
     } else {
-        byte b = a + n - 1;
-        invertir_vector(v, a + 1, n - 2);
+        invertir(v, a + 1, b - 1);
         String temp = v->Cells[a][0];
         v->Cells[a][0] = v->Cells[b][0];
         v->Cells[b][0] = temp;
@@ -288,7 +290,7 @@ void selection_sort(TStringGrid* v, byte n)
     }
 }
 
-// Ejm: x = "Hola" => v[H,a,l,o]
+// Ejm: x = "Hola" => v[H,a,l,o] orden ASCII
 void cargar_caracteres_orden_ascendente(TStringGrid* v, String x)
 {
     if (x.Length() > 0) {
@@ -300,7 +302,7 @@ void cargar_caracteres_orden_ascendente(TStringGrid* v, String x)
     }
 }
 
-// Ejm: x = "Hola" => v[o,H,l,a]
+// Ejm: x = "Hola" => v[o,H,l,a] orden ASCII
 void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
 {
     if (x.Length() > 0) {
