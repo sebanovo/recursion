@@ -342,8 +342,8 @@ void __fastcall TForm1::CargarPalabrasVClick(TObject* Sender)
 
 void __fastcall TForm1::OrdenamientoAscendenteVClick(TObject* Sender)
 {
-    //    ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
-    selection_sort(StringGrid1, StringGrid1->ColCount);
+    ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
+    //selection_sort(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
@@ -364,28 +364,32 @@ void __fastcall TForm1::VerificarOrdenadoDescendenteClick(TObject* Sender)
 void __fastcall TForm1::BusquedaBinariaVClick(TObject* Sender)
 {
     ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
-    EditOutput->Text = busqueda_binaria(StrToInt(EditInput->Text), StringGrid1,
-                           0, StringGrid1->ColCount - 1)
-                           ? "Encontrado"
-                           : "No Encontrado";
+    Cardinal numero = StrToInt(InputBox("Busqueda Binaria", "", ""));
+    MessageBox(NULL,
+        busqueda_binaria(numero, StringGrid1, 0, StringGrid1->ColCount - 1)
+            ? L"Encontrado"
+            : L"No Encontrado",
+        L"Busqueda Secuencial", MB_ICONASTERISK);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::VerificarOrdenadoAscendenteVClick(TObject* Sender)
 {
-    EditOutput->Text =
+    MessageBox(NULL,
         verificar_ordenado_ascendente(StringGrid1, 0, StringGrid1->ColCount)
-            ? "Ordenado Ascendentemente"
-            : "Desordenado";
+            ? L"Ordenado Ascendentemente"
+            : L"Desordenado",
+        L"Verificar Ordenado Ascendente", MB_ICONASTERISK);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::VerificarOrdenadoDescendenteVClick(TObject* Sender)
 {
-    EditOutput->Text =
+    MessageBox(NULL,
         verificar_ordenado_descendente(StringGrid1, 0, StringGrid1->ColCount)
-            ? "Ordenado Descendentemente"
-            : "Desordenado";
+            ? L"Ordenado Descendente"
+            : L"Desordenado",
+        L"Verificar Ordenado Descendente", MB_ICONASTERISK);
 }
 //---------------------------------------------------------------------------
 
@@ -424,10 +428,12 @@ void __fastcall TForm1::VerificarPrimoClick(TObject* Sender)
 
 void __fastcall TForm1::VerificarPalindromoVClick(TObject* Sender)
 {
-    EditOutput->Text = verificar_palindromo(StringGrid1, 0,
-                           StringGrid1->ColCount - 1, StringGrid1->ColCount)
-                           ? "Es Palindromo"
-                           : "No es Palindromo";
+    MessageBox(NULL,
+        verificar_palindromo(
+            StringGrid1, 0, StringGrid1->ColCount - 1, StringGrid1->ColCount)
+            ? L"Es Palindromo"
+            : L"No es Palindromo",
+        L"Verificar Palindromo", MB_ICONASTERISK);
 }
 //---------------------------------------------------------------------------
 
@@ -457,7 +463,7 @@ void __fastcall TForm1::CargarRandomMClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::OrdenarFilasAscendenteMClick(TObject* Sender)
+void __fastcall TForm1::OrdenarFilasAscendentementeMClick(TObject* Sender)
 {
     ordenar_filas_burbuja_ascedente(
         StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
@@ -468,9 +474,61 @@ void __fastcall TForm1::CargarTriangularInferiorIzquierdaMClick(TObject* Sender)
 {
     StringGrid2->RowCount = StrToInt(EditRows->Text);
     StringGrid2->ColCount = StrToInt(EditCols->Text);
-    byte contador = 1;
     cargar_triangular_inferior_izquierda(
-        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, contador);
+        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarPorFilasMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    cargar_por_filas(StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarPorColumnasMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    cargar_por_columnas(
+        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::BusquedaSecuencialClick(TObject* Sender)
+{
+    Cardinal numero = StrToInt(InputBox("Busqueda Secuencial", "", ""));
+    MessageBox(NULL,
+        busqueda_secuencial(numero, StringGrid1, 0, StringGrid1->ColCount - 1)
+            ? L"Encontrado"
+            : L"No Encontrado",
+        L"Busqueda Secuencial", MB_ICONASTERISK);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarLMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    cargar_L(StringGrid2, StringGrid2->RowCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarCircularMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    cargar_circular(StringGrid2, 0, StringGrid2->RowCount - 1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarMagicoMClick(TObject* Sender)
+{
+    byte f, c, m = StrToInt(EditRows->Text);
+    StringGrid2->RowCount = m;
+    StringGrid2->ColCount = m;
+    cargar_magico(StringGrid2, m, m * m, f, c);
 }
 //---------------------------------------------------------------------------
 

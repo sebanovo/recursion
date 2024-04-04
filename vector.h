@@ -30,6 +30,7 @@ void mover_numero_mayor_al_final(TStringGrid* v, byte n);
 void ordenamiento_burbuja_ascendente(TStringGrid* v, byte n);
 void ordenamiento_burbuja_descendente(TStringGrid* v, byte n);
 bool busqueda_binaria(Cardinal x, TStringGrid* v, byte a, byte b);
+bool busqueda_secuencial(Cardinal x, TStringGrid* v, byte a, byte b);
 bool verificar_ordenado_ascendente(TStringGrid* v, byte a, byte n);
 bool verificar_ordenado_descendente(TStringGrid* v, byte a, byte n);
 byte contar_numeros_pares(TStringGrid* v, byte n);
@@ -39,7 +40,7 @@ void eliminar_elemento(String x, TStringGrid* v, byte a, byte b);
 void factorial(TStringGrid* v, byte n);
 bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n);
 
-// sorts
+// ordenamientos
 byte posicion_del_numero_mayor(TStringGrid* v, byte n);
 void selection_sort(TStringGrid* v, byte n);
 

@@ -146,6 +146,21 @@ bool busqueda_binaria(Cardinal x, TStringGrid* v, byte a, byte b)
     return bol;
 }
 
+bool busqueda_secuencial(Cardinal x, TStringGrid* v, byte a, byte b)
+{
+    bool bol;
+    byte n = b - a + 1;
+    if (n == 0) {
+        bol = false;
+    } else {
+        bol = busqueda_secuencial(x, v, a + 1, b);
+        if (!bol && StrToInt(v->Cells[a][0] == x)) {
+            bol = true;
+        }
+    }
+    return bol;
+}
+
 bool verificar_ordenado_ascendente(TStringGrid* v, byte a, byte n)
 {
     bool bol;

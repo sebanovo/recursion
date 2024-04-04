@@ -17,7 +17,7 @@
     Top = 0
     Width = 969
     Height = 486
-    ActivePage = TabSheet3
+    ActivePage = TabSheet4
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 963
@@ -104,6 +104,7 @@
         Width = 761
         Height = 65
         DefaultRowHeight = 48
+        FixedColor = clBlue
         FixedCols = 0
         RowCount = 1
         FixedRows = 0
@@ -112,6 +113,7 @@
         Font.Height = -20
         Font.Name = 'Segoe UI'
         Font.Style = []
+        GridLineWidth = 4
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
         ParentFont = False
         TabOrder = 0
@@ -173,7 +175,8 @@
         Top = 152
         Width = 513
         Height = 249
-        DefaultRowHeight = 48
+        DefaultColWidth = 40
+        DefaultRowHeight = 32
         FixedCols = 0
         RowCount = 1
         FixedRows = 0
@@ -182,22 +185,35 @@
         Font.Height = -20
         Font.Name = 'Segoe UI'
         Font.Style = []
+        GridLineWidth = 4
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
         ParentFont = False
         TabOrder = 0
       end
       object EditRows: TEdit
         Left = 240
-        Top = 72
-        Width = 121
-        Height = 23
+        Top = 96
+        Width = 129
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 1
       end
       object EditCols: TEdit
-        Left = 632
-        Top = 72
-        Width = 121
-        Height = 23
+        Left = 384
+        Top = 96
+        Width = 129
+        Height = 36
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 2
       end
     end
@@ -425,6 +441,10 @@
         Caption = 'Busqueda Binaria'
         OnClick = BusquedaBinariaVClick
       end
+      object BusquedaSecuencial: TMenuItem
+        Caption = 'Busqueda Secuencial'
+        OnClick = BusquedaSecuencialClick
+      end
       object ContarNumerosParesV: TMenuItem
         Caption = 'Contar N'#250'meros Pares'
         OnClick = ContarNumerosParesVClick
@@ -456,9 +476,29 @@
         Caption = 'Cargar Random'
         OnClick = CargarRandomMClick
       end
-      object OrdenarFilasAscendenteM: TMenuItem
-        Caption = 'Ordenar Filas Ascendente '
-        OnClick = OrdenarFilasAscendenteMClick
+      object CargarPorFilasM: TMenuItem
+        Caption = 'Cargar Por Filas'
+        OnClick = CargarPorFilasMClick
+      end
+      object CargarPorColumnasM: TMenuItem
+        Caption = 'Cargar Por Columnas'
+        OnClick = CargarPorColumnasMClick
+      end
+      object CargarLM: TMenuItem
+        Caption = 'Cargar L'
+        OnClick = CargarLMClick
+      end
+      object CargarCircularM: TMenuItem
+        Caption = 'Cargar Circular'
+        OnClick = CargarCircularMClick
+      end
+      object CargarMagicoM: TMenuItem
+        Caption = 'Cargar Magico'
+        OnClick = CargarMagicoMClick
+      end
+      object OrdenarFilasAscendentementeM: TMenuItem
+        Caption = 'Ordenar Filas Ascendentemente'
+        OnClick = OrdenarFilasAscendentementeMClick
       end
       object CargarTriangularInferiorIzquierdaM: TMenuItem
         Caption = 'Cargar Triangular Inferior Izquierda'

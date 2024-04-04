@@ -97,8 +97,14 @@ class TForm1 : public TForm
     TEdit* EditCols;
     TMenuItem* Matriz1;
     TMenuItem* CargarRandomM;
-    TMenuItem* OrdenarFilasAscendenteM;
+    TMenuItem* OrdenarFilasAscendentementeM;
     TMenuItem* CargarTriangularInferiorIzquierdaM;
+    TMenuItem* CargarPorFilasM;
+    TMenuItem* CargarPorColumnasM;
+    TMenuItem* BusquedaSecuencial;
+    TMenuItem* CargarLM;
+    TMenuItem* CargarCircularM;
+    TMenuItem* CargarMagicoM;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -162,8 +168,14 @@ class TForm1 : public TForm
     void __fastcall CargarCaracteresOrdenDescendenteASCIIVClick(
         TObject* Sender);
     void __fastcall CargarRandomMClick(TObject* Sender);
-    void __fastcall OrdenarFilasAscendenteMClick(TObject* Sender);
+    void __fastcall OrdenarFilasAscendentementeMClick(TObject* Sender);
     void __fastcall CargarTriangularInferiorIzquierdaMClick(TObject* Sender);
+    void __fastcall CargarPorFilasMClick(TObject* Sender);
+    void __fastcall CargarPorColumnasMClick(TObject* Sender);
+    void __fastcall BusquedaSecuencialClick(TObject* Sender);
+    void __fastcall CargarLMClick(TObject* Sender);
+    void __fastcall CargarCircularMClick(TObject* Sender);
+    void __fastcall CargarMagicoMClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);
