@@ -279,6 +279,7 @@ void cargar_magico(TStringGrid* v, byte m, byte z, byte &f, byte &c)
 /*
 9) Cargar los caracteres de una cadena (mxn)
 	x = Programando
+
 	P r n
 	r a d     , m = 4 , n = 3
 	o m o
@@ -376,23 +377,30 @@ void cargar_caracol(
 	5 	6 	7 	8 	9
 */
 
-void aux_diagonal(TStringGrid* v, byte f, byte c, Cardinal r)
+void llenar_columnas_diagonales(
+    TStringGrid* v, byte ca, byte cb, byte f, Cardinal r)
 {
-    if (f > 0 && c <= v->ColCount) {
-        v->Cells[c - 1][f - 1] = r;
-        aux_diagonal(v, f - 1, c + 1, r);
+    byte n = cb - ca + 1;
+    if (n == 0) {
+        // nada
+    } else if (ca == 0) {
+        v->Cells[ca][f] = r;
+        llenar_columnas_diagonales(v, ca + 1, cb, f, r);
+    } else {
+        v->Cells[ca][f] = StrToInt(v->Cells[ca - 1][f]) + 1;
+        llenar_columnas_diagonales(v, ca + 1, cb, f, r);
     }
 }
-//Aqui entra el valor de r, r = 9
-void cargar_diagonales(TStringGrid* v, byte f, byte c, Cardinal r)
+
+void cargar_diagonales(TStringGrid* v, byte fa, byte fb, Cardinal &r)
 {
-    if (c > 0 && f > 0) {
-        aux_diagonal(v, f, c, r);
-        if (c == 1) {
-            cargar_diagonales(v, f - 1, c, r - 1);
-        } else {
-            cargar_diagonales(v, f, c - 1, r - 1);
-        }
+    byte n = fb - fa + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        llenar_columnas_diagonales(v, 0, v->ColCount - 1, fa, r);
+        r++;
+        cargar_diagonales(v, fa + 1, fb, r);
     }
 }
 

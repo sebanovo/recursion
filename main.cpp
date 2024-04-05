@@ -556,9 +556,11 @@ void __fastcall TForm1::CargarDiagonalesSecundariasMClick(TObject* Sender)
 {
     StringGrid2->RowCount = StrToInt(EditRows->Text);
     StringGrid2->ColCount = StrToInt(EditCols->Text);
-    Cardinal razon = 9;
-    cargar_diagonales(
-        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
+    //    Cardinal razon = 9;
+    //    cargar_diagonales(
+    //        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
+    Cardinal razon = 1;
+    cargar_diagonales(StringGrid2, 0, StringGrid2->RowCount - 1, razon);
 }
 //---------------------------------------------------------------------------
 
