@@ -149,24 +149,25 @@ void ordenar_filas_burbuja_ascedente(TStringGrid* v, byte m, byte n)
 	7  8  9  10
 */
 
-void cargar_fila_triangular_inferior_izquierda(TStringGrid* v, byte f, byte n)
+void cargar_fila_triangular_inferior_izquierda(
+    TStringGrid* v, byte f, byte n, Cardinal &r)
 {
     if (n == 0) {
         // nada
-    } else if (n == 1) { // averiguar cual es la formula
-        v->Cells[0][f] = 1;
     } else {
-        cargar_fila_triangular_inferior_izquierda(v, f, n - 1);
-        v->Cells[n - 1][f] = StrToInt(v->Cells[n - 2][f]) + 1;
+        v->Cells[n - 1][f] = r;
+        r++;
+        cargar_fila_triangular_inferior_izquierda(v, f, n - 1, r);
     }
 }
-void cargar_triangular_inferior_izquierda(TStringGrid* v, byte m, byte n)
+void cargar_triangular_inferior_izquierda(
+    TStringGrid* v, byte m, byte n, Cardinal &r)
 {
     if (m == 0) {
         // nada
     } else {
-        cargar_fila_triangular_inferior_izquierda(v, m - 1, n);
-        cargar_triangular_inferior_izquierda(v, m - 1, n - 1);
+        cargar_fila_triangular_inferior_izquierda(v, m - 1, n, r);
+        cargar_triangular_inferior_izquierda(v, m - 1, n - 1, r);
     }
 }
 
@@ -272,6 +273,126 @@ void cargar_magico(TStringGrid* v, byte m, byte z, byte &f, byte &c)
             }
         }
         v->Cells[c][f] = z;
+    }
+}
+
+/*
+9) Cargar los caracteres de una cadena (mxn)
+	x = Programando
+	P r n
+	r a d     , m = 4 , n = 3
+	o m o
+	g a -
+*/
+void cargar_caracter(TStringGrid* v, String &x, byte f, byte c)
+{
+    if (f <= v->RowCount && x != "") {
+        wchar_t character = x[1];
+        x.Delete(1, 1);
+        v->Cells[c - 1][f - 1] = character;
+        cargar_caracter(v, x, f + 1, c);
+    }
+}
+void cargar_caracteres(TStringGrid* v, String &x, byte c)
+{
+    if (c <= v->ColCount) {
+        cargar_caracter(v, x, 1, c);
+        cargar_caracteres(v, x, c + 1);
+    }
+}
+
+/*
+10) Cargar matriz caracol (mxn)
+	1   2  3  4 5
+	16 17 18 19 6
+	15 24 25 20 7   , m = 5 , n = 5
+	14 23 22 21 8
+	13 12 11 10 9
+
+	1  2  3  4
+	12 13 14 5
+	11 16 15 6       , m = 4, n = 4
+	10  9  8 7
+*/
+
+void caracol_arriba(TStringGrid* v, byte f, byte ca, byte cb, Cardinal &r)
+{
+    if (ca < cb) {
+        v->Cells[ca - 1][f - 1] = r;
+        r++;
+        caracol_arriba(v, f, ca + 1, cb, r);
+    }
+}
+
+void caracol_derecha(TStringGrid* v, byte fa, byte fb, byte c, Cardinal &r)
+{
+    if (fa < fb) {
+        v->Cells[c - 1][fb - 1] = r;
+        r++;
+        caracol_derecha(v, fa, fb - 1, c, r);
+    }
+}
+
+void caracol_abajo(TStringGrid* v, byte f, byte ca, byte cb, Cardinal &r)
+{
+    if (ca < cb) {
+        v->Cells[cb - 1][f - 1] = r;
+        r++;
+        caracol_abajo(v, f, ca, cb - 1, r);
+    }
+}
+
+void caracol_izquierda(TStringGrid* v, byte fa, byte fb, byte c, Cardinal &r)
+{
+    if (fa < fb) {
+        v->Cells[c - 1][fa - 1] = r;
+        r++;
+        caracol_izquierda(v, fa + 1, fb, c, r);
+    }
+}
+
+void cargar_caracol(
+    TStringGrid* v, byte fa, byte fb, byte ca, byte cb, Cardinal &r)
+{
+    if (fa <= fb && ca <= cb) {
+        if (fa == fb && ca == cb) {
+            v->Cells[fa - 1][ca - 1] = r;
+        } else {
+            caracol_arriba(v, fa, ca, cb, r);
+            caracol_izquierda(v, fa, fb, cb, r);
+            caracol_abajo(v, fb, ca, cb, r);
+            caracol_derecha(v, fa, fb, ca, r);
+        }
+        cargar_caracol(v, fa + 1, fb - 1, ca + 1, cb - 1, r);
+    }
+}
+
+/*
+11) Cargar Matriz de Diagonales (mxn)
+	1 	2 	3 	4 	5
+	2 	3 	4 	5 	6
+	3 	4 	5 	6 	7
+	4 	5 	6 	7 	8
+	5 	6 	7 	8 	9
+*/
+
+void aux_diagonal(TStringGrid* v, byte f, byte c, Cardinal r)
+{
+    if (f > 0 && c <= v->ColCount) {
+        v->Cells[c - 1][f - 1] = r;
+        aux_diagonal(v, f - 1, c + 1, r);
+    }
+}
+//Aqui entra el valor de r, r = 9
+void cargar_diagonales(TStringGrid* v, byte f, byte c, Cardinal r)
+{
+    if (c > 0 && f > 0) {
+        aux_diagonal(v, f, c, r);
+        if (c == 1) {
+            cargar_diagonales(v, f - 1, c, r - 1);
+        } else {
+            cargar_diagonales(v, f, c - 1, r - 1);
+        }
     }
 }
 

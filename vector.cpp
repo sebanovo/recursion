@@ -356,33 +356,34 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
 // ----------------------------------------------------------------------------
 
 // *** EJERCICIO DE 2 StringGrid ***//
-// Ej: v1[H,o,l,a,m,u,n,d,o]
+//Ej:  v1[H,o,l,a,m,u,n,d,o]
 //     v2[1,2,1,1,1,1,1,1,2]
 // cuenta cuantas veces se repite cada caracter en el vector
-//Cardinal frecuencia(String cad, char c)
+//Cardinal frecuencia(String cad, wchar_t c)
 //{
-//    Cardinal f;
-//    if (cad.Length() == 0) {
-//        f = 0;
-//    } else {
-//        char x = cad[1];
-//        cad.Delete(1, 1);
-//        f = frecuencia(cad, c);
-//        if (x == c) {
-//            f++;
-//        }
-//    }
-//    return f;
+//	Cardinal f;
+//	if (cad.Length() == 0) {
+//		f = 0;
+//	} else {
+//		char x = cad[1];
+//		cad.Delete(1, 1);
+//		f = frecuencia(cad, c);
+//		if (x == c) {
+//			f++;
+//		}
+//	}
+//	return f;
 //}
 //
 //void cargar_frecuencia(String cad, TStringGrid* vc, TStringGrid* vf, Cardinal n)
 //{
-//    if (n > 0) {
-//        char c = cad[n];
-//        Cardinal f = frecuencia(cad, c);
-//        vc->Cells[n - 1][0] = c;
-//        vf->Cells[n - 1][0] = f;
-//        cargar_frecuencia(cad, vc, vf, n - 1);
-//    }
-//} // ------------------------------------------------------------------------
+//	if (n > 0) {
+//		char c = cad[n];
+//		Cardinal f = frecuencia(cad, c);
+//		vc->Cells[n - 1][0] = c;
+//		vf->Cells[n - 1][0] = f;
+//		cargar_frecuencia(cad, vc, vf, n - 1);
+//	}
+//}
+// ------------------------------------------------------------------------
 

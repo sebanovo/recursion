@@ -474,8 +474,9 @@ void __fastcall TForm1::CargarTriangularInferiorIzquierdaMClick(TObject* Sender)
 {
     StringGrid2->RowCount = StrToInt(EditRows->Text);
     StringGrid2->ColCount = StrToInt(EditCols->Text);
+    Cardinal razon = 1;
     cargar_triangular_inferior_izquierda(
-        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount);
+        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
 }
 //---------------------------------------------------------------------------
 
@@ -529,6 +530,35 @@ void __fastcall TForm1::CargarMagicoMClick(TObject* Sender)
     StringGrid2->RowCount = m;
     StringGrid2->ColCount = m;
     cargar_magico(StringGrid2, m, m * m, f, c);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarCaracteresMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    String palabra = InputBox("Cargar Caracteres", "", "Programando");
+    cargar_caracteres(StringGrid2, palabra, 1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarCaracolMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    Cardinal razon = 1;
+    cargar_caracol(
+        StringGrid2, 1, StringGrid2->RowCount, 1, StringGrid2->ColCount, razon);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarDiagonalesSecundariasMClick(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    Cardinal razon = 9;
+    cargar_diagonales(
+        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
 }
 //---------------------------------------------------------------------------
 

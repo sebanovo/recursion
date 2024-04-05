@@ -496,6 +496,14 @@
         Caption = 'Cargar Magico'
         OnClick = CargarMagicoMClick
       end
+      object CargarCaracolM: TMenuItem
+        Caption = 'Cargar Caracol'
+        OnClick = CargarCaracolMClick
+      end
+      object CargarCaracteresM: TMenuItem
+        Caption = 'Cargar Caracteres'
+        OnClick = CargarCaracteresMClick
+      end
       object OrdenarFilasAscendentementeM: TMenuItem
         Caption = 'Ordenar Filas Ascendentemente'
         OnClick = OrdenarFilasAscendentementeMClick
@@ -503,6 +511,10 @@
       object CargarTriangularInferiorIzquierdaM: TMenuItem
         Caption = 'Cargar Triangular Inferior Izquierda'
         OnClick = CargarTriangularInferiorIzquierdaMClick
+      end
+      object CargarDiagonalesSecundariasM: TMenuItem
+        Caption = 'Cargar Diagonales Secundarias'
+        OnClick = CargarDiagonalesSecundariasMClick
       end
     end
   end
