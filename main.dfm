@@ -508,13 +508,13 @@
         Caption = 'Ordenar Filas Ascendentemente'
         OnClick = OrdenarFilasAscendentementeMClick
       end
-      object CargarTriangularInferiorIzquierdaM: TMenuItem
-        Caption = 'Cargar Triangular Inferior Izquierda'
-        OnClick = CargarTriangularInferiorIzquierdaMClick
-      end
       object CargarDiagonalesSecundariasM: TMenuItem
         Caption = 'Cargar Diagonales Secundarias'
         OnClick = CargarDiagonalesSecundariasMClick
+      end
+      object CargarTriangularInferiorIzquierdaM: TMenuItem
+        Caption = 'Cargar Triangular Inferior Izquierda'
+        OnClick = CargarTriangularInferiorIzquierdaMClick
       end
     end
   end
