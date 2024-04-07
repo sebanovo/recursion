@@ -112,6 +112,7 @@ class TForm1 : public TForm
     TMenuItem* RemplazarDigitoPorPosicin1;
     TMenuItem* CargarDiagonalesPrincipalesTriangularInferiorIzquierdaM;
     TMenuItem* CargarDiagonalesHard1;
+    TMenuItem* CargarViboraM;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -191,6 +192,7 @@ class TForm1 : public TForm
     void __fastcall CargarDiagonalesPrincipalesTriangularInferiorIzquierdaMClick(
         TObject* Sender);
     void __fastcall CargarDiagonalesHard1Click(TObject* Sender);
+    void __fastcall CargarViboraMClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

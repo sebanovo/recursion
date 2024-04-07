@@ -472,11 +472,16 @@ void __fastcall TForm1::OrdenarFilasAscendentementeMClick(TObject* Sender)
 
 void __fastcall TForm1::CargarTriangularInferiorIzquierdaMClick(TObject* Sender)
 {
+    //    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    //    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    //    Cardinal razon = 1;
+    //    cargar_triangular_inferior_izquierda(
+    //        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
     StringGrid2->RowCount = StrToInt(EditRows->Text);
     StringGrid2->ColCount = StrToInt(EditCols->Text);
     Cardinal razon = 1;
     cargar_triangular_inferior_izquierda(
-        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
+        StringGrid2, 0, StringGrid2->ColCount, razon);
 }
 //---------------------------------------------------------------------------
 
@@ -606,6 +611,16 @@ void __fastcall TForm1::CargarDiagonalesHard1Click(TObject* Sender)
     Cardinal k = (m + 1) * m;
     byte f, c;
     cargar_diagonales_hard(StringGrid2, m, k, f, c);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarViboraMClick(TObject* Sender)
+{
+    byte m = StrToInt(EditRows->Text);
+    StringGrid2->RowCount = m;
+    StringGrid2->ColCount = m;
+    Cardinal r = 1;
+    cargar_vibora_por_columnas(StringGrid2, 0, StringGrid2->ColCount - 1, r);
 }
 //---------------------------------------------------------------------------
 

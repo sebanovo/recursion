@@ -149,25 +149,49 @@ void ordenar_filas_burbuja_ascedente(TStringGrid* v, byte m, byte n)
 	7  8  9  10
 */
 
-void cargar_fila_triangular_inferior_izquierda(
-    TStringGrid* v, byte f, byte n, Cardinal &r)
+//void cargar_fila_triangular_inferior_izquierda(
+//    TStringGrid* v, byte f, byte n, Cardinal &r)
+//{
+//    if (n == 0) {
+//        // nada
+//    } else {
+//        cargar_fila_triangular_inferior_izquierda(v, f, n - 1, r);
+//        v->Cells[n - 1][f] = r;
+//        r++;
+//    }
+//}
+//void cargar_triangular_inferior_izquierda(
+//    TStringGrid* v, byte m, byte n, Cardinal &r)
+//{
+//    if (m == 0) {
+//        // nada
+//    } else {
+//        cargar_fila_triangular_inferior_izquierda(v, m - 1, n, r);
+//        cargar_triangular_inferior_izquierda(v, m - 1, n - 1, r);
+//    }
+//}
+
+void cargar_col_triangular_inferior_izquierda(
+    TStringGrid* v, byte c, byte fa, byte fb, Cardinal &r)
 {
+    byte n = fb - fa + 1;
     if (n == 0) {
         // nada
     } else {
-        v->Cells[n - 1][f] = r;
+        v->Cells[c][fa] = r;
         r++;
-        cargar_fila_triangular_inferior_izquierda(v, f, n - 1, r);
+        cargar_col_triangular_inferior_izquierda(v, c, fa + 1, fb, r);
     }
 }
 void cargar_triangular_inferior_izquierda(
-    TStringGrid* v, byte m, byte n, Cardinal &r)
+    TStringGrid* v, byte ca, byte cb, Cardinal &r)
 {
-    if (m == 0) {
+    byte n = cb - ca + 1;
+    if (n == 0) {
         // nada
     } else {
-        cargar_fila_triangular_inferior_izquierda(v, m - 1, n, r);
-        cargar_triangular_inferior_izquierda(v, m - 1, n - 1, r);
+        cargar_col_triangular_inferior_izquierda(v, ca, ca, cb, r);
+        cargar_triangular_inferior_izquierda(v, ca + 1, cb, r);
     }
 }
 
@@ -184,9 +208,10 @@ void llenar_L(TStringGrid* v, byte f, byte n)
     if (n == 0) {
         // nada
     } else {
-        llenar_L(v, f, n - 1);
+        //llenar_L(v, f, n - 1);
         v->Cells[n - 1][f] = f + 1;
         v->Cells[f][n - 1] = f + 1;
+        llenar_L(v, f, n - 1);
     }
 }
 
@@ -457,7 +482,7 @@ void cargar_diagonales_triangular_inferior_izquierda(
 }
 
 /*
-12) Cargar Matriz de Diagonales Hard Izquierda (mxm)
+13) Cargar Matriz de Diagonales Hard Izquierda (mxm)
 	1   3   6  10
 	2   5   9  13
 	4 	8  12  15   , k = (m + 1) *m
@@ -485,5 +510,42 @@ void cargar_diagonales_hard(TStringGrid* v, byte m, byte k, byte &f, byte &c)
         }
     }
     v->Cells[c][f] = k;
+}
+
+/*
+14) Cargar Matriz vibora (mxm)
+	1   8  9   16
+	2   7  10  15
+	3 	6  11  14
+	4   5  12  13
+*/
+void llenar_columnas_vibora(
+    TStringGrid* v, byte c, byte fa, byte fb, Cardinal &r)
+{
+    byte n = fb - fa + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        if (c % 2 == 0) {
+            v->Cells[c][fa] = r;
+            r++;
+            llenar_columnas_vibora(v, c, fa + 1, fb, r);
+        } else {
+            v->Cells[c][fb] = r;
+            r++;
+            llenar_columnas_vibora(v, c, fa, fb - 1, r);
+        }
+    }
+}
+
+void cargar_vibora_por_columnas(TStringGrid* v, byte ca, byte cb, Cardinal &r)
+{
+    byte n = cb - ca + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        llenar_columnas_vibora(v, ca, 0, v->RowCount - 1, r);
+        cargar_vibora_por_columnas(v, ca + 1, cb, r);
+    }
 }
 

@@ -532,6 +532,10 @@
         Caption = 'Cargar Diagonales Hard'
         OnClick = CargarDiagonalesHard1Click
       end
+      object CargarViboraM: TMenuItem
+        Caption = 'Cargar Vibora'
+        OnClick = CargarViboraMClick
+      end
     end
   end
 end

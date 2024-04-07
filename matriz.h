@@ -29,6 +29,8 @@ void cargar_triangular_inferior_izquierda(
 void cargar_diagonales_triangular_inferior_izquierda(
     TStringGrid* v, byte fa, byte fb, Cardinal &r);
 void cargar_diagonales_hard(TStringGrid* v, byte m, byte k, byte &f, byte &c);
+void cargar_vibora_por_columnas(TStringGrid* v, byte ca, byte cb, Cardinal &r);
+
 //---------------------------------------------------------------------------
 #endif
 
