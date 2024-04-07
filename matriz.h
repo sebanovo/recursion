@@ -26,6 +26,9 @@ void cargar_diagonales(TStringGrid* v, byte fa, byte fb, Cardinal &r);
 void ordenar_filas_burbuja_ascedente(TStringGrid* v, byte m, byte n);
 void cargar_triangular_inferior_izquierda(
     TStringGrid* v, byte m, byte n, Cardinal &r);
+void cargar_diagonales_triangular_inferior_izquierda(
+    TStringGrid* v, byte fa, byte fb, Cardinal &r);
+void cargar_diagonales_hard(TStringGrid* v, byte m, byte k, byte &f, byte &c);
 //---------------------------------------------------------------------------
 #endif
 

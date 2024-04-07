@@ -556,11 +556,56 @@ void __fastcall TForm1::CargarDiagonalesSecundariasMClick(TObject* Sender)
 {
     StringGrid2->RowCount = StrToInt(EditRows->Text);
     StringGrid2->ColCount = StrToInt(EditCols->Text);
-    //    Cardinal razon = 9;
-    //    cargar_diagonales(
-    //        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
     Cardinal razon = 1;
     cargar_diagonales(StringGrid2, 0, StringGrid2->RowCount - 1, razon);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InsertarDigitoPorPosicin1Click(TObject* Sender)
+{
+    byte digito =
+        StrToInt(InputBox("Insertar digito por posición", "digito", ""));
+    byte posicion =
+        StrToInt(InputBox("Insertar digito por posición", "posición", ""));
+    Cardinal numero = StrToInt(Edit1->Text);
+    insertar_digito_por_posicion(numero, digito, posicion);
+    Edit2->Text = numero;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RemplazarDigitoPorPosicin1Click(TObject* Sender)
+{
+    byte digito =
+        StrToInt(InputBox("Insertar digito por posición", "digito", ""));
+    byte posicion =
+        StrToInt(InputBox("Insertar digito por posición", "posición", ""));
+    Cardinal numero = StrToInt(Edit1->Text);
+    remplazar_digito_por_posicion(numero, digito, posicion);
+    Edit2->Text = numero;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::
+    CargarDiagonalesPrincipalesTriangularInferiorIzquierdaMClick(
+        TObject* Sender)
+
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    Cardinal r = 1;
+    cargar_diagonales_triangular_inferior_izquierda(
+        StringGrid2, 0, StringGrid2->RowCount - 1, r);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarDiagonalesHard1Click(TObject* Sender)
+{
+    StringGrid2->RowCount = StrToInt(EditRows->Text);
+    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    int m = StringGrid2->RowCount;
+    Cardinal k = (m + 1) * m;
+    byte f, c;
+    cargar_diagonales_hard(StringGrid2, m, k, f, c);
 }
 //---------------------------------------------------------------------------
 

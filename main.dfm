@@ -315,6 +315,14 @@
         Caption = 'Repetir Digitos'
         OnClick = RepetirDigitosClick
       end
+      object InsertarDigitoPorPosicin1: TMenuItem
+        Caption = 'Insertar Digito Por Posici'#243'n'
+        OnClick = InsertarDigitoPorPosicin1Click
+      end
+      object RemplazarDigitoPorPosicin1: TMenuItem
+        Caption = 'Remplazar Digito Por Posici'#243'n'
+        OnClick = RemplazarDigitoPorPosicin1Click
+      end
     end
     object Cadena: TMenuItem
       Caption = 'Cadena'
@@ -515,6 +523,14 @@
       object CargarTriangularInferiorIzquierdaM: TMenuItem
         Caption = 'Cargar Triangular Inferior Izquierda'
         OnClick = CargarTriangularInferiorIzquierdaMClick
+      end
+      object CargarDiagonalesPrincipalesTriangularInferiorIzquierdaM: TMenuItem
+        Caption = 'Cargar Diagonales Principales Triangular Inferior Izquierda'
+        OnClick = CargarDiagonalesPrincipalesTriangularInferiorIzquierdaMClick
+      end
+      object CargarDiagonalesHard1: TMenuItem
+        Caption = 'Cargar Diagonales Hard'
+        OnClick = CargarDiagonalesHard1Click
       end
     end
   end

@@ -50,6 +50,9 @@ byte contar_digitos_impares_antes_de_uno_par(Cardinal x);
 String repetir_numero(Cardinal numero, Cardinal veces);
 String repetir_digitos(Cardinal n);
 
+void insertar_digito_por_posicion(Cardinal &x, byte digito, byte posicion);
+void remplazar_digito_por_posicion(Cardinal &x, byte digito, byte posicion);
+
 //---------------------------------------------------------------------------
 #endif
 

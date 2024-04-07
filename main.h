@@ -108,6 +108,10 @@ class TForm1 : public TForm
     TMenuItem* CargarCaracteresM;
     TMenuItem* CargarCaracolM;
     TMenuItem* CargarDiagonalesSecundariasM;
+    TMenuItem* InsertarDigitoPorPosicin1;
+    TMenuItem* RemplazarDigitoPorPosicin1;
+    TMenuItem* CargarDiagonalesPrincipalesTriangularInferiorIzquierdaM;
+    TMenuItem* CargarDiagonalesHard1;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -182,6 +186,11 @@ class TForm1 : public TForm
     void __fastcall CargarCaracteresMClick(TObject* Sender);
     void __fastcall CargarCaracolMClick(TObject* Sender);
     void __fastcall CargarDiagonalesSecundariasMClick(TObject* Sender);
+    void __fastcall InsertarDigitoPorPosicin1Click(TObject* Sender);
+    void __fastcall RemplazarDigitoPorPosicin1Click(TObject* Sender);
+    void __fastcall CargarDiagonalesPrincipalesTriangularInferiorIzquierdaMClick(
+        TObject* Sender);
+    void __fastcall CargarDiagonalesHard1Click(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

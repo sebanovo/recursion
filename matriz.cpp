@@ -404,3 +404,86 @@ void cargar_diagonales(TStringGrid* v, byte fa, byte fb, Cardinal &r)
     }
 }
 
+/*
+12) Cargar Matriz de Diagonales Triangular Inferior Izquierda (mxm)
+	1
+	6 	2
+	10 	7 	3              , k = (m + 1) * m / 2
+	13  11 	8 	4
+	15  14  12 	9   5
+*/
+
+void cargar_diagonal_principal(
+    TStringGrid* v, byte fa, byte fb, byte c, Cardinal &r)
+{
+    byte n = fb - fa + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        v->Cells[c][fa] = r;
+        r++;
+        cargar_diagonal_principal(v, fa + 1, fb, c + 1, r);
+    }
+}
+
+//void version_del_auxiliar(TStringGrid* v, byte m, byte k, byte &f, &c)
+//{
+//    if (k == 1) {
+//        f = 0;
+//        c = 0;
+//    } else {
+//        version_del_auxiliar(v, m, k - 1, f, c);
+//        if (f = m - 1) {
+//            f = m - c;
+//            c = 0;
+//        } else {
+//            f++;
+//            c++;
+//        }
+//    }
+//    v->Cells[c][f] = k;
+//}
+
+void cargar_diagonales_triangular_inferior_izquierda(
+    TStringGrid* v, byte fa, byte fb, Cardinal &r)
+{
+    byte n = fb - fa + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        cargar_diagonal_principal(v, fa, fb, 0, r);
+        cargar_diagonales_triangular_inferior_izquierda(v, fa + 1, fb, r);
+    }
+}
+
+/*
+12) Cargar Matriz de Diagonales Hard Izquierda (mxm)
+	1   3   6  10
+	2   5   9  13
+	4 	8  12  15   , k = (m + 1) *m
+	7  11  14  16
+*/
+
+void cargar_diagonales_hard(TStringGrid* v, byte m, byte k, byte &f, byte &c)
+{
+    if (k == 1) {
+        f = 0;
+        c = 0;
+    } else {
+        cargar_diagonales_hard(v, m, k - 1, f, c);
+        if (c == m - 1) {
+            c = f + 1;
+            f = m - 1;
+        } else {
+            if (f == 0) {
+                f = c + 1;
+                c = 0;
+            } else {
+                c++;
+                f--;
+            }
+        }
+    }
+    v->Cells[c][f] = k;
+}
+

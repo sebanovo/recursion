@@ -418,3 +418,32 @@ byte contar_digitos_impares_antes_de_uno_par(Cardinal x)
 //}
 // --------------------------------------------------------------------------
 
+// Insertar digito por posicion
+// x = 12345, digito = 9 , posicion = 5, -> x = 912345
+void insertar_digito_por_posicion(Cardinal &x, byte digito, byte posicion)
+{
+    if (posicion == 0) {
+        x = x * 10 + digito;
+    } else {
+        byte digit = x % 10;
+        x = x / 10;
+        insertar_digito_por_posicion(x, digito, posicion - 1);
+        x = x * 10 + digit;
+    }
+}
+
+// Insertar digito por posicion
+// x = 12345, digito = 9 , posicion = 3, -> x = 19345
+void remplazar_digito_por_posicion(Cardinal &x, byte digito, byte posicion)
+{
+    if (posicion == 0) {
+        x = x / 10;
+        x = x * 10 + digito;
+    } else {
+        byte digit = x % 10;
+        x = x / 10;
+        remplazar_digito_por_posicion(x, digito, posicion - 1);
+        x = x * 10 + digit;
+    }
+}
+
