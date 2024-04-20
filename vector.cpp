@@ -389,6 +389,7 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
 //}
 // ------------------------------------------------------------------------
 
+// pregunta de examen
 // n = 5 => v[1, 21, 321, 4321, 54321]
 
 String N1(byte n)
