@@ -17,7 +17,7 @@
     Top = 0
     Width = 969
     Height = 486
-    ActivePage = TabSheet4
+    ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 963
@@ -338,6 +338,10 @@
         Caption = 'Contar Letras'
         OnClick = ContarLetrasClick
       end
+      object ContarPalabras: TMenuItem
+        Caption = 'Contar Palabras'
+        OnClick = ContarPalabrasClick
+      end
       object InvertirCadena: TMenuItem
         Caption = 'Invertir Cadena'
         OnClick = InvertirCadenaClick
@@ -350,17 +354,21 @@
         Caption = 'Filtrar Primer Numero'
         OnClick = FiltrarPrimerNumeroClick
       end
-      object EliminarVocales: TMenuItem
-        Caption = 'Eliminar Vocales'
-        OnClick = EliminarVocalesClick
-      end
       object PalabraMsLarga: TMenuItem
         Caption = 'Palabra M'#225's Larga'
         OnClick = PalabraMsLargaClick
       end
+      object EliminarVocales: TMenuItem
+        Caption = 'Eliminar Vocales'
+        OnClick = EliminarVocalesClick
+      end
       object EliminarPrimerLetraDeCadaPalabra: TMenuItem
         Caption = 'Eliminar Primer Letra De Cada Palabra'
         OnClick = EliminarPrimerLetraDeCadaPalabraClick
+      end
+      object EliminarPrimerYUltimaLetraDeCadaPalabra: TMenuItem
+        Caption = 'Eliminar Primer Y Ultima Letra De Cada Palabra'
+        OnClick = EliminarPrimerYUltimaLetraDeCadaPalabraClick
       end
       object InvertirCadaPalabra: TMenuItem
         Caption = 'Invertir Cada Palabra'
@@ -381,14 +389,6 @@
       object EliminarDesdePrimerPalabra: TMenuItem
         Caption = 'Eliminar Desde Primer Palabra'
         OnClick = EliminarDesdePrimerPalabraClick
-      end
-      object ContarPalabras: TMenuItem
-        Caption = 'Contar Palabras'
-        OnClick = ContarPalabrasClick
-      end
-      object EliminarPrimerYUltimaLetraDeCadaPalabra: TMenuItem
-        Caption = 'Eliminar Primer Y Ultima Letra De Cada Palabra'
-        OnClick = EliminarPrimerYUltimaLetraDeCadaPalabraClick
       end
       object NmeroMayor: TMenuItem
         Caption = 'N'#250'mero Mayor'
@@ -476,6 +476,10 @@
       object CargarCaracteresOrdenDescendenteASCIIV: TMenuItem
         Caption = 'Cargar Caracteres Orden Descendente ASCII'
         OnClick = CargarCaracteresOrdenDescendenteASCIIVClick
+      end
+      object Cargar1213211: TMenuItem
+        Caption = 'Cargar 1, 21, 321, ....'
+        OnClick = Cargar1213211Click
       end
     end
     object Matriz1: TMenuItem

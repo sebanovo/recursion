@@ -8,6 +8,8 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.Menus.hpp>
+#include <cmath>
+#include <math.h>
 #include "vector.h"
 #include "cadena.h"
 #include "numero.h"
@@ -386,4 +388,25 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
 //	}
 //}
 // ------------------------------------------------------------------------
+
+// n = 5 => v[1, 21, 321, 4321, 54321]
+
+String N1(byte n)
+{
+    String s;
+    if (n == 0) {
+        s = "";
+    } else {
+        s = String(n) + N1(n - 1);
+    }
+    return s;
+}
+
+void LoadNumber12(TStringGrid* v, byte n)
+{
+    if (n > 0) {
+        LoadNumber12(v, n - 1);
+        v->Cells[n - 1][0] = N1(n);
+    }
+}
 

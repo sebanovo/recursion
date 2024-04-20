@@ -310,20 +310,27 @@ void cargar_magico(TStringGrid* v, byte m, byte z, byte &f, byte &c)
 	o m o
 	g a -
 */
-void cargar_caracter(TStringGrid* v, String &x, byte f, byte c)
+
+void cargar_caracter(TStringGrid* v, byte fa, byte fb, byte c, String &x)
 {
-    if (f <= v->RowCount && x != "") {
-        wchar_t character = x[1];
+    byte m = fb - fa + 1;
+    if (m == 0) {
+        // nada
+    } else if (x != "") { // para que no de error
+        wchar_t letra = x[1];
         x.Delete(1, 1);
-        v->Cells[c - 1][f - 1] = character;
-        cargar_caracter(v, x, f + 1, c);
+        v->Cells[c][fa] = letra;
+        cargar_caracter(v, fa + 1, fb, c, x);
     }
 }
-void cargar_caracteres(TStringGrid* v, String &x, byte c)
+void cargar_caracteres(TStringGrid* v, byte ca, byte cb, String &x)
 {
-    if (c <= v->ColCount) {
-        cargar_caracter(v, x, 1, c);
-        cargar_caracteres(v, x, c + 1);
+    byte n = cb - ca + 1;
+    if (n == 0) {
+        // nada
+    } else {
+        cargar_caracter(v, 0, v->RowCount - 1, ca, x);
+        cargar_caracteres(v, ca + 1, cb, x);
     }
 }
 
@@ -335,7 +342,7 @@ void cargar_caracteres(TStringGrid* v, String &x, byte c)
 	14 23 22 21 8
 	13 12 11 10 9
 
-	1  2  3  4
+	1   2  3 4
 	12 13 14 5
 	11 16 15 6       , m = 4, n = 4
 	10  9  8 7
@@ -458,7 +465,7 @@ void cargar_diagonal_principal(
 //        c = 0;
 //    } else {
 //        version_del_auxiliar(v, m, k - 1, f, c);
-//        if (f = m - 1) {
+//        if (f == m - 1) {
 //            f = m - c;
 //            c = 0;
 //        } else {

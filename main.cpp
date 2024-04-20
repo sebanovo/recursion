@@ -477,11 +477,11 @@ void __fastcall TForm1::CargarTriangularInferiorIzquierdaMClick(TObject* Sender)
     //    Cardinal razon = 1;
     //    cargar_triangular_inferior_izquierda(
     //        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
-    StringGrid2->RowCount = StrToInt(EditRows->Text);
-    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    byte total = StrToInt(EditRows->Text);
+    StringGrid2->RowCount = total;
+    StringGrid2->ColCount = total;
     Cardinal razon = 1;
-    cargar_triangular_inferior_izquierda(
-        StringGrid2, 0, StringGrid2->ColCount, razon);
+    cargar_triangular_inferior_izquierda(StringGrid2, 0, total - 1, razon);
 }
 //---------------------------------------------------------------------------
 
@@ -543,7 +543,7 @@ void __fastcall TForm1::CargarCaracteresMClick(TObject* Sender)
     StringGrid2->RowCount = StrToInt(EditRows->Text);
     StringGrid2->ColCount = StrToInt(EditCols->Text);
     String palabra = InputBox("Cargar Caracteres", "", "Programando");
-    cargar_caracteres(StringGrid2, palabra, 1);
+    cargar_caracteres(StringGrid2, 0, StringGrid2->ColCount - 1, palabra);
 }
 //---------------------------------------------------------------------------
 
@@ -621,6 +621,14 @@ void __fastcall TForm1::CargarViboraMClick(TObject* Sender)
     StringGrid2->ColCount = m;
     Cardinal r = 1;
     cargar_vibora_por_columnas(StringGrid2, 0, StringGrid2->ColCount - 1, r);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Cargar1213211Click(TObject* Sender)
+{
+    byte n = StrToInt(EditInput->Text);
+    StringGrid1->ColCount = n;
+    LoadNumber12(StringGrid1, n);
 }
 //---------------------------------------------------------------------------
 
