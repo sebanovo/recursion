@@ -624,11 +624,59 @@ void __fastcall TForm1::CargarViboraMClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Cargar1213211Click(TObject* Sender)
+void __fastcall TForm1::V1_21_321_4321_54321Click(TObject* Sender)
 {
     byte n = StrToInt(EditInput->Text);
     StringGrid1->ColCount = n;
-    LoadNumber12(StringGrid1, n);
+    serie1(StringGrid1, n);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarFibonacciVClick(TObject* Sender)
+{
+    byte n = StrToInt(EditInput->Text);
+    StringGrid1->ColCount = n;
+    cargar_fibonacci(StringGrid1, n);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::TerminoFibonacci1Click(TObject* Sender)
+{
+    Edit2->Text = fibonacci(StrToInt(Edit1->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::V1_2_3_6_7Click(TObject* Sender)
+{
+    byte n = StrToInt(EditInput->Text);
+    StringGrid1->ColCount = n;
+    serie2(StringGrid1, n);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::MoverDigitoMenorAlPrincipio1Click(TObject* Sender)
+{
+    Cardinal numero = StrToInt(Edit1->Text);
+    mover_digito_menor_al_principio(numero);
+    Edit1->Text = numero;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarCadena2en2InvVClick(TObject* Sender)
+{
+    String cadena = EditInput->Text;
+    byte n = contar_palabras_2en2(cadena);
+    StringGrid1->ColCount = n;
+    cargar_cadena_2en2(StringGrid1, cadena, 0, n - 1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarDigitosVClick(TObject* Sender)
+{
+    Cardinal numero = StrToInt(EditInput->Text);
+    byte n = contar_digitos(numero);
+    StringGrid1->ColCount = n;
+    cargar_digitos(StringGrid1, numero, n);
 }
 //---------------------------------------------------------------------------
 

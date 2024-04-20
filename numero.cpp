@@ -50,6 +50,20 @@ Cardinal factorial(Cardinal x)
     return f;
 }
 
+Cardinal fibonacci(Cardinal x)
+{
+    Cardinal fibo;
+
+    if (x == 1) {
+        fibo = 0;
+    } else if (x == 2) {
+        fibo = 1;
+    } else {
+        fibo = fibonacci(x - 1) + fibonacci(x - 2);
+    }
+    return fibo;
+}
+
 byte sumar_digitos(Cardinal x)
 {
     byte s;
@@ -274,6 +288,43 @@ void ordenamiento_descendente(Cardinal &x)
     }
 }
 
+// selección
+//void mover_digito_menor_al_principio(Cardinal &x)
+//{
+//    if (x < 10) {
+//        // nada
+//    } else {
+//        byte d = x % 10;
+//        x = x / 10;
+//        mover_digito_menor_al_principio(x);
+//        float exponente = floor(log10(Double(x)));
+//        byte pd = x / pow(10, exponente);
+//        if (d < pd) {
+//            x = d * pow(10, exponente + 1) + x;
+//        } else {
+//            x = x * 10 + d;
+//        }
+//    }
+//}
+
+// burbuja
+void mover_digito_menor_al_principio(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        byte d = x % 10;
+        x = x / 10;
+        if (x % 10 > d) {
+            byte aux = d;
+            d = x % 10;
+            x = (x / 10) * 10 + aux;
+        }
+        mover_digito_menor_al_principio(x);
+        x = x * 10 + d;
+    }
+}
+
 void eliminar_digitos_impares(Cardinal &x)
 {
     if (x < 10) {
@@ -375,48 +426,6 @@ byte contar_digitos_impares_antes_de_uno_par(Cardinal x)
     }
     return c;
 }
-
-// PAQUETE DE EJERCICIO MOVER MENOR DIGITO AL PRINCIPIO NO FUNCIONA
-// --------------------------------------------------------------------------
-//int agregar_digito_al_principio(int numero, int digito)
-//{
-//    int numDigitos = (int)log10(numero) + 1;
-//    return digito * (int)pow(10, numDigitos) + numero;
-//}
-//
-//int obtener_primer_digito(int numero)
-//{
-//    int numDigitos = (int)log10(numero) + 1;
-//    int primerDigito = numero / (int)pow(10, numDigitos - 1);
-//    return primerDigito;
-//}
-//
-//int eliminar_primer_digito(int numero)
-//{
-//    int numDigitos = (int)log10(numero) + 1;
-//    int numeroSinPrimerDigito = numero % (int)pow(10, numDigitos - 1);
-//    return numeroSinPrimerDigito;
-//}
-//
-//void mover_digito_menor_al_principio(int &x)
-//{
-//    if (x < 10) {
-//        // nada
-//    } else {
-//        int d = obtener_primer_digito(x);
-//        x = eliminar_primer_digito(x);
-//        mover_digito_menor_al_principio(x);
-//        if (obtener_primer_digito(x) >= d) {
-//            x = agregar_digito_al_principio(x, d);
-//        } else {
-//            int z = obtener_primer_digito(x);
-//            x = eliminar_primer_digito(x);
-//            x = agregar_digito_al_principio(x, d);
-//            x = agregar_digito_al_principio(x, z);
-//        }
-//    }
-//}
-// --------------------------------------------------------------------------
 
 // Insertar digito por posicion
 // x = 12345, digito = 9 , posicion = 5, -> x = 912345

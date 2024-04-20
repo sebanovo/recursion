@@ -113,7 +113,13 @@ class TForm1 : public TForm
     TMenuItem* CargarDiagonalesPrincipalesTriangularInferiorIzquierdaM;
     TMenuItem* CargarDiagonalesHard1;
     TMenuItem* CargarViboraM;
-    TMenuItem* Cargar1213211;
+    TMenuItem* V1_21_321_4321_54321;
+    TMenuItem* CargarFibonacciV;
+    TMenuItem* TerminoFibonacci1;
+    TMenuItem* V1_2_3_6_7;
+    TMenuItem* MoverDigitoMenorAlPrincipio1;
+    TMenuItem* CargarCadena2en2InvV;
+    TMenuItem* CargarDigitosV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -194,7 +200,13 @@ class TForm1 : public TForm
         TObject* Sender);
     void __fastcall CargarDiagonalesHard1Click(TObject* Sender);
     void __fastcall CargarViboraMClick(TObject* Sender);
-    void __fastcall Cargar1213211Click(TObject* Sender);
+    void __fastcall V1_21_321_4321_54321Click(TObject* Sender);
+    void __fastcall CargarFibonacciVClick(TObject* Sender);
+    void __fastcall TerminoFibonacci1Click(TObject* Sender);
+    void __fastcall V1_2_3_6_7Click(TObject* Sender);
+    void __fastcall MoverDigitoMenorAlPrincipio1Click(TObject* Sender);
+    void __fastcall CargarCadena2en2InvVClick(TObject* Sender);
+    void __fastcall CargarDigitosVClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

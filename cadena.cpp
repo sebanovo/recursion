@@ -532,3 +532,18 @@ Cardinal posicion_del_caracter_menor(String x)
     return p;
 }
 
+// x = "hola como están" => 3
+byte contar_palabras_2en2(String x)
+{
+    byte c;
+    if (x == "") {
+        c = 0;
+    } else if (x.Length() == 1) {
+        c = 1;
+    } else {
+        x.Delete(1, 2);
+        c = contar_palabras_2en2(x) + 1;
+    }
+    return c;
+}
+

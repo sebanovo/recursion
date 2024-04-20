@@ -389,25 +389,94 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
 //}
 // ------------------------------------------------------------------------
 
-// pregunta de examen
-// n = 5 => v[1, 21, 321, 4321, 54321]
+// x = hola como están
+// v["án", "st", "e", "mo", "co", "a", "ol, "h"]
+void cargar_cadena_2en2(TStringGrid* v, String x, byte a, byte b)
+{
+    byte length = x.Length();
+    if (length == 0) {
+        // nada
+    } else if (length == 1) {
+        v->Cells[a][0] = x[1];
+    } else {
+        wchar_t ultimo = x[length];
+        wchar_t penultimo = x[length - 1];
+        x.Delete(length - 1, 2);
+        cargar_cadena_2en2(v, x, a + 1, b);
+        v->Cells[a][0] = String(penultimo) + String(ultimo);
+    }
+}
 
-String N1(byte n)
+// x = 12345
+// v[1,2,3,4,5]
+
+void cargar_digitos(TStringGrid* v, Cardinal x, byte n)
+{
+    if (x < 10) {
+        v->Cells[0][0] = x;
+    } else {
+        // hacer cosas
+        byte d = x % 10;
+        v->Cells[n - 1][0] = d;
+        cargar_digitos(v, x / 10, n - 1);
+    }
+}
+
+// Series
+
+// n = 6
+// v[0, 1, 1, 2, 3, 5]
+
+void cargar_fibonacci(TStringGrid* v, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else {
+        v->Cells[n - 1][0] = fibonacci(n);
+        cargar_fibonacci(v, n - 1);
+    }
+}
+
+// n = 5
+// v[1, 21, 321, 4321, 54321]
+
+String aux_1(byte x)
 {
     String s;
-    if (n == 0) {
+    if (x == 0) {
         s = "";
     } else {
-        s = String(n) + N1(n - 1);
+        s = String(x) + aux_1(x - 1);
     }
     return s;
 }
 
-void LoadNumber12(TStringGrid* v, byte n)
+void serie1(TStringGrid* v, byte n)
 {
-    if (n > 0) {
-        LoadNumber12(v, n - 1);
-        v->Cells[n - 1][0] = N1(n);
+    if (n == 0) {
+        // nada
+    } else {
+        serie1(v, n - 1);
+        v->Cells[n - 1][0] = aux_1(n);
+    }
+}
+
+// 1, 2, 3, 6, 7, 14, 16, 30
+// v[1, 2, 3, 6, 7, 14, 16, 30]
+
+void serie2(TStringGrid* v, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else if (n == 1) {
+        v->Cells[0][0] = 1;
+    } else {
+        serie2(v, n - 1);
+        if ((n - 1) % 2 == 0) {
+            v->Cells[n - 1][0] = StrToInt(v->Cells[n - 2][0]) + 1;
+        } else {
+            v->Cells[n - 1][0] = StrToInt(v->Cells[n - 2][0]) * 2;
+        }
     }
 }
 

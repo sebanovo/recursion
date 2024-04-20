@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 486
+  ClientHeight = 499
   ClientWidth = 969
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,12 +16,12 @@
     Left = 0
     Top = 0
     Width = 969
-    Height = 486
+    Height = 499
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 963
-    ExplicitHeight = 477
+    ExplicitHeight = 490
     object TabSheet1: TTabSheet
       Caption = 'Numero'
       object Edit1: TEdit
@@ -323,6 +323,14 @@
         Caption = 'Remplazar Digito Por Posici'#243'n'
         OnClick = RemplazarDigitoPorPosicin1Click
       end
+      object TerminoFibonacci1: TMenuItem
+        Caption = 'Termino Fibonacci'
+        OnClick = TerminoFibonacci1Click
+      end
+      object MoverDigitoMenorAlPrincipio1: TMenuItem
+        Caption = 'Mover Digito Menor Al Principio'
+        OnClick = MoverDigitoMenorAlPrincipio1Click
+      end
     end
     object Cadena: TMenuItem
       Caption = 'Cadena'
@@ -409,6 +417,14 @@
         Caption = 'Cargar Palabras'
         OnClick = CargarPalabrasVClick
       end
+      object CargarDigitosV: TMenuItem
+        Caption = 'Cargar Digitos'
+        OnClick = CargarDigitosVClick
+      end
+      object CargarCadena2en2InvV: TMenuItem
+        Caption = 'Cargar Cadena 2 en 2 Inv'
+        OnClick = CargarCadena2en2InvVClick
+      end
       object SumarTodosLosNúmerosV: TMenuItem
         Caption = 'Sumar Todos Los N'#250'meros'
         OnClick = SumarTodosLosNúmerosVClick
@@ -477,9 +493,17 @@
         Caption = 'Cargar Caracteres Orden Descendente ASCII'
         OnClick = CargarCaracteresOrdenDescendenteASCIIVClick
       end
-      object Cargar1213211: TMenuItem
-        Caption = 'Cargar 1, 21, 321, ....'
-        OnClick = Cargar1213211Click
+      object CargarFibonacciV: TMenuItem
+        Caption = 'Cargar Fibonacci'
+        OnClick = CargarFibonacciVClick
+      end
+      object V1_21_321_4321_54321: TMenuItem
+        Caption = '1, 21, 321, 4321, 54321,...'
+        OnClick = V1_21_321_4321_54321Click
+      end
+      object V1_2_3_6_7: TMenuItem
+        Caption = '1, 2, 3, 6, 7'
+        OnClick = V1_2_3_6_7Click
       end
     end
     object Matriz1: TMenuItem
