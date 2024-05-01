@@ -183,6 +183,7 @@ void cargar_col_triangular_inferior_izquierda(
         cargar_col_triangular_inferior_izquierda(v, c, fa + 1, fb, r);
     }
 }
+
 void cargar_triangular_inferior_izquierda(
     TStringGrid* v, byte ca, byte cb, Cardinal &r)
 {
@@ -202,7 +203,6 @@ void cargar_triangular_inferior_izquierda(
 	3 3 3 4
 	4 4 4 4
 */
-
 void llenar_L(TStringGrid* v, byte f, byte n)
 {
     if (n == 0) {
@@ -310,7 +310,6 @@ void cargar_magico(TStringGrid* v, byte m, byte z, byte &f, byte &c)
 	o m o
 	g a -
 */
-
 void cargar_caracter(TStringGrid* v, byte fa, byte fb, byte c, String &x)
 {
     byte m = fb - fa + 1;
@@ -323,6 +322,7 @@ void cargar_caracter(TStringGrid* v, byte fa, byte fb, byte c, String &x)
         cargar_caracter(v, fa + 1, fb, c, x);
     }
 }
+
 void cargar_caracteres(TStringGrid* v, byte ca, byte cb, String &x)
 {
     byte n = cb - ca + 1;
@@ -347,7 +347,6 @@ void cargar_caracteres(TStringGrid* v, byte ca, byte cb, String &x)
 	11 16 15 6       , m = 4, n = 4
 	10  9  8 7
 */
-
 void caracol_arriba(TStringGrid* v, byte f, byte ca, byte cb, Cardinal &r)
 {
     if (ca < cb) {
@@ -408,7 +407,6 @@ void cargar_caracol(
 	4 	5 	6 	7 	8
 	5 	6 	7 	8 	9
 */
-
 void llenar_columnas_diagonales(
     TStringGrid* v, byte ca, byte cb, byte f, Cardinal r)
 {
@@ -444,7 +442,6 @@ void cargar_diagonales(TStringGrid* v, byte fa, byte fb, Cardinal &r)
 	13  11 	8 	4
 	15  14  12 	9   5
 */
-
 void cargar_diagonal_principal(
     TStringGrid* v, byte fa, byte fb, byte c, Cardinal &r)
 {
