@@ -148,7 +148,6 @@ void ordenar_filas_burbuja_ascedente(TStringGrid* v, byte m, byte n)
 	4  5  6
 	7  8  9  10
 */
-
 //void cargar_fila_triangular_inferior_izquierda(
 //    TStringGrid* v, byte f, byte n, Cardinal &r)
 //{
