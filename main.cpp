@@ -524,7 +524,7 @@ void __fastcall TForm1::CargarLMClick(TObject* Sender)
 void __fastcall TForm1::CargarCircularMClick(TObject* Sender)
 {
     StringGrid2->RowCount = StrToInt(EditRows->Text);
-    StringGrid2->ColCount = StrToInt(EditCols->Text);
+    StringGrid2->ColCount = StrToInt(EditRows->Text);
     cargar_circular(StringGrid2, 0, StringGrid2->RowCount - 1);
 }
 //---------------------------------------------------------------------------
