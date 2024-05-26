@@ -517,6 +517,10 @@
         Caption = 'Bubble Sort'
         OnClick = BubbleSortVClick
       end
+      object QuickSortV: TMenuItem
+        Caption = 'Quick Sort'
+        OnClick = QuickSortVClick
+      end
     end
     object Matriz1: TMenuItem
       Caption = 'Matriz'

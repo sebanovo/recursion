@@ -280,6 +280,58 @@ bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n)
     return p;
 }
 
+// quick sort
+
+//void pivotear(TStringGrid* v, byte a, byte b, byte &c)
+//{
+//    bool sw = true;
+//    while (a < b) {
+//        if (StrToInt(v->Cells[a][0]) > StrToInt(v->Cells[b][0])) {
+//            String temp = v->Cells[a][0];
+//            v->Cells[a][0] = v->Cells[b][0];
+//            v->Cells[b][0] = temp;
+//            sw = !sw;
+//        }
+//        if (sw)
+//            a++;
+//        else
+//            b--;
+//    }
+//    c = a;
+//}
+void pivotear(TStringGrid* v, byte a, byte b, byte &c, bool sw)
+{
+    if (a >= b) {
+        c = a;
+        return;
+    }
+
+    if (StrToInt(v->Cells[a][0]) > StrToInt(v->Cells[b][0])) {
+        String temp = v->Cells[a][0];
+        v->Cells[a][0] = v->Cells[b][0];
+        v->Cells[b][0] = temp;
+        sw = !sw;
+    }
+
+    if (sw)
+        a++;
+    else
+        b--;
+
+    pivotear(v, a, b, c, sw);
+}
+
+void quick_sort(TStringGrid* v, byte a, byte b)
+{
+    byte n = b - a + 1;
+    byte c;
+    if (n > 1) {
+        pivotear(v, a, b, c, true);
+        quick_sort(v, a, c - 1);
+        quick_sort(v, c + 1, b);
+    }
+} // fin quick sort
+
 // merge sort
 void copiar_en_aux(TStringGrid* v, String aux[], int start, byte n)
 {

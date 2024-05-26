@@ -33,6 +33,7 @@ void factorial(TStringGrid* v, byte n);
 bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n);
 
 // ordenamientos
+void quick_sort(TStringGrid* v, byte a, byte b);
 void merge_sort(TStringGrid* v, byte a, byte b);
 void selection_sort(TStringGrid* v, byte n);
 void bubble_sort(TStringGrid* v, byte n);

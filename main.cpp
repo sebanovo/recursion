@@ -698,3 +698,9 @@ void __fastcall TForm1::BubbleSortVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::QuickSortVClick(TObject* Sender)
+{
+    quick_sort(StringGrid1, 0, StringGrid1->ColCount - 1);
+}
+//---------------------------------------------------------------------------
+
