@@ -680,3 +680,21 @@ void __fastcall TForm1::CargarDigitosVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::MergeSortVClick(TObject* Sender)
+{
+    merge_sort(StringGrid1, 0, StringGrid1->ColCount - 1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SelectionSortVClick(TObject* Sender)
+{
+    selection_sort(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::BubbleSortVClick(TObject* Sender)
+{
+    bubble_sort(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+

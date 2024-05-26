@@ -505,6 +505,18 @@
         Caption = '1, 2, 3, 6, 7'
         OnClick = V1_2_3_6_7Click
       end
+      object MergeSortV: TMenuItem
+        Caption = 'Merge Sort'
+        OnClick = MergeSortVClick
+      end
+      object SelectionSortV: TMenuItem
+        Caption = 'Selection Sort'
+        OnClick = SelectionSortVClick
+      end
+      object BubbleSortV: TMenuItem
+        Caption = 'Bubble Sort'
+        OnClick = BubbleSortVClick
+      end
     end
     object Matriz1: TMenuItem
       Caption = 'Matriz'

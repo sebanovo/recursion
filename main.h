@@ -120,6 +120,9 @@ class TForm1 : public TForm
     TMenuItem* MoverDigitoMenorAlPrincipio1;
     TMenuItem* CargarCadena2en2InvV;
     TMenuItem* CargarDigitosV;
+    TMenuItem* MergeSortV;
+    TMenuItem* SelectionSortV;
+    TMenuItem* BubbleSortV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -207,6 +210,9 @@ class TForm1 : public TForm
     void __fastcall MoverDigitoMenorAlPrincipio1Click(TObject* Sender);
     void __fastcall CargarCadena2en2InvVClick(TObject* Sender);
     void __fastcall CargarDigitosVClick(TObject* Sender);
+    void __fastcall MergeSortVClick(TObject* Sender);
+    void __fastcall SelectionSortVClick(TObject* Sender);
+    void __fastcall BubbleSortVClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

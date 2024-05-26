@@ -280,6 +280,68 @@ bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n)
     return p;
 }
 
+// merge sort
+void copiar_en_aux(TStringGrid* v, String aux[], int start, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else {
+        aux[n - 1] = v->Cells[start + n - 1][0];
+        copiar_en_aux(v, aux, start, n - 1);
+    }
+}
+
+void merge_aux(TStringGrid* v, String L[], String R[], int i, int j, int k,
+    byte n1, byte n2)
+{
+    if (i < n1 && j < n2) {
+        if (StrToInt(L[i]) <= StrToInt(R[j])) {
+            v->Cells[k][0] = L[i];
+            i++;
+        } else {
+            v->Cells[k][0] = R[j];
+            j++;
+        }
+        k++;
+        merge_aux(v, L, R, i, j, k, n1, n2);
+    } else if (i < n1) {
+        v->Cells[k][0] = L[i];
+        i++;
+        k++;
+        merge_aux(v, L, R, i, j, k, n1, n2);
+    } else if (j < n2) {
+        v->Cells[k][0] = R[j];
+        j++;
+        k++;
+        merge_aux(v, L, R, i, j, k, n1, n2);
+    }
+}
+
+void merge(TStringGrid* v, byte a, byte b, byte c)
+{
+    byte n1 = c - a + 1;
+    byte n2 = b - c;
+    String L[n1], R[n2];
+
+    copiar_en_aux(v, L, a, n1);
+    copiar_en_aux(v, R, c + 1, n2);
+
+    int i = 0, j = 0, k = a;
+    merge_aux(v, L, R, i, j, k, n1, n2);
+}
+
+void merge_sort(TStringGrid* v, byte a, byte b)
+{
+    byte n = b - a + 1;
+    if (n > 1) {
+        byte c = (a + b) / 2;
+        merge_sort(v, a, c);
+        merge_sort(v, c + 1, b);
+        merge(v, a, b, c);
+    }
+} // fin merge sort
+
+// selection sort
 byte posicion_del_numero_mayor(TStringGrid* v, byte n)
 {
     byte p;
@@ -305,7 +367,36 @@ void selection_sort(TStringGrid* v, byte n)
         v->Cells[pm][0] = temp;
         selection_sort(v, n - 1);
     }
+} // fin selection sort
+
+// bubble sort
+void mover_mayor_al_final(TStringGrid* v, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else if (n == 1) {
+        // nada
+    } else {
+        mover_mayor_al_final(v, n - 1);
+        if (StrToInt(v->Cells[n - 2][0]) > StrToInt(v->Cells[n - 1][0])) {
+            String temp = v->Cells[n - 2][0];
+            v->Cells[n - 2][0] = v->Cells[n - 1][0];
+            v->Cells[n - 1][0] = temp;
+        }
+    }
 }
+
+void bubble_sort(TStringGrid* v, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else if (n == 1) {
+        // nada
+    } else {
+        mover_mayor_al_final(v, n);
+        bubble_sort(v, n - 1);
+    }
+} // fin bubble sort
 
 // Ejm: x = "Hola" => v[H,a,l,o] orden ASCII
 void cargar_caracteres_orden_ascendente(TStringGrid* v, String x)
