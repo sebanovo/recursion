@@ -13,7 +13,7 @@ recursivas en diversos escenarios.
 - Clona este repositorio en tu máquina local.
 
   ```bash
-  git clone https://github.com/sebanovo/recursividad.git
+  git clone https://github.com/sebanovo/recursion.git
   ```
 
 - abrir el archivo `.cbproj` con tu IDE
