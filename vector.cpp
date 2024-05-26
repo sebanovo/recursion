@@ -195,7 +195,7 @@ bool verificar_ordenado_descendente(TStringGrid* v, byte a, byte n)
     return bol;
 }
 
-//Escribir una funciÛn que devuelva la cantidad de n˙meros pares que contiene
+//Escribir una funci√≥n que devuelva la cantidad de n√∫meros pares que contiene
 //Ej. ContarPares(v[2, 4,5,12, 23, 54,3, 34, 6], 9) => 6
 byte contar_numeros_pares(TStringGrid* v, byte n)
 {
@@ -281,24 +281,6 @@ bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n)
 }
 
 // quick sort
-
-//void pivotear(TStringGrid* v, byte a, byte b, byte &c)
-//{
-//    bool sw = true;
-//    while (a < b) {
-//        if (StrToInt(v->Cells[a][0]) > StrToInt(v->Cells[b][0])) {
-//            String temp = v->Cells[a][0];
-//            v->Cells[a][0] = v->Cells[b][0];
-//            v->Cells[b][0] = temp;
-//            sw = !sw;
-//        }
-//        if (sw)
-//            a++;
-//        else
-//            b--;
-//    }
-//    c = a;
-//}
 void pivotear(TStringGrid* v, byte a, byte b, byte &c, bool sw)
 {
     if (a >= b) {
@@ -532,8 +514,8 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
 //}
 // ------------------------------------------------------------------------
 
-// x = hola como est·n
-// v["·n", "st", "e", "mo", "co", "a", "ol, "h"]
+// x = hola como est√°n
+// v["√°n", "st", "e", "mo", "co", "a", "ol, "h"]
 void cargar_cadena_2en2(TStringGrid* v, String x, byte a, byte b)
 {
     byte length = x.Length();
