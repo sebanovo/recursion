@@ -704,3 +704,15 @@ void __fastcall TForm1::QuickSortVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::BogoSortVClick(TObject* Sender)
+{
+    bogo_sort(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InsertionSortVClick(TObject* Sender)
+{
+    insertion_sort(StringGrid1, StringGrid1->ColCount);
+}
+//---------------------------------------------------------------------------
+

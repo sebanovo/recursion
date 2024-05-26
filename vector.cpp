@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #pragma hdrstop
 
@@ -403,6 +403,24 @@ void selection_sort(TStringGrid* v, byte n)
     }
 } // fin selection sort
 
+// insertion sort
+void insertion_sort(TStringGrid* v, byte n)
+{
+    if (n <= 1)
+        return;
+
+    insertion_sort(v, n - 1);
+
+    String key = v->Cells[n - 1][0];
+    byte j = n - 2;
+
+    if (j >= 0 && v->Cells[j][0] < key) {
+        v->Cells[j + 1][0] = v->Cells[j][0];
+        v->Cells[j][0] = key;
+        insertion_sort(v, n - 1);
+    }
+} // fin insertion sort
+
 // bubble sort
 void mover_mayor_al_final(TStringGrid* v, byte n)
 {
@@ -431,6 +449,30 @@ void bubble_sort(TStringGrid* v, byte n)
         bubble_sort(v, n - 1);
     }
 } // fin bubble sort
+
+// bogo sort
+void desordenar(TStringGrid* v, byte n)
+{
+    if (n == 0) {
+        // nada
+    } else if (n == 1) {
+        // nada
+    } else {
+        byte randomIndex = Random(v->ColCount);
+
+        String temp = v->Cells[n - 1][0];
+        v->Cells[n - 1][0] = v->Cells[randomIndex][0];
+        v->Cells[randomIndex][0] = temp;
+        desordenar(v, n - 1);
+    }
+}
+void bogo_sort(TStringGrid* v, byte n)
+{
+    if (!verificar_ordenado_ascendente(v, 0, n)) {
+        desordenar(v, n);
+        bogo_sort(v, n);
+    }
+} // fin bogo sort
 
 // Ejm: x = "Hola" => v[H,a,l,o] orden ASCII
 void cargar_caracteres_orden_ascendente(TStringGrid* v, String x)

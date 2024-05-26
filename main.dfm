@@ -505,21 +505,29 @@
         Caption = '1, 2, 3, 6, 7'
         OnClick = V1_2_3_6_7Click
       end
+      object QuickSortV: TMenuItem
+        Caption = 'Quick Sort'
+        OnClick = QuickSortVClick
+      end
       object MergeSortV: TMenuItem
         Caption = 'Merge Sort'
         OnClick = MergeSortVClick
       end
-      object SelectionSortV: TMenuItem
-        Caption = 'Selection Sort'
-        OnClick = SelectionSortVClick
+      object InsertionSortV: TMenuItem
+        Caption = 'Insertion Sort'
+        OnClick = InsertionSortVClick
       end
       object BubbleSortV: TMenuItem
         Caption = 'Bubble Sort'
         OnClick = BubbleSortVClick
       end
-      object QuickSortV: TMenuItem
-        Caption = 'Quick Sort'
-        OnClick = QuickSortVClick
+      object SelectionSortV: TMenuItem
+        Caption = 'Selection Sort'
+        OnClick = SelectionSortVClick
+      end
+      object BogoSortV: TMenuItem
+        Caption = 'Bogo Sort'
+        OnClick = BogoSortVClick
       end
     end
     object Matriz1: TMenuItem

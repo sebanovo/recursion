@@ -36,7 +36,9 @@ bool verificar_palindromo(TStringGrid* v, byte a, byte b, byte n);
 void quick_sort(TStringGrid* v, byte a, byte b);
 void merge_sort(TStringGrid* v, byte a, byte b);
 void selection_sort(TStringGrid* v, byte n);
+void insertion_sort(TStringGrid* v, byte n);
 void bubble_sort(TStringGrid* v, byte n);
+void bogo_sort(TStringGrid* v, byte n);
 
 void cargar_caracteres_orden_ascendente(TStringGrid* v, String x);
 void cargar_caracteres_orden_descendente(TStringGrid* v, String x);
