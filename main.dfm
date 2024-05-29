@@ -2,8 +2,8 @@
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 499
-  ClientWidth = 969
+  ClientHeight = 490
+  ClientWidth = 963
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,13 +15,11 @@
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 969
-    Height = 499
-    ActivePage = TabSheet3
+    Width = 963
+    Height = 490
+    ActivePage = TabSheet4
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 963
-    ExplicitHeight = 490
     object TabSheet1: TTabSheet
       Caption = 'Numero'
       object Edit1: TEdit
@@ -587,6 +585,18 @@
       object CargarViboraM: TMenuItem
         Caption = 'Cargar Vibora'
         OnClick = CargarViboraMClick
+      end
+      object BubbleSortM: TMenuItem
+        Caption = 'Bubble Sort'
+        OnClick = BubbleSortMClick
+      end
+      object SegmentarParYNoParM: TMenuItem
+        Caption = 'Segmentar Par Y No Par'
+        OnClick = SegmentarParYNoParMClick
+      end
+      object IntercalarParYNoParM: TMenuItem
+        Caption = 'Intercalar Par Y No Par'
+        OnClick = IntercalarParYNoParMClick
       end
     end
   end

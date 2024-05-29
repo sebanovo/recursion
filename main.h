@@ -126,6 +126,9 @@ class TForm1 : public TForm
     TMenuItem* QuickSortV;
     TMenuItem* InsertionSortV;
     TMenuItem* BogoSortV;
+    TMenuItem* BubbleSortM;
+    TMenuItem* SegmentarParYNoParM;
+    TMenuItem* IntercalarParYNoParM;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -219,6 +222,9 @@ class TForm1 : public TForm
     void __fastcall QuickSortVClick(TObject* Sender);
     void __fastcall BogoSortVClick(TObject* Sender);
     void __fastcall InsertionSortVClick(TObject* Sender);
+    void __fastcall BubbleSortMClick(TObject* Sender);
+    void __fastcall SegmentarParYNoParMClick(TObject* Sender);
+    void __fastcall IntercalarParYNoParMClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

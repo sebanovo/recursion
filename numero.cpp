@@ -288,7 +288,24 @@ void ordenamiento_descendente(Cardinal &x)
     }
 }
 
-// selección
+void mover_digito_menor_al_principio(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        byte d = x % 10;
+        x = x / 10;
+        if (x % 10 > d) {
+            byte aux = d;
+            d = x % 10;
+            x = (x / 10) * 10 + aux;
+        }
+        mover_digito_menor_al_principio(x);
+        x = x * 10 + d;
+    }
+}
+
+// selection sort
 //void mover_digito_menor_al_principio(Cardinal &x)
 //{
 //    if (x < 10) {
@@ -306,24 +323,6 @@ void ordenamiento_descendente(Cardinal &x)
 //        }
 //    }
 //}
-
-// burbuja
-void mover_digito_menor_al_principio(Cardinal &x)
-{
-    if (x < 10) {
-        // nada
-    } else {
-        byte d = x % 10;
-        x = x / 10;
-        if (x % 10 > d) {
-            byte aux = d;
-            d = x % 10;
-            x = (x / 10) * 10 + aux;
-        }
-        mover_digito_menor_al_principio(x);
-        x = x * 10 + d;
-    }
-}
 
 void eliminar_digitos_impares(Cardinal &x)
 {

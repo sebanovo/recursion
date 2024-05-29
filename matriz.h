@@ -31,6 +31,11 @@ void cargar_diagonales_triangular_inferior_izquierda(
 void cargar_diagonales_hard(TStringGrid* v, byte m, byte k, byte &f, byte &c);
 void cargar_vibora_por_columnas(TStringGrid* v, byte ca, byte cb, Cardinal &r);
 
+// ordenamientos
+void bubble_sort(TStringGrid* v);
+void segmentar_par_impar(TStringGrid* v);
+void intercalar_par_impar(TStringGrid* v);
+
 //---------------------------------------------------------------------------
 #endif
 

@@ -457,13 +457,13 @@ void cargar_diagonal_principal(
     }
 }
 
-//void version_del_auxiliar(TStringGrid* v, byte m, byte k, byte &f, &c)
+//void otra_version(TStringGrid* v, byte m, byte k, byte &f, &c)
 //{
 //    if (k == 1) {
 //        f = 0;
 //        c = 0;
 //    } else {
-//        version_del_auxiliar(v, m, k - 1, f, c);
+//        otra_version(v, m, k - 1, f, c);
 //        if (f == m - 1) {
 //            f = m - c;
 //            c = 0;
@@ -553,5 +553,201 @@ void cargar_vibora_por_columnas(TStringGrid* v, byte ca, byte cb, Cardinal &r)
         llenar_columnas_vibora(v, ca, 0, v->RowCount - 1, r);
         cargar_vibora_por_columnas(v, ca + 1, cb, r);
     }
+}
+
+/*
+15) Ordenar la matriz Bubble sort(mxn)
+	1   2   3   4
+	5   6   7   8
+	9  10  11  12
+	13 14  15  16
+*/
+
+void for4(TStringGrid* v, byte c2, byte m, byte c1, byte f1, byte f2)
+{
+    if (c2 < m) {
+        if (StrToInt(v->Cells[c2][f2]) < StrToInt(v->Cells[c1][f1])) {
+            String temp = v->Cells[c2][f2];
+            v->Cells[c2][f2] = v->Cells[c1][f1];
+            v->Cells[c1][f1] = temp;
+        }
+        for4(v, c2 + 1, m, c1, f1, f2);
+    }
+}
+
+void for3(TStringGrid* v, byte f2, byte n, byte f1, byte c1)
+{
+    if (f2 < n) {
+        byte ic;
+        ic = (f2 == f1) ? c1 : 0;
+        for4(v, ic, v->ColCount, c1, f1, f2);
+        for3(v, f2 + 1, n, f1, c1);
+    }
+}
+
+void for2(TStringGrid* v, byte c1, byte m, byte f1)
+{
+    if (c1 < m) {
+        for3(v, f1, v->RowCount, f1, c1);
+        for2(v, c1 + 1, m, f1);
+    }
+}
+
+void for1(TStringGrid* v, byte f1, byte n)
+{
+    if (f1 < n) {
+        for2(v, 0, v->ColCount, f1);
+        for1(v, f1 + 1, n);
+    }
+}
+
+void bubble_sort(TStringGrid* v)
+{
+    for1(v, 0, v->RowCount);
+}
+
+/*
+16) Segmentar Par Impar (mxn)
+	1   2   3   4         2  4  6  8
+	5   6   7   8    ->  10 12 14 16
+	9  10  11  12         1  3  5  7
+	13 14  15  16         9 11 13 15
+*/
+
+void spi4(TStringGrid* v, byte c2, byte m, byte c1, byte f1, byte f2)
+{
+    if (c2 < m) {
+        byte n1 = StrToInt(v->Cells[c1][f1]);
+        byte n2 = StrToInt(v->Cells[c2][f2]);
+
+        if ((n2 % 2 == 0 && n1 % 2 != 0) ||
+            (n2 % 2 == 0 && n1 % 2 == 0 && n2 < n1) ||
+            (n2 % 2 != 0 && n1 % 2 != 0 && n2 < n1))
+        {
+            v->Cells[c2][f2] = n1;
+            v->Cells[c1][f1] = n2;
+        }
+        spi4(v, c2 + 1, m, c1, f1, f2);
+    }
+}
+
+void spi3(TStringGrid* v, byte f2, byte n, byte f1, byte c1)
+{
+    if (f2 < n) {
+        byte ic;
+        ic = (f2 == f1) ? c1 : 0;
+        spi4(v, ic, v->ColCount, c1, f1, f2);
+        spi3(v, f2 + 1, n, f1, c1);
+    }
+}
+
+void spi2(TStringGrid* v, byte c1, byte m, byte f1)
+{
+    if (c1 < m) {
+        spi3(v, f1, v->RowCount, f1, c1);
+        spi2(v, c1 + 1, m, f1);
+    }
+}
+
+void spi1(TStringGrid* v, byte f1, byte n)
+{
+    if (f1 < n) {
+        spi2(v, 0, v->ColCount, f1);
+        spi1(v, f1 + 1, n);
+    }
+}
+
+void segmentar_par_impar(TStringGrid* v)
+{
+    spi1(v, 0, v->RowCount);
+}
+
+/*
+17) Intercalar Par Impar (mxn)
+	1   2   3   4         2   1   4  3
+	5   6   7   8    ->   6   5   8  7
+	9  10  11  12         10  9  12 11
+	13 14  15  16         14  13 16 15
+*/
+
+void ipi4_true(TStringGrid* v, byte c2, byte m, byte c1, byte f1, byte f2)
+{
+    if (c2 < m) {
+        byte n1 = StrToInt(v->Cells[c1][f1]);
+        byte n2 = StrToInt(v->Cells[c2][f2]);
+
+        if ((n2 % 2 == 0 && n1 % 2 != 0) ||
+            (n2 % 2 == 0 && n1 % 2 == 0 && n2 < n1) ||
+            (n2 % 2 != 0 && n1 % 2 != 0 && n2 < n1))
+        {
+            v->Cells[c2][f2] = n1;
+            v->Cells[c1][f1] = n2;
+        }
+        ipi4_true(v, c2 + 1, m, c1, f1, f2);
+    }
+}
+
+void ipi4_false(TStringGrid* v, byte c2, byte m, byte c1, byte f1, byte f2)
+{
+    if (c2 < m) {
+        byte n1 = StrToInt(v->Cells[c1][f1]);
+        byte n2 = StrToInt(v->Cells[c2][f2]);
+
+        if ((n2 % 2 != 0 && n1 % 2 == 0) ||
+            (n2 % 2 != 0 && n1 % 2 != 0 && n2 < n1) ||
+            (n2 % 2 == 0 && n1 % 2 == 0 && n2 < n1))
+        {
+            v->Cells[c2][f2] = n1;
+            v->Cells[c1][f1] = n2;
+        }
+        ipi4_false(v, c2 + 1, m, c1, f1, f2);
+    }
+}
+
+void ipi3_true(TStringGrid* v, byte f2, byte n, byte f1, byte c1)
+{
+    if (f2 < n) {
+        byte ic;
+        ic = (f2 == f1) ? c1 : 0;
+        ipi4_true(v, ic, v->ColCount, c1, f1, f2);
+        ipi3_true(v, f2 + 1, n, f1, c1);
+    }
+}
+
+void ipi3_false(TStringGrid* v, byte f2, byte n, byte f1, byte c1)
+{
+    if (f2 < n) {
+        byte ic;
+        ic = (f2 == f1) ? c1 : 0;
+        ipi4_false(v, ic, v->ColCount, c1, f1, f2);
+        ipi3_false(v, f2 + 1, n, f1, c1);
+    }
+}
+
+void ipi2(TStringGrid* v, byte c1, byte m, byte f1, bool &b)
+{
+    if (c1 < m) {
+        if (b) {
+            ipi3_true(v, f1, v->RowCount, f1, c1);
+        } else {
+            ipi3_false(v, f1, v->RowCount, f1, c1);
+        }
+        b = !b;
+        ipi2(v, c1 + 1, m, f1, b);
+    }
+}
+
+void ipi1(TStringGrid* v, byte f1, byte n, bool &b)
+{
+    if (f1 < n) {
+        ipi2(v, 0, v->ColCount, f1, b);
+        ipi1(v, f1 + 1, n, b);
+    }
+}
+
+void intercalar_par_impar(TStringGrid* v)
+{
+    bool b = true;
+    ipi1(v, 0, v->RowCount, b);
 }
 

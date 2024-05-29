@@ -716,3 +716,21 @@ void __fastcall TForm1::InsertionSortVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::BubbleSortMClick(TObject* Sender)
+{
+    bubble_sort(StringGrid2);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SegmentarParYNoParMClick(TObject* Sender)
+{
+    segmentar_par_impar(StringGrid2);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::IntercalarParYNoParMClick(TObject* Sender)
+{
+    intercalar_par_impar(StringGrid2);
+}
+//---------------------------------------------------------------------------
+
