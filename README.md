@@ -6,13 +6,8 @@ Este proyecto contiene varios ejemplos de algoritmos recursivos implementadas en
 ejemplo demuestra un concepto diferente y muestra cómo se pueden utilizar las funciones
 recursivas en diversos escenarios.
 
-<div align="center">
-<img src="https://ibb.co/M5qgK4M" alt="vector img"></img>
-</div>
-
-<div align="center">
-<img src="https://ibb.co/dGY2DYj" alt="matriz img"></img>
-</div>
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/KYLw9cpd/recursion-matriz.png" alt="recursion-matriz"/></a><br/><br/>
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/mDsqKx0h/recursion-vector.png" alt="recursion-vector"/></a><br/><br/>
 
 ## Instrucciones de Ejecución
 
