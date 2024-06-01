@@ -37,15 +37,14 @@ void eliminar_digitos_pares(Cardinal &x);
 void encontrar_digito_mayor_y_menor(Cardinal x, byte &M, byte &m);
 
 byte contar_digitos_impares_antes_de_uno_par(Cardinal x);
-// double convertir_base_binario_a_decimal(int nro, int base);
-
-// ejercicios de examen:
 String repetir_numero(Cardinal numero, Cardinal veces);
 String repetir_digitos(Cardinal n);
 
 void insertar_digito_por_posicion(Cardinal &x, byte digito, byte posicion);
 void remplazar_digito_por_posicion(Cardinal &x, byte digito, byte posicion);
 
+// ordenamiento
+void bubble_sort(Cardinal &x);
 //---------------------------------------------------------------------------
 #endif
 

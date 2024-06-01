@@ -288,6 +288,38 @@ void ordenamiento_descendente(Cardinal &x)
     }
 }
 
+// bubble sort
+void burbujear(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        byte d = x % 10;
+        x = x / 10;
+        burbujear(x);
+        if (x % 10 <= d) {
+            x = x * 10 + d;
+        } else {
+            byte z = x % 10;
+            x = x / 10;
+            x = (x * 10 + d) * 10 + z;
+        }
+    }
+}
+
+void bubble_sort(Cardinal &x)
+{
+    if (x < 10) {
+        // nada
+    } else {
+        burbujear(x);
+        int ultimoDigito = x % 10;
+        x = x / 10;
+        bubble_sort(x);
+        x = x * 10 + ultimoDigito;
+    }
+} // fin bubble sort
+
 void mover_digito_menor_al_principio(Cardinal &x)
 {
     if (x < 10) {
@@ -295,34 +327,16 @@ void mover_digito_menor_al_principio(Cardinal &x)
     } else {
         byte d = x % 10;
         x = x / 10;
-        if (x % 10 > d) {
-            byte aux = d;
-            d = x % 10;
-            x = (x / 10) * 10 + aux;
-        }
         mover_digito_menor_al_principio(x);
-        x = x * 10 + d;
+        float exponente = floor(log10(Double(x)));
+        byte pd = x / pow(10, exponente);
+        if (d < pd) {
+            x = d * pow(10, exponente + 1) + x;
+        } else {
+            x = x * 10 + d;
+        }
     }
 }
-
-// selection sort
-//void mover_digito_menor_al_principio(Cardinal &x)
-//{
-//    if (x < 10) {
-//        // nada
-//    } else {
-//        byte d = x % 10;
-//        x = x / 10;
-//        mover_digito_menor_al_principio(x);
-//        float exponente = floor(log10(Double(x)));
-//        byte pd = x / pow(10, exponente);
-//        if (d < pd) {
-//            x = d * pow(10, exponente + 1) + x;
-//        } else {
-//            x = x * 10 + d;
-//        }
-//    }
-//}
 
 void eliminar_digitos_impares(Cardinal &x)
 {

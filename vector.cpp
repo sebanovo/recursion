@@ -406,19 +406,8 @@ void selection_sort(TStringGrid* v, byte n)
 // insertion sort
 void insertion_sort(TStringGrid* v, byte n)
 {
-    if (n <= 1)
-        return;
+    // pendiente arreglar
 
-    insertion_sort(v, n - 1);
-
-    String key = v->Cells[n - 1][0];
-    byte j = n - 2;
-
-    if (j >= 0 && v->Cells[j][0] < key) {
-        v->Cells[j + 1][0] = v->Cells[j][0];
-        v->Cells[j][0] = key;
-        insertion_sort(v, n - 1);
-    }
 } // fin insertion sort
 
 // bubble sort
@@ -498,63 +487,63 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
     }
 }
 
-// *** EJERCICIO DE 2 StringGrid ***//
-// insertar un vector en otro indicando una posicion;
-//void recorrer1(TStringGrid1* v, byte p, byte n)
-//{
-//    if (p < n) {
-//        v->Cells[n][0] = v->Cells[n - 1][0];
-//        recorrer1(v, p, n - 1);
-//    }
-//}
-//
-//void insertar_aux(TStringGrid* v2, TStringGrid* v1, byte p, byte i)
-//{
-//    if (i < v2->ColCount) {
-//        v1->ColCount++;
-//        recorrer1(v1, p, v1->ColCount);
-//        v1->Cells[p][0] = v2->Cells[i][0];
-//        insertar_aux(v2, v1, p + 1, i + 1);
-//    }
-//}
-//
-//void insertar(TStringGrid* v2, TStringGrid* v1, byte p)
-//{
-//    insertar_aux(v2, v1, p, 0);
-//}
-// ----------------------------------------------------------------------------
+// ¡Necesitan 2 StringGrid !!
 
-// *** EJERCICIO DE 2 StringGrid ***//
+//insertar un vector en otro indicando una posicion
+void recorrer_numeros(TStringGrid* v, byte p, byte n)
+{
+    if (p < n) {
+        v->Cells[n][0] = v->Cells[n - 1][0];
+        recorrer_numeros(v, p, n - 1);
+    }
+}
+
+void insertar_aux(TStringGrid* v2, TStringGrid* v1, byte p, byte i)
+{
+    if (i < v2->ColCount) {
+        v1->ColCount++;
+        recorrer_numeros(v1, p, v1->ColCount);
+        v1->Cells[p][0] = v2->Cells[i][0];
+        insertar_aux(v2, v1, p + 1, i + 1);
+    }
+}
+
+void insertar_v2_en_v1(TStringGrid* v2, TStringGrid* v1, byte p)
+{
+    insertar_aux(v2, v1, p, 0);
+}
+
+// contar cuantas veces se repite cada caracter en el vector
 //Ej:  v1[H,o,l,a,m,u,n,d,o]
 //     v2[1,2,1,1,1,1,1,1,2]
-// cuenta cuantas veces se repite cada caracter en el vector
-//Cardinal frecuencia(String cad, wchar_t c)
-//{
-//	Cardinal f;
-//	if (cad.Length() == 0) {
-//		f = 0;
-//	} else {
-//		char x = cad[1];
-//		cad.Delete(1, 1);
-//		f = frecuencia(cad, c);
-//		if (x == c) {
-//			f++;
-//		}
-//	}
-//	return f;
-//}
-//
-//void cargar_frecuencia(String cad, TStringGrid* vc, TStringGrid* vf, Cardinal n)
-//{
-//	if (n > 0) {
-//		char c = cad[n];
-//		Cardinal f = frecuencia(cad, c);
-//		vc->Cells[n - 1][0] = c;
-//		vf->Cells[n - 1][0] = f;
-//		cargar_frecuencia(cad, vc, vf, n - 1);
-//	}
-//}
-// ------------------------------------------------------------------------
+Cardinal frecuencia(String cad, wchar_t c)
+{
+    Cardinal f;
+    if (cad.Length() == 0) {
+        f = 0;
+    } else {
+        char x = cad[1];
+        cad.Delete(1, 1);
+        f = frecuencia(cad, c);
+        if (x == c) {
+            f++;
+        }
+    }
+    return f;
+}
+
+void cargar_frecuencia(String cad, TStringGrid* vc, TStringGrid* vf, Cardinal n)
+{
+    if (n > 0) {
+        char c = cad[n];
+        Cardinal f = frecuencia(cad, c);
+        vc->Cells[n - 1][0] = c;
+        vf->Cells[n - 1][0] = f;
+        cargar_frecuencia(cad, vc, vf, n - 1);
+    }
+}
+
+// --------------------------- 2 String Grid ----------------------------------
 
 // x = hola como están
 // v["án", "st", "e", "mo", "co", "a", "ol, "h"]

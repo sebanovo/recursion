@@ -17,9 +17,11 @@
     Top = 0
     Width = 963
     Height = 490
-    ActivePage = TabSheet4
+    ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 957
+    ExplicitHeight = 481
     object TabSheet1: TTabSheet
       Caption = 'Numero'
       object Edit1: TEdit
@@ -84,21 +86,21 @@
       ImageIndex = 2
       object Label1: TLabel
         Left = 152
-        Top = 120
+        Top = 32
         Width = 40
         Height = 15
         Caption = 'Entrada'
       end
       object Label2: TLabel
-        Left = 152
-        Top = 320
+        Left = 296
+        Top = 32
         Width = 31
         Height = 15
         Caption = 'Salida'
       end
       object StringGrid1: TStringGrid
         Left = 152
-        Top = 208
+        Top = 111
         Width = 761
         Height = 65
         DefaultRowHeight = 48
@@ -116,9 +118,18 @@
         ParentFont = False
         TabOrder = 0
       end
-      object EditDimensionar: TEdit
-        Left = 648
-        Top = 141
+      object DimensionarVector1: TButton
+        Left = 807
+        Top = 53
+        Width = 106
+        Height = 36
+        Caption = 'Dimensionar'
+        TabOrder = 1
+        OnClick = DimensionarVector1Click
+      end
+      object EditInput: TEdit
+        Left = 152
+        Top = 53
         Width = 105
         Height = 36
         Font.Charset = DEFAULT_CHARSET
@@ -127,21 +138,12 @@
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        TabOrder = 1
-      end
-      object DimensionarVector: TButton
-        Left = 807
-        Top = 141
-        Width = 106
-        Height = 36
-        Caption = 'Dimensionar'
         TabOrder = 2
-        OnClick = DimensionarVectorClick
       end
-      object EditInput: TEdit
-        Left = 152
-        Top = 141
-        Width = 329
+      object EditOutput: TEdit
+        Left = 296
+        Top = 53
+        Width = 113
         Height = 36
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -151,18 +153,34 @@
         ParentFont = False
         TabOrder = 3
       end
-      object EditOutput: TEdit
+      object StringGrid3: TStringGrid
         Left = 152
-        Top = 341
-        Width = 329
-        Height = 36
+        Top = 256
+        Width = 761
+        Height = 65
+        DefaultRowHeight = 48
+        FixedColor = clBlue
+        FixedCols = 0
+        RowCount = 1
+        FixedRows = 0
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -20
         Font.Name = 'Segoe UI'
         Font.Style = []
+        GridLineWidth = 4
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
         ParentFont = False
         TabOrder = 4
+      end
+      object DimensionarVector2: TButton
+        Left = 807
+        Top = 205
+        Width = 106
+        Height = 33
+        Caption = 'Dimensionar'
+        TabOrder = 5
+        OnClick = DimensionarVector2Click
       end
     end
     object TabSheet4: TTabSheet
@@ -217,8 +235,8 @@
     end
   end
   object MainMenu1: TMainMenu
-    Left = 816
-    Top = 424
+    Left = 896
+    Top = 408
     object Numero: TMenuItem
       Caption = 'Numero'
       object Factorial: TMenuItem
@@ -328,6 +346,10 @@
       object MoverDigitoMenorAlPrincipio1: TMenuItem
         Caption = 'Mover Digito Menor Al Principio'
         OnClick = MoverDigitoMenorAlPrincipio1Click
+      end
+      object BubbleSort1: TMenuItem
+        Caption = 'Bubble Sort'
+        OnClick = BubbleSort1Click
       end
     end
     object Cadena: TMenuItem
@@ -526,6 +548,14 @@
       object BogoSortV: TMenuItem
         Caption = 'Bogo Sort'
         OnClick = BogoSortVClick
+      end
+      object InsertarV2EnV1V: TMenuItem
+        Caption = 'Insertar V2 En V1'
+        OnClick = InsertarV2EnV1VClick
+      end
+      object CargarFrecuenciaDeCaracteresV: TMenuItem
+        Caption = 'Cargar Frecuencia De Caracteres'
+        OnClick = CargarFrecuenciaDeCaracteresVClick
       end
     end
     object Matriz1: TMenuItem

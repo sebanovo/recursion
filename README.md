@@ -6,6 +6,14 @@ Este proyecto contiene varios ejemplos de algoritmos recursivos implementadas en
 ejemplo demuestra un concepto diferente y muestra cómo se pueden utilizar las funciones
 recursivas en diversos escenarios.
 
+<div align="center">
+<img src="https://ibb.co/M5qgK4M" alt="vector img"></img>
+</div>
+
+<div align="center">
+<img src="https://ibb.co/dGY2DYj" alt="matriz img"></img>
+</div>
+
 ## Instrucciones de Ejecución
 
 - tener instalado `c++ Builder IDE`o `RAD Studio`

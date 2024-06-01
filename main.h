@@ -66,8 +66,7 @@ class TForm1 : public TForm
     TEdit* Edit3;
     TEdit* Edit4;
     TStringGrid* StringGrid1;
-    TEdit* EditDimensionar;
-    TButton* DimensionarVector;
+    TButton* DimensionarVector1;
     TMenuItem* Vector;
     TEdit* EditInput;
     TEdit* EditOutput;
@@ -129,6 +128,11 @@ class TForm1 : public TForm
     TMenuItem* BubbleSortM;
     TMenuItem* SegmentarParYNoParM;
     TMenuItem* IntercalarParYNoParM;
+    TMenuItem* BubbleSort1;
+    TStringGrid* StringGrid3;
+    TButton* DimensionarVector2;
+    TMenuItem* InsertarV2EnV1V;
+    TMenuItem* CargarFrecuenciaDeCaracteresV;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -169,7 +173,7 @@ class TForm1 : public TForm
         TObject* Sender);
     void __fastcall NmeroMayorClick(TObject* Sender);
     void __fastcall InvertirFraseClick(TObject* Sender);
-    void __fastcall DimensionarVectorClick(TObject* Sender);
+    void __fastcall DimensionarVector1Click(TObject* Sender);
     void __fastcall SumarTodosLosNúmerosVClick(TObject* Sender);
     void __fastcall InvertirVClick(TObject* Sender);
     void __fastcall MoverNumeroMenorAlFinalVClick(TObject* Sender);
@@ -225,6 +229,10 @@ class TForm1 : public TForm
     void __fastcall BubbleSortMClick(TObject* Sender);
     void __fastcall SegmentarParYNoParMClick(TObject* Sender);
     void __fastcall IntercalarParYNoParMClick(TObject* Sender);
+    void __fastcall BubbleSort1Click(TObject* Sender);
+    void __fastcall DimensionarVector2Click(TObject* Sender);
+    void __fastcall InsertarV2EnV1VClick(TObject* Sender);
+    void __fastcall CargarFrecuenciaDeCaracteresVClick(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

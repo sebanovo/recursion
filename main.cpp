@@ -294,9 +294,10 @@ void __fastcall TForm1::InvertirFraseClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::DimensionarVectorClick(TObject* Sender)
+void __fastcall TForm1::DimensionarVector1Click(TObject* Sender)
 {
-    StringGrid1->ColCount = StrToInt(EditDimensionar->Text);
+    byte dim = StrToInt(InputBox("Dimensionar Vector 1", "longitud", ""));
+    StringGrid1->ColCount = dim;
 }
 //---------------------------------------------------------------------------
 
@@ -343,7 +344,6 @@ void __fastcall TForm1::CargarPalabrasVClick(TObject* Sender)
 void __fastcall TForm1::OrdenamientoAscendenteVClick(TObject* Sender)
 {
     ordenamiento_burbuja_ascendente(StringGrid1, StringGrid1->ColCount);
-    //selection_sort(StringGrid1, StringGrid1->ColCount);
 }
 //---------------------------------------------------------------------------
 
@@ -472,11 +472,6 @@ void __fastcall TForm1::OrdenarFilasAscendentementeMClick(TObject* Sender)
 
 void __fastcall TForm1::CargarTriangularInferiorIzquierdaMClick(TObject* Sender)
 {
-    //    StringGrid2->RowCount = StrToInt(EditRows->Text);
-    //    StringGrid2->ColCount = StrToInt(EditCols->Text);
-    //    Cardinal razon = 1;
-    //    cargar_triangular_inferior_izquierda(
-    //        StringGrid2, StringGrid2->RowCount, StringGrid2->ColCount, razon);
     byte total = StrToInt(EditRows->Text);
     StringGrid2->RowCount = total;
     StringGrid2->ColCount = total;
@@ -731,6 +726,43 @@ void __fastcall TForm1::SegmentarParYNoParMClick(TObject* Sender)
 void __fastcall TForm1::IntercalarParYNoParMClick(TObject* Sender)
 {
     intercalar_par_impar(StringGrid2);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::BubbleSort1Click(TObject* Sender)
+{
+    Cardinal x = StrToInt(Edit1->Text);
+    bubble_sort(x);
+    Edit2->Text = x;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::DimensionarVector2Click(TObject* Sender)
+{
+    byte dim = StrToInt(InputBox("Dimensionar Vector 2", "longitud", ""));
+    StringGrid3->ColCount = dim;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InsertarV2EnV1VClick(TObject* Sender)
+{
+    byte p = StrToInt(InputBox("Insertar V2 En V1", "posición", ""));
+    if (p < 0 || p > StringGrid1->ColCount - 1) {
+        MessageBox(
+            NULL, L"Indice fuera de los limites", L"Error", MB_ICONASTERISK);
+        return;
+    }
+    insertar_v2_en_v1(StringGrid3, StringGrid1, p);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CargarFrecuenciaDeCaracteresVClick(TObject* Sender)
+{
+    String cad = InputBox("Cargar Frecuencia De Caracteres", "cadena", "");
+    byte length = cad.Length();
+    StringGrid1->ColCount = length;
+    StringGrid3->ColCount = length;
+    cargar_frecuencia(cad, StringGrid1, StringGrid3, length);
 }
 //---------------------------------------------------------------------------
 

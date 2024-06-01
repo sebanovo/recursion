@@ -45,6 +45,11 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x);
 void cargar_cadena_2en2(TStringGrid* v, String x, byte a, byte b);
 void cargar_digitos(TStringGrid* v, Cardinal x, byte n);
 
+// ¡Necesitan 2 StringGrid !!
+void insertar_v2_en_v1(TStringGrid* v2, TStringGrid* v1, byte p);
+void cargar_frecuencia(
+    String cad, TStringGrid* vc, TStringGrid* vf, Cardinal n);
+
 // series
 void cargar_fibonacci(TStringGrid* v, byte n);
 void serie1(TStringGrid* v, byte n);
