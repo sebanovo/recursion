@@ -403,10 +403,29 @@ void selection_sort(TStringGrid* v, byte n)
     }
 } // fin selection sort
 
-// insertion sort
+void insertion_aux2(TStringGrid* v, byte a)
+{
+    if (a > 0 && StrToInt(v->Cells[a - 1][0]) > StrToInt(v->Cells[a][0])) {
+        String temp = v->Cells[a - 1][0];
+        v->Cells[a - 1][0] = v->Cells[a][0];
+        v->Cells[a][0] = temp;
+        insertion_aux2(v, a - 1);
+    }
+}
+
+void insertion_aux1(TStringGrid* v, byte a, byte n)
+{
+    if (a > n - 1) {
+        // nada
+    } else {
+        insertion_aux2(v, a);
+        insertion_aux1(v, a + 1, n);
+    }
+}
+
 void insertion_sort(TStringGrid* v, byte n)
 {
-    // pendiente arreglar
+    insertion_aux1(v, 1, n);
 
 } // fin insertion sort
 
@@ -455,6 +474,7 @@ void desordenar(TStringGrid* v, byte n)
         desordenar(v, n - 1);
     }
 }
+
 void bogo_sort(TStringGrid* v, byte n)
 {
     if (!verificar_ordenado_ascendente(v, 0, n)) {

@@ -17,7 +17,7 @@
     Top = 0
     Width = 963
     Height = 490
-    ActivePage = TabSheet3
+    ActivePage = TabSheet4
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 957
@@ -198,7 +198,7 @@
         FixedRows = 0
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -20
+        Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
         GridLineWidth = 4
