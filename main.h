@@ -133,6 +133,12 @@ class TForm1 : public TForm
     TButton* DimensionarVector2;
     TMenuItem* InsertarV2EnV1V;
     TMenuItem* CargarFrecuenciaDeCaracteresV;
+    TLabel* Label3;
+    TLabel* Label4;
+    TLabel* Label5;
+    TLabel* Label6;
+    TLabel* Label7;
+    TLabel* Label8;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);

@@ -24,6 +24,32 @@
     ExplicitHeight = 481
     object TabSheet1: TTabSheet
       Caption = 'Numero'
+      object Label7: TLabel
+        Left = 360
+        Top = 40
+        Width = 67
+        Height = 28
+        Caption = 'Entrada'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label8: TLabel
+        Left = 360
+        Top = 133
+        Width = 53
+        Height = 28
+        Caption = 'Salida'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
       object Edit1: TEdit
         Left = 360
         Top = 71
@@ -54,6 +80,32 @@
     object TabSheet2: TTabSheet
       Caption = 'Cadena'
       ImageIndex = 1
+      object Label5: TLabel
+        Left = 360
+        Top = 40
+        Width = 67
+        Height = 28
+        Caption = 'Entrada'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 360
+        Top = 133
+        Width = 53
+        Height = 28
+        Caption = 'Salida'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
       object Edit3: TEdit
         Left = 360
         Top = 71
@@ -186,6 +238,32 @@
     object TabSheet4: TTabSheet
       Caption = 'Matriz'
       ImageIndex = 3
+      object Label3: TLabel
+        Left = 240
+        Top = 56
+        Width = 38
+        Height = 28
+        Caption = 'Filas'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 392
+        Top = 56
+        Width = 86
+        Height = 28
+        Caption = 'Columnas'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
       object StringGrid2: TStringGrid
         Left = 240
         Top = 152

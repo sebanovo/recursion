@@ -121,8 +121,9 @@
     <ItemGroup>
         <None Include=".gitignore"/>
         <CppCompile Include="cadena.cpp">
+            <VirtualFolder>{3E467CF6-A11C-45D3-BF55-914151753A77}</VirtualFolder>
             <DependentOn>cadena.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
+            <BuildOrder>5</BuildOrder>
         </CppCompile>
         <CppCompile Include="main.cpp">
             <Form>Form1</Form>
@@ -131,12 +132,14 @@
             <BuildOrder>2</BuildOrder>
         </CppCompile>
         <CppCompile Include="matriz.cpp">
+            <VirtualFolder>{3E467CF6-A11C-45D3-BF55-914151753A77}</VirtualFolder>
             <DependentOn>matriz.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
+            <BuildOrder>6</BuildOrder>
         </CppCompile>
         <CppCompile Include="numero.cpp">
+            <VirtualFolder>{3E467CF6-A11C-45D3-BF55-914151753A77}</VirtualFolder>
             <DependentOn>numero.h</DependentOn>
-            <BuildOrder>3</BuildOrder>
+            <BuildOrder>7</BuildOrder>
         </CppCompile>
         <None Include="README.md"/>
         <CppCompile Include="Recursion.cpp">
@@ -147,8 +150,9 @@
             <PCH>true</PCH>
         </PCHCompile>
         <CppCompile Include="vector.cpp">
+            <VirtualFolder>{3E467CF6-A11C-45D3-BF55-914151753A77}</VirtualFolder>
             <DependentOn>vector.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
+            <BuildOrder>8</BuildOrder>
         </CppCompile>
         <FormResources Include="main.dfm"/>
         <BuildConfiguration Include="Base">
@@ -177,6 +181,9 @@
                 <Source>
                     <Source Name="MainSource">Recursion.cpp</Source>
                 </Source>
+                <VFOLDERS>
+                    <VFOLDER ID="{3E467CF6-A11C-45D3-BF55-914151753A77}" name="lib"/>
+                </VFOLDERS>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="4">
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
