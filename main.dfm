@@ -17,7 +17,7 @@
     Top = 0
     Width = 963
     Height = 490
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 957
