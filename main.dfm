@@ -429,6 +429,14 @@
         Caption = 'Bubble Sort'
         OnClick = BubbleSort1Click
       end
+      object DecimalABinario1: TMenuItem
+        Caption = 'Decimal A Binario'
+        OnClick = DecimalABinario1Click
+      end
+      object BinarioADecimal1: TMenuItem
+        Caption = 'Binario A Decimal'
+        OnClick = BinarioADecimal1Click
+      end
     end
     object Cadena: TMenuItem
       Caption = 'Cadena'

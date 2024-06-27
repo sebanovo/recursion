@@ -469,3 +469,29 @@ void remplazar_digito_por_posicion(Cardinal &x, byte digito, byte posicion)
     }
 }
 
+// Convertir Decimal a Binario
+Cardinal decimal_a_binario(Cardinal x)
+{
+    Cardinal binaryNumber;
+    if (x < 0) {
+        throw Exception("No hay binario de números negativos");
+    } else if (x == 0) {
+        binaryNumber = 0;
+    } else {
+        binaryNumber = x % 2 + 10 * decimal_a_binario(x / 2);
+    }
+    return binaryNumber;
+}
+
+//Cardinal binario_a_decimal(Cardinal x, byte base)
+//{
+//    Cardinal binario;
+//    if (x < base) {
+//        binario = x;
+//    } else {
+//        binario = binario_a_decimal(x / base, base);
+//        binario = binario * 10 + (x % base);
+//    }
+//    return binario;
+//}
+

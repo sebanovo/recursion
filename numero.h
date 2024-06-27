@@ -43,6 +43,9 @@ String repetir_digitos(Cardinal n);
 void insertar_digito_por_posicion(Cardinal &x, byte digito, byte posicion);
 void remplazar_digito_por_posicion(Cardinal &x, byte digito, byte posicion);
 
+// converciones
+Cardinal decimal_a_binario(Cardinal x);
+//Cardinal binario_a_decimal(Cardinal x, byte base);
 // ordenamiento
 void bubble_sort(Cardinal &x);
 //---------------------------------------------------------------------------
