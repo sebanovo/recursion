@@ -469,29 +469,63 @@ void remplazar_digito_por_posicion(Cardinal &x, byte digito, byte posicion)
     }
 }
 
-// Convertir Decimal a Binario
-Cardinal decimal_a_binario(Cardinal x)
+const AnsiString digitos = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+// Algoritmo para convertir base decimal a cualquier base
+AnsiString decimal_a_base_N(Cardinal x, byte base)
 {
-    Cardinal binaryNumber;
-    if (x < 0) {
-        throw Exception("No hay binario de números negativos");
-    } else if (x == 0) {
-        binaryNumber = 0;
+    AnsiString resultado;
+    if (x == 0) {
+        resultado = "";
     } else {
-        binaryNumber = x % 2 + 10 * decimal_a_binario(x / 2);
+        char digito = digitos[(x % base) + 1];
+        Cardinal digitosRestantes = x / base;
+        resultado = decimal_a_base_N(digitosRestantes, base) + digito;
     }
-    return binaryNumber;
+    return resultado;
 }
 
-//Cardinal binario_a_decimal(Cardinal x, byte base)
-//{
-//    Cardinal binario;
-//    if (x < base) {
-//        binario = x;
-//    } else {
-//        binario = binario_a_decimal(x / base, base);
-//        binario = binario * 10 + (x % base);
-//    }
-//    return binario;
-//}
+AnsiString decimal_a_base_N_1(Cardinal x, byte base)
+{
+    AnsiString resultado;
+    if (base < 1 || base > 36) {
+        throw Exception("La base solo puede estar entre 1 y 36");
+    } else if (base == 1) {
+        resultado = repetir_numero(1, x);
+    } else if (x == 0) {
+        resultado = "0";
+    } else {
+        resultado = decimal_a_base_N(x, base);
+    }
+    return resultado;
+}
+
+// Algoritmo para convertir cualquier base N a base decimal
+Cardinal base_N_a_decimal(AnsiString x, byte base, Cardinal index)
+{
+    Cardinal resultado;
+    if (index >= x.Length()) {
+        resultado = 0;
+    } else {
+        char digit = x[index + 1];
+        byte pos = digitos.Pos(digit) - 1;
+        Cardinal power = x.Length() - index - 1;
+        resultado =
+            pos * std::pow(base, power) + base_N_a_decimal(x, base, index + 1);
+    }
+    return resultado;
+}
+
+Cardinal base_N_a_decimal_1(AnsiString x, byte base)
+{
+    Cardinal resultado;
+    if (base < 1 || base > 36) {
+        throw Exception("La base solo puede estar entre 1 y 36");
+    } else if (base == 1) {
+        resultado = x.Length();
+    } else {
+        resultado = base_N_a_decimal(x.UpperCase(), base, 0);
+    }
+    return resultado;
+}
 

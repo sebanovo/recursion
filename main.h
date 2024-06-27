@@ -139,8 +139,8 @@ class TForm1 : public TForm
     TLabel* Label6;
     TLabel* Label7;
     TLabel* Label8;
-    TMenuItem* DecimalABinario1;
-    TMenuItem* BinarioADecimal1;
+    TMenuItem* DecimalABaseN1;
+    TMenuItem* BaseNADecimal1;
     void __fastcall SumarDigitosClick(TObject* Sender);
     void __fastcall SumarDigitosParesClick(TObject* Sender);
     void __fastcall SumarDigitosImparesClick(TObject* Sender);
@@ -241,8 +241,8 @@ class TForm1 : public TForm
     void __fastcall DimensionarVector2Click(TObject* Sender);
     void __fastcall InsertarV2EnV1VClick(TObject* Sender);
     void __fastcall CargarFrecuenciaDeCaracteresVClick(TObject* Sender);
-    void __fastcall DecimalABinario1Click(TObject* Sender);
-    void __fastcall BinarioADecimal1Click(TObject* Sender);
+    void __fastcall DecimalABaseN1Click(TObject* Sender);
+    void __fastcall BaseNADecimal1Click(TObject* Sender);
   private: // User declarations
   public: // User declarations
     __fastcall TForm1(TComponent* Owner);

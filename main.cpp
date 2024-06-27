@@ -766,15 +766,28 @@ void __fastcall TForm1::CargarFrecuenciaDeCaracteresVClick(TObject* Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::DecimalABinario1Click(TObject* Sender)
+void __fastcall TForm1::DecimalABaseN1Click(TObject* Sender)
 {
-    Edit2->Text = decimal_a_binario(StrToInt(Edit1->Text));
+    Cardinal numero = StrToInt(Edit1->Text);
+    byte base = StrToInt(InputBox("Decimal A Base N", "base", ""));
+    try {
+        Edit2->Text = decimal_a_base_N_1(numero, base);
+    } catch (AnsiString e) {
+        ShowMessage(e);
+    }
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::BinarioADecimal1Click(TObject* Sender)
+void __fastcall TForm1::BaseNADecimal1Click(TObject* Sender)
 {
-    //Edit2->Text = binario_a_decimal(StrToInt(Edit1->Text), 2);
+    AnsiString number = Edit1->Text;
+    byte base = StrToInt(InputBox("Base N A Decimal", "base", ""));
+    try {
+        Edit2->Text = number.UpperCase();
+        Edit2->Text = base_N_a_decimal_1(number, base);
+    } catch (AnsiString e) {
+        ShowMessage(e);
+    }
 }
 //---------------------------------------------------------------------------
 
