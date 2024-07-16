@@ -266,18 +266,6 @@ void invertir_cada_palabra(String &x)
     }
 }
 
-//double convertir_base_binario_a_decimal(int nro, int base)
-//{
-//    int bin;
-//    if (nro < base) {
-//        bin = nro;
-//    } else {
-//        bin = convertir_base_binario_a_decimal(nro / base, base);
-//        bin = bin * 10 + (nro % base);
-//    }
-//    return bin;
-//}
-
 bool verificar_palindromo(String x)
 {
     bool b;
