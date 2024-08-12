@@ -1,4 +1,4 @@
-ï»¿//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 #pragma hdrstop
 
@@ -195,7 +195,7 @@ bool verificar_ordenado_descendente(TStringGrid* v, byte a, byte n)
     return bol;
 }
 
-//Escribir una funciÃ³n que devuelva la cantidad de nÃºmeros pares que contiene
+//Escribir una función que devuelva la cantidad de números pares que contiene
 //Ej. ContarPares(v[2, 4,5,12, 23, 54,3, 34, 6], 9) => 6
 byte contar_numeros_pares(TStringGrid* v, byte n)
 {
@@ -507,7 +507,7 @@ void cargar_caracteres_orden_descendente(TStringGrid* v, String x)
     }
 }
 
-// Â¡Necesitan 2 StringGrid !!
+// ¡Necesitan 2 StringGrid !!
 
 //insertar un vector en otro indicando una posicion
 void recorrer_numeros(TStringGrid* v, byte p, byte n)
@@ -565,8 +565,8 @@ void cargar_frecuencia(String cad, TStringGrid* vc, TStringGrid* vf, Cardinal n)
 
 // --------------------------- 2 String Grid ----------------------------------
 
-// x = hola como estÃ¡n
-// v["Ã¡n", "st", "e", "mo", "co", "a", "ol, "h"]
+// x = hola como están
+// v["án", "st", "e", "mo", "co", "a", "ol, "h"]
 void cargar_cadena_2en2(TStringGrid* v, String x, byte a, byte b)
 {
     byte length = x.Length();
