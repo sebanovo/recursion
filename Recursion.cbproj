@@ -134,6 +134,10 @@
             <DependentOn>lib\numero.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
+        <CppCompile Include="lib\vector.cpp">
+            <DependentOn>lib\vector.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
         <CppCompile Include="main.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
@@ -148,10 +152,6 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="vector.cpp">
-            <DependentOn>vector.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
         <FormResources Include="main.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

@@ -458,7 +458,7 @@ void bubble_sort(TStringGrid* v, byte n)
     }
 } // fin bubble sort
 
-// bogo sort
+// bogo sort (NOTA :Este algoritmo es muy lento probar con pocos datos sino se cuelga)
 void desordenar(TStringGrid* v, byte n)
 {
     if (n == 0) {
