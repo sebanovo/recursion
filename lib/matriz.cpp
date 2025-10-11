@@ -269,7 +269,7 @@ void cargar_circular(TStringGrid* v, byte fa, byte fb)
 
 /*
 8)  Cargar cuadrado magico (mxm)
-	17 24  1  3  15
+	17 24  1  8  15
 	23  5  7 14  16
 	 4  6 13 20  22    , m = 5
 	10 12 19 21  3
